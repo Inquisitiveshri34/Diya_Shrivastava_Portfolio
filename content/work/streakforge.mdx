@@ -1,0 +1,106 @@
+---
+{
+  "kind": "featured",
+  "slug": "streakforge",
+  "order": 3,
+  "draft": false,
+  "name": "StreakForge",
+  "subtitle": "Fitness Engagement & Retention Insight Platform",
+  "title": "StreakForge — Fitness Engagement & Retention Insight Platform",
+  "label": "Product analytics · Aug–Sep 2026",
+  "cardLabel": "Product analytics · 2026 · Team project",
+  "summary": "An insight platform that shows a gym chain's product team which engagement behaviours actually drive retention — and found that the biggest leak is members who never get started, not members who stop renewing.",
+  "cardLine": "Fitness apps can see who stops showing up, but not why. StreakForge shows which engagement habits keep members coming back — and finds the biggest leak is members who never get started.",
+  "cardTags": ["Python", "Pandas", "Plotly", "Streamlit"],
+  "details": "Team project of three. I wrote the product requirements document and led the exploratory analysis, KPI design, insight storytelling and dashboard delivery across 10 pull requests. Teammates built the data cleaning, merging and feature-engineering pipeline.",
+  "stack": ["Python", "NumPy", "Pandas", "Plotly", "Scikit-learn", "Streamlit"],
+  "links":
+    {
+      "github": "https://github.com/kalviumcommunity/JDF_StreakForge_Kalvium-Community",
+      "demo": "https://streakforge-fitness-engagement-retention-insight-platform.streamlit.app/",
+    },
+  "glance":
+    [
+      {
+        "number": "81.2%",
+        "meaning": "of members never activate — no visit or app session in their first 7 days. The single largest drop in the funnel.",
+      },
+      {
+        "number": "94% → 84%",
+        "meaning": "Headline churn once it's measured at the date the data actually ends",
+      },
+      {
+        "number": "16% → 24%",
+        "meaning": "Outside January, activation sat at 15–16% every year from 2021 to 2024, then rose to 23.7% in 2025 — the leak is real but shrinking",
+      },
+      {
+        "number": "0 of 40",
+        "meaning": "Branches whose churn rate is a statistical outlier — the problem is platform-wide, not a few bad branches",
+      },
+      {
+        "number": "16,956 members",
+        "meaning": "From five sources totalling 309,497 rows, merged into 206,732 engagement events",
+      },
+      {
+        "number": "15 KPIs · 13 unusual weeks · 12 at-risk members",
+        "meaning": "Defined, flagged and listed for outreach",
+      },
+    ],
+  "metrics":
+    [
+      {
+        "value": "81.2%",
+        "label": "drop-off",
+        "context": "of members never activate in their first 7 days",
+        "viz": { "kind": "bar", "percent": 18.8 },
+      },
+      { "value": "27.9% vs 15.6%", "context": "activation on the PT-Combo plan vs Basic" },
+    ],
+}
+---
+
+## The problem
+
+A gym chain with a companion app runs 40 branches across Indian cities. Its engagement data sits in five separate systems — member profiles, subscriptions, streaks, gym check-ins and app events — with no shared structure or consistent timestamps. The product team can see that members leave, but not which behaviours keep them. Retention spending is guesswork.
+
+## The data
+
+A synthetic dataset designed around realistic Indian gym patterns — city-tier pricing, festival and monsoon seasonality, corporate tie-ups — and generated with deliberate messiness. Five sources totalling 309,497 rows: 17,500 members, 45,088 subscriptions, 40,177 streak episodes, 108,744 gym check-ins and 97,988 app events.
+
+The team's cleaning removed 676 duplicate subscriptions and 25 duplicate streaks, parsed two conflicting date formats, and collapsed 81 spellings of city names into 27 cities (Bangalore and Bengaluru, Gurgaon and Gurugram). Missing values were kept as meaning rather than filled: a missing trainer means a self-guided session.
+
+## Approach
+
+- **One timeline of events.** Our pipeline combined gym check-ins and app events into a single table of 206,732 events and tagged each event with the member's subscription and streak status at that exact moment. Alternative: analysing gym and app data separately, or summarising straight to one row per member — both lose the timing that churn and activation depend on. Eleven merge checks confirmed no rows were duplicated or lost.
+- **Measuring members once, not once per event.** In my analysis, churn, spend and tenure were computed from the member tables, not the event table. Otherwise an active member with 30 events would count 30 times and skew every average.
+- **A funnel where each stage builds on the last.** Signed up → activated in 7 days → renewed → 7-day streak → retained. Because the stages cascade, each drop is a true sequential loss, which is what isolated activation as the main leak.
+- **Questioning the headline number.** The pipeline's reporting date sat ten months after the last real event, so members looked churned simply because the data had stopped. I computed every KPI at both dates and reported both side by side: 94% churn at the reporting date, 84% at the data's real end.
+- **Rule-based segments, not clustering.** Members were scored on recency, frequency and spend in quartiles and placed in four segments — Champions, Loyal, At Risk, Dormant. A manager can see why a member is "At Risk"; a cluster label can't explain itself.
+- **Anomalies at platform level.** Comparing each week with its 8-week rolling average flagged 13 unusual weeks — the largest are New Year sign-up rushes. A 14th, the partial final week of data, was recognised as an artefact and excluded rather than reported as a spike. A separate check on churn by branch found no outliers among 40 branches.
+
+## What I found
+
+- Churn doesn't depend on who the member is. It was about 94% in every segment — membership type, city tier, signup channel, even "Champions" versus "Dormant" — and no category was meaningfully associated with churn (Cramér's V below 0.1).
+- What matters is getting started. Only 18.8% of members activate in their first week. That single step loses 13,776 members — more than every later stage combined.
+- Guided plans help members start: activation was 27.9% on PT-Combo plans against 15.6% on Basic, and 23.5% with a personal trainer against 17.6% without — the only statistically significant differences. Activation also improved: outside January it held at 15–16% for four years, then rose to 23.7% in 2025. January sign-ups activate best every year.
+- Twelve currently active members show almost every risk signal at once, and were listed for outreach.
+
+## Results
+
+A deployed six-page Streamlit dashboard — cached loading, filters, error handling, health checks and export — presenting 15 KPIs and five insights, each routed to the audience that should act on it (leadership, product, operations or customer success), across seven interactive charts.
+
+## Limitations
+
+- **Synthetic data.** The patterns are designed to be realistic, but the findings show the method, not truths about a real gym chain.
+- **Churn is inferred from silence.** A member counts as churned 30 days after their plan ends without renewal. The data can't separate a deliberate cancellation from a forgotten renewal or a failed payment, and each needs a different response.
+- **The 7-day activation window wasn't tested.** Members who start on day 8 count as not activated. Re-running with 14 or 30 days would change the size of the drop.
+- **Correlation, not cause.** There's no experiment showing that improving activation would reduce churn, and no explanation yet for why activation improved in 2025. The single highest monthly figure, 36.6% for September 2025, sits at the very edge of the data and isn't relied on.
+- **Uniform churn is a puzzle.** "Champions" churning at the same rate as "Dormant" members is a strong finding, but it may partly reflect how the synthetic data was generated.
+
+## What I'd do next
+
+1. **Test onboarding changes directly** — experiment with the first-week experience (welcome timing, a scheduled first workout) and measure activation against the 2025 baseline of 23.7%. Guided plans are the obvious first lever to test.
+2. **Find out why activation improved** — identify what changed for the cohorts where it rose, so the improvement can be kept.
+3. **Test the activation window** at 7, 14 and 30 days to see whether the main finding holds.
+4. **Run the same pipeline on real gym data** to check whether the activation leak and the uniform churn appear there too.
+5. **Score at-risk members continuously** instead of once, so outreach happens before the 30-day grace period ends.

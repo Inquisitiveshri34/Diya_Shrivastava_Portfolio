@@ -1,0 +1,101 @@
+---
+{
+  "kind": "featured",
+  "slug": "deliveriq",
+  "order": 4,
+  "draft": false,
+  "name": "DeliverIQ",
+  "subtitle": "Delivery ETA Predictor",
+  "title": "DeliverIQ — Delivery ETA Predictor",
+  "label": "Logistics · Apr–May 2026",
+  "cardLabel": "Logistics · 2026",
+  "summary": "A machine-learning model that predicts urban delivery times from traffic, weather and road-network data, served through an interactive forecasting dashboard.",
+  "cardLine": "Customers and dispatchers need delivery times they can plan around. DeliverIQ predicts urban delivery ETAs from traffic, weather and road data.",
+  "cardTags": ["Python", "Scikit-learn", "Pandas", "Streamlit. Card order on the Work page"],
+  "details": "Role: solo project · Duration: Apr–May 2026",
+  "stack": ["Python", "NumPy", "Pandas", "Scikit-learn", "Plotly", "Streamlit", "Jupyter Notebook"],
+  "links":
+    {
+      "github": "https://github.com/Inquisitiveshri34/DeliverIQ-Travel-Time-Predictor",
+      "demo": "https://deliveriq-v0.streamlit.app/",
+    },
+  "glance":
+    [
+      { "number": "7.83 min MAE", "meaning": "Average prediction error on 47,984 held-out trips" },
+      {
+        "number": "55% better",
+        "meaning": "Than always predicting the average trip time, which is off by 17.48 min on average",
+      },
+      {
+        "number": "239,919 trips",
+        "meaning": "Used after cleaning, from 250,000 synthetic delivery trips",
+      },
+      {
+        "number": "R² 0.21",
+        "meaning": "Kept low by deliberate noise built into the synthetic data — see Limitations",
+      },
+    ],
+  "metrics":
+    [
+      {
+        "value": "7.83 min",
+        "label": "MAE",
+        "context": "average prediction error",
+        "viz": { "kind": "scale", "value": 7.83, "baseline": 17.48, "max": 20, "unit": "min" },
+      },
+      { "value": "55%", "label": "better", "context": "than the baseline" },
+    ],
+}
+---
+
+## The problem
+
+A delivery estimate is a promise. Overestimate it and drivers sit idle; underestimate it and customers are let down. City deliveries depend on distance, road type, traffic and weather all at once, which a simple distance-based estimate can't capture.
+
+## The data
+
+A synthetic, multi-table transportation dataset: 250,000 delivery trips joined with 25,000 road segments, 100,000 traffic snapshots and 75,000 weather events. The data was built with deliberate errors — typos, out-of-range values, duplicates, broken references and noise — so cleaning was a real part of the work.
+
+I standardised category spellings, clipped values to valid ranges (for example, speeds of 1–120 km/h), merged duplicate weather events (75,000 → 37,900), checked every foreign key and filled gaps with group-wise medians or modes, and removed 10,081 trips with no recorded travel time, leaving 239,919. Travel times were heavily skewed (skewness 8.47), so I modelled them on a log scale.
+
+## Approach
+
+- **Log-scale target.** I predicted log(1 + minutes) instead of raw minutes. With a skewness of 8.47, raw times would let a few very long trips dominate training.
+- **Group-wise filling of gaps.** Missing values were filled with the median or mode for their road type, traffic level or weather, not one global value, because a highway and a residential street behave very differently.
+- **One end-to-end pipeline.** Scaling and encoding sit inside a single Scikit-learn pipeline, so they're learned only from training data. That prevents information from the test set leaking into the model.
+- **A step-by-step model progression.** Mean baseline → linear regression (18% better) → decision tree tuned with GridSearchCV over 60 combinations (55.3% better) → Random Forest (55.2% better). I chose the Random Forest despite near-identical error, because an ensemble generalises more reliably than one deep tree. Its settings were chosen by hand, informed by the tree search, because a randomised search ran out of memory.
+- **MAE as the main metric.** Dispatchers care about the typical error in minutes. RMSE (35.7 min) is far higher than MAE, which shows a few extreme trips dominate squared error.
+
+## Evaluation
+
+An 80/20 random split — 191,935 trips for training, 47,984 for testing. The baseline always predicts the training set's average trip time. All metrics were re-computed in a separate verification notebook and matched exactly.
+
+**Figures:**
+
+- Travel times are heavily right-skewed (mean 21.8 min, median 12.3, skewness 8.47); on a log scale they become close to bell-shaped, which makes them usable for modelling.
+- Road type is a strong signal: median trip times are 6.5 minutes on highways, 12.3 on urban roads and 19.0 on residential streets.
+- Average travel time by hour and day of week: the 7–9 am and 5–7 pm rush hours stand out on every day of the week.
+- Speed falls as traffic rises — about 62.5 km/h in low traffic, 40 in medium and 20 in high.
+- Road type and weather together: average trips range from about 15 minutes on highways in clear weather to about 35 minutes on residential streets in fog.
+
+## Results
+
+7.83 minutes mean absolute error against 17.48 for the baseline — a 55.2% improvement. Distance is the dominant feature, at 65% of the model's importance. RMSE is 35.7 minutes, R² 0.21 and MAPE 37.8%. Deployed as an interactive Streamlit dashboard for on-demand forecasts.
+
+## Limitations
+
+- **Synthetic data with deliberate noise.** Built-in noise and broken references cap how much variation any model can explain (R² 0.21). How it would perform on real deliveries is untested.
+- **Random rather than time-ordered split.** Test trips come from the same period as training trips, so the score doesn't show how well the model predicts future weeks.
+- **Impossible distances left in the data.** Some trips list distances of hundreds to thousands of kilometres yet take under 90 minutes. Cleaning didn't cap distance, so these errors reached the model.
+- **A spike of trips at midnight.** About 21,600 trips are logged at 00:00, more than twice any other hour, which suggests missing times were filled in as midnight. That weakens the hour and rush-hour features.
+- **Large errors on rare long trips.** A few trips run up to about 600 minutes; these drive RMSE to 35.7 minutes even though typical error is under 8.
+- **Broken road references.** 13.5% of trips (33,793) had no valid road record and defaulted to "residential", which weakens predictions for those trips.
+- **No seasonal or holiday effects.** Hour and day of week are used, but monthly patterns and holidays are not.
+
+## What I'd do next
+
+1. **Fix the two data issues and re-measure** — cap impossible distances, treat midnight timestamps as missing, and re-run the evaluation.
+2. **Validate on time-ordered data** — train on earlier months and test on later ones, to measure performance on the future.
+3. **Predict ranges, not single numbers** — quantile regression would give dispatchers a likely window, such as 12–18 minutes.
+4. **Add seasonal and holiday features** to capture monthly and festival-period patterns.
+5. **Monitor drift after deployment** — compare predictions with actual times and retrain when error rises.

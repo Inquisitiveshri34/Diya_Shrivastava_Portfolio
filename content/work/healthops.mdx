@@ -1,0 +1,46 @@
+---
+{
+  "kind": "learning",
+  "slug": "healthops",
+  "order": 1,
+  "draft": false,
+  "name": "HealthOps",
+  "subtitle": "Hospital Resource Intelligence",
+  "title": "HealthOps — Hospital Resource Demand Analysis",
+  "label": "Healthcare operations · Mar–Apr 2026",
+  "cardLabel": "Healthcare operations · Mar–Apr 2026",
+  "summary": "A cleaned dataset and descriptive dashboard showing where a small hospital's demand for beds, ICU care and oxygen comes from, and when it peaks.",
+  "cardLine": "Hospitals need to see resource pressure before it becomes a crisis. HealthOps cleans and analyses 4,926 synthetic patient records to show patterns in inflow, ICU demand, oxygen use and bed occupancy.",
+  "details": "Solo project",
+  "stack": ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Jupyter Notebook", "Streamlit"],
+  "links":
+    {
+      "github": "https://github.com/Inquisitiveshri34/HealthOps_Data-Driven_Hospital_Resource_Intelligence",
+      "demo": "https://healthops.streamlit.app/",
+    },
+}
+---
+
+## The problem
+
+Small hospitals collect plenty of patient and operational data but rarely analyse it, so shortages of beds, ICU capacity and oxygen are handled reactively during peak periods.
+
+## The data
+
+A synthetic dataset of 5,075 patient visits across 2023 and 2024, designed to resemble a hospital's operations. Cleaning removed 75 duplicates and 74 rows with unreadable dates, filled missing departments, genders, stays and oxygen figures, capped bed and ICU occupancy at capacity, clipped impossible ages and stays, and added bed and ICU utilisation rates — leaving 4,926 records.
+
+## What I built
+
+A cleaning notebook, an exploratory analysis notebook, and a Streamlit dashboard with 13 charts across seven sections — overview, patient inflow, seasonal trends, diseases, resource use, severity and operations.
+
+## What the analysis showed
+
+- Patient numbers are higher in winter and the monsoon; food poisoning, influenza and dengue are the most common conditions.
+- ICU cases concentrate in a few conditions — COVID-19, pneumonia and stroke.
+- Most cases are mild or moderate; severe and critical cases are about 29%, and emergency admissions skew towards them.
+- Bed utilisation usually sits at 60–75%, with occasional peaks near capacity, and oxygen use is volatile with sudden spikes.
+- The median stay is 3 days, with some stays reaching 30.
+
+## Scope note
+
+A descriptive analysis of synthetic data. It shows past patterns only — there's no forecasting, live data or interactive filtering.

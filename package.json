@@ -10,16 +10,26 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "media:manifest": "tsx scripts/build-media-manifest.ts",
+    "validate:content": "tsx scripts/validate-content.ts",
+    "predev": "npm run media:manifest",
+    "prebuild": "npm run media:manifest && npm run validate:content",
     "lint": "eslint .",
+    "prelint": "npm run media:manifest",
     "typecheck": "tsc --noEmit",
+    "pretypecheck": "npm run media:manifest",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "pretest:e2e": "npm run media:manifest"
   },
   "dependencies": {
+    "gray-matter": "4.0.3",
     "next": "16.4.6",
+    "next-mdx-remote": "6.0.0",
     "react": "19.3.1",
-    "react-dom": "19.3.1"
+    "react-dom": "19.3.1",
+    "zod": "4.6.7"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",
@@ -33,6 +43,7 @@
     "prettier": "3.10.0",
     "prettier-plugin-tailwindcss": "0.8.1",
     "tailwindcss": "4.3.5",
+    "tsx": "4.23.15",
     "typescript": "6.0.3"
   }
 }

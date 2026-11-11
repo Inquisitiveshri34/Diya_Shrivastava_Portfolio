@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+/*
+ * Keep Tailwind's automatic source detection out of the design mock-ups.
+ * docs/ holds HTML, SVG and PNG reference files; none of their classes belong
+ * in the build.
+ */
+@source not "../docs";
+
+/*
+ * Design tokens. Source: docs/design-source.md (Style guide section).
+ * These are the only colours in the codebase. Everything else maps to them.
+ */
+:root {
+  --background: #f5f7f2; /* pale sage page */
+  --surface: #ffffff; /* cards, boxes */
+  --band: #ebf0e7; /* muted bands, project cards */
+  --border: #dee5d8; /* hairlines */
+  --ink: #23262b; /* graphite text */
+  --ink-muted: #5d626a; /* captions, metadata */
+  --accent: #6c3e66; /* plum: links, buttons, metrics */
+  --accent-hover: #5a3355; /* hover and pressed */
+  --accent-tint: #f3eaf1; /* highlighter, badge */
+  --limit-tint: #fbf1e4; /* limitation callouts */
+  --limit-ink: #8a5a1f; /* limitation label and rule */
+
+  --font-serif-stack: var(--font-literata), Georgia, serif;
+  --font-sans-stack: var(--font-public-sans), system-ui, sans-serif;
+  --font-mono-stack: var(--font-roboto-mono), ui-monospace, monospace;
+
+  /* Spacing and widths. Source: design-source.md (Style guide, Space and Width). */
+  --space-section: 112px; /* between sections on phones */
+  --space-section-wide: 160px; /* between sections on laptops */
+  --focus-width: 2px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-band: var(--band);
+  --color-border: var(--border);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-tint: var(--accent-tint);
+  --color-limit-tint: var(--limit-tint);
+  --color-limit-ink: var(--limit-ink);
+
+  --font-serif: var(--font-serif-stack);
+  --font-sans: var(--font-sans-stack);
+  --font-mono: var(--font-mono-stack);
+
+  /* Radii from design-source.md: 16px cards, pill buttons and badges. */
+  --radius-card: 16px;
+  --radius-pill: 999px;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--background);
+    color: var(--ink);
+    font-family: var(--font-sans-stack);
+    font-size: clamp(17px, 0.6vw + 16px, 18px);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif-stack);
+    font-weight: 600;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-size: clamp(31px, 2.4vw + 22px, 46px);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+  }
+
+  h2 {
+    font-size: clamp(24px, 1vw + 20px, 32px);
+    line-height: 1.25;
+  }
+
+  h3 {
+    font-family: var(--font-sans-stack);
+    font-size: clamp(19px, 0.4vw + 18px, 21px);
+    line-height: 1.35;
+  }
+
+  p {
+    max-width: 68ch;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    text-underline-offset: 3px;
+  }
+
+  a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+  }
+
+  /* One focus style everywhere: a 2px plum ring with a small gap. */
+  :focus-visible {
+    outline: var(--focus-width) solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Touch targets: at least 44px in both directions. */
+  button,
+  [role="button"],
+  a.touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  ::selection {
+    background-color: var(--accent-tint);
+    color: var(--ink);
+  }
+}
+
+@layer utilities {
+  .text-metric {
+    font-family: var(--font-mono-stack);
+    font-weight: 500;
+  }
+
+  /* Sections fade and rise 8px over 400ms, once. */
+  @keyframes rise-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .rise-in {
+    animation: rise-in 400ms ease-out both;
+  }
+}
+
+/* Motion off for anyone who asks for less of it. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

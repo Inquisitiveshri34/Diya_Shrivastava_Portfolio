@@ -1,0 +1,4 @@
+{
+  "alt": "Line chart on log scales of predicted dispute risk against actual dispute rate for ten groups of test transactions, following the diagonal of perfect calibration from about 0.1% to 5%, with the top group above the line.",
+  "caption": "Predicted risk closely tracks the actual dispute rate across ten equal-sized groups (calibration error 0.00185). The riskiest group is slightly under-predicted: 3.9% predicted against 5.1% actual."
+}

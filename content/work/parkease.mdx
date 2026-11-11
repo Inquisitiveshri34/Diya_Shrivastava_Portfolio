@@ -1,0 +1,41 @@
+---
+{
+  "kind": "learning",
+  "slug": "parkease",
+  "order": 2,
+  "draft": false,
+  "name": "ParkEase",
+  "subtitle": "Smart Parking Management System",
+  "title": "ParkEase — Smart Parking Management System",
+  "label": "Urban mobility · Feb–Mar 2026",
+  "cardLabel": "Urban mobility · Feb–Mar 2026",
+  "summary": "A full-stack parking app where drivers pick a slot from a live grid and book a time window, with each booking checked for overlaps inside a single database transaction.",
+  "cardLine": "Drivers lose time circling for parking, and booking systems break when two people book the same spot. ParkEase checks every booking for overlaps inside a single database transaction.",
+  "details": "Solo project",
+  "stack":
+    ["Next.js", "TypeScript", "PostgreSQL", "Prisma ORM", "Redis", "Zod", "Docker", "Vercel"],
+  "links":
+    {
+      "github": "https://github.com/kalviumcommunity/S66-0126-Diya-NextJS-ParkEase",
+      "demo": "https://parkease-sage.vercel.app/",
+    },
+}
+---
+
+## The problem
+
+Drivers lose time circling for parking, and a booking system that checks availability carelessly can let two people reserve the same spot.
+
+## What I built
+
+- A booking service that runs each booking as one database transaction: it checks the slot is available, checks for any confirmed or pending booking that overlaps the requested time, then creates the booking and marks the slot reserved — all or nothing.
+- A 5 × 10 slot grid coloured by status, a slot page with a booking form, a "my bookings" page with cancellation, and an admin page for changing slot status.
+- Sign-up and login with bcrypt-hashed passwords, 15-minute access tokens, 7-day refresh tokens in an HTTP-only cookie, and protected routes.
+- Slot listings cached in Redis for 30 seconds and cleared after every booking or admin status change.
+- A PostgreSQL schema in Prisma — users, slots and bookings — seeded with a 50-slot car park and test accounts.
+- Zod validation on every API route, input sanitisation against XSS, and security headers (CSP, HSTS) set in middleware.
+- A Dockerfile and docker-compose setup, a GitHub Actions workflow that builds and lints on every push, and pre-commit linting and formatting.
+
+## Scope note
+
+The overlap check runs inside a transaction but hasn't been tested under many simultaneous requests. Logout is still a placeholder, emails are written to the server log rather than sent, and there are no automated tests yet. Crowd-sourced slot reports, admin reports, a profile page and payments are planned but not built.

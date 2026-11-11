@@ -1,0 +1,37 @@
+---
+{
+  "kind": "learning",
+  "slug": "craftbridge",
+  "order": 3,
+  "draft": false,
+  "name": "CraftBridge",
+  "subtitle": "Marketplace for Local Artisans",
+  "title": "CraftBridge — Marketplace for Local Artisans",
+  "label": "Marketplace · Feb–Mar 2026",
+  "cardLabel": "Marketplace · Feb–Mar 2026",
+  "summary": "A Flutter marketplace prototype where approved artisans list handmade products and buyers browse, order and track them — with an admin approval step to keep sellers genuine.",
+  "cardLine": "Local artisans struggle to reach buyers. CraftBridge is a mobile marketplace prototype where approved artisans list products and buyers browse, order and track them.",
+  "details": "Solo project · built across 51 documented pull requests · prototype (MVP)",
+  "stack": ["Flutter", "Dart", "Firebase Auth", "Cloud Firestore"],
+  "links": { "github": "https://github.com/Inquisitiveshri34/craft_bridge" },
+  "linkNote": "Mobile app — no live web demo",
+}
+---
+
+## The problem
+
+Skilled local artisans often depend on middlemen or word of mouth to reach buyers.
+
+## What I built
+
+- Sign-up and login with three roles — buyer, artisan and admin — each routed to its own home screen, with sessions that persist across restarts.
+- An approval step: new artisans see a "pending approval" screen until an admin approves them, and only approved artisans can list products.
+- Artisans add, edit and delete products (title, description, price, category, stock and one photo) and move orders through pending → confirmed → shipped → delivered or cancelled.
+- Buyers browse active products, search, filter across seven categories, sort by price or date, view details, use a cart and place orders.
+- Admins approve or reject artisans and see all users and orders.
+- Products and orders update in real time through Firestore, and Firestore security rules limit who can create and change products and orders.
+- Dark mode.
+
+## Scope note
+
+A working prototype, not a finished app. There are no payments — orders are recorded only. Product photos are saved on the seller's device rather than uploaded to the cloud, so buyers on other devices can't see them yet. Reviews, maps and push notifications were planned and partly scaffolded but aren't working, and the cart resets when the app closes.

@@ -1,0 +1,113 @@
+---
+{
+  "kind": "featured",
+  "slug": "chargebacklens",
+  "order": 2,
+  "draft": false,
+  "name": "ChargebackLens",
+  "subtitle": "Transaction Dispute Risk & Decision Engine",
+  "title": "ChargebackLens — Transaction Dispute Risk & Decision Engine",
+  "label": "Payments & fintech risk · Aug–Sep 2026",
+  "cardLabel": "Payments & fintech risk · 2026",
+  "summary": "A calibrated risk model that turns each transaction's chance of being disputed into the action that loses the least money — allow it, ask for extra verification, or send it for manual review.",
+  "cardLine": "Payment teams have to decide, transaction by transaction, whether to allow, challenge or review. ChargebackLens turns dispute risk into the rupee-optimal decision.",
+  "cardTags": ["Python", "Scikit-learn", "Pandas", "Streamlit"],
+  "details": "Role: solo project · Built for the Razorpay AI Buildathon, Track 02: AI Risk Manager · Duration: Aug–Sep 2026",
+  "stack": ["Python", "NumPy", "Pandas", "Scikit-learn", "Plotly", "Streamlit"],
+  "links":
+    {
+      "github": "https://github.com/Inquisitiveshri34/ChargeBackLens-Transaction-Dispute-Risk-Decision-Engine",
+      "demo": "https://chargebacklens-transaction-dispute-risk-decision-engine.streamlit.app/",
+    },
+  "glanceNote": "All figures are on the held-out test period: 45,246 transactions, 407 disputes (a 0.90% dispute rate).",
+  "glance":
+    [
+      {
+        "number": "9.7×",
+        "meaning": "PR-AUC of 0.0872 against a 0.90% base rate — the model ranks disputes about 9.7 times better than chance",
+      },
+      {
+        "number": "16.2× lift",
+        "meaning": "66 disputes among the 452 highest-risk transactions (top 1%)",
+      },
+      {
+        "number": "43.2% recall at 5% reviewed",
+        "meaning": "Reviewing the riskiest 5% (2,262 transactions) catches 175 of the 407 disputes",
+      },
+      {
+        "number": "₹11.99L net savings",
+        "meaning": "39.1% of the ₹30.7L that allowing every transaction would cost, under assumed costs — see Limitations",
+      },
+      {
+        "number": "+₹1.19L from the third band",
+        "meaning": "Three bands save ₹11.99L; the best single threshold saves ₹10.81L",
+      },
+      {
+        "number": "0.00185 calibration error",
+        "meaning": "Predicted risks closely match how often disputes actually happen",
+      },
+    ],
+  "metrics":
+    [
+      {
+        "value": "16.2×",
+        "label": "lift",
+        "context": "in the top 1% of the review queue",
+        "viz": { "kind": "lift", "disputes": 66, "transactions": 452, "baseRate": "0.90%" },
+      },
+      { "value": "₹11.99L", "label": "net savings", "context": "39.1% of exposure" },
+    ],
+}
+---
+
+## The problem
+
+A merchant loses money to a chargeback in three ways: the disputed amount, a fixed dispute fee, and the time spent handling it. But stopping a genuine customer costs money too — someone asked for extra verification may simply abandon the purchase. Most fraud models only ask "is this risky?" The question a merchant actually faces is "which action loses the least money?" ChargebackLens is built to answer that.
+
+## The data
+
+Synthetic data for Indian payments: 120,000 transactions from 35,000 customers and 60 merchants, spread across five files — transactions, customers, merchants, fulfilment and disputes. I fixed 14 kinds of data issues, such as non-standard state codes, mismatched delivery timestamps and orphaned records, logged each fix against a written specification, and checked the result with 20 automated data-quality checks, all passing. The final table holds 119,988 transactions, of which 1,050 (0.875%) were disputed.
+
+## Approach
+
+- **Three bands instead of one cut-off.** Transactions are allowed, stepped up to 3-D Secure verification, or sent for manual review, with both thresholds optimised together. Alternative: a single flag-or-allow threshold. The third band added ₹1.19L in net savings — so the extra complexity is measured, not assumed.
+- **Refusing information the model couldn't have.** I tagged 12 columns as forbidden because they're only known after the decision — such as delivery status, which shows a real 3.1× difference in dispute rates. The feature-building notebook never loads the fulfilment file, so the rule is enforced by design, not by a filter that could be forgotten.
+- **A time-based split.** The model is trained on earlier transactions, chosen and calibrated on a later block, and tested on the latest period — the way it would be used in practice.
+- **Logistic regression over gradient boosting.** I compared several candidates, including a tuned gradient-boosting model. None ranked disputes meaningfully better than another, so I broke the tie on log-loss, which rewards trustworthy probabilities. A plain logistic regression won and is simpler to explain and maintain.
+- **Sigmoid calibration instead of isotonic.** Isotonic calibration is a step function that can merge different scores and blur the top of the review queue; cross-validated calibration would also mix time periods. Sigmoid calibration on one held-out time block keeps the ranking intact.
+- **Testing the assumptions, not just the model.** I varied each of the four cost assumptions to see how the thresholds and savings moved. Savings stayed positive in every case, but one assumption — how many customers abandon when asked to verify — shifts the step-up threshold about 3×, so it's the one number a merchant must measure.
+
+## Interactive: try the thresholds
+
+- **Heading:** Try the thresholds yourself
+- **Intro:** Move the two thresholds to see how many transactions are allowed, challenged or reviewed — and what that does to disputes caught and money saved.
+- **Controls:** Step-up threshold · Review threshold · Reset to chosen policy
+- **Outputs:** Allowed · Stepped up · Reviewed · Disputes caught · Net savings
+- **Chosen policy (shown on reset):** 93.2% allowed, 6.2% stepped up, 0.7% reviewed — catching 49.9% of disputes (203 of 407) and saving ₹11.99L.
+- **Footnote:** Computed on the held-out test period (45,246 transactions, 0.90% dispute rate). Assumed costs: ₹1,500 fee per dispute, ₹300 per manual review, an 18% merchant margin, and 25% of customers abandoning when asked to verify.
+
+## Evaluation
+
+Candidates were compared on a separate validation block (14,947 transactions, 128 disputes) using bootstrapped PR-AUC, with ties broken on log-loss. The chosen model was then scored once on the test period using PR-AUC, lift and recall at fixed review volumes, calibration error across ten equal-sized groups, and a Brier skill score of 0.039 against simply predicting the average dispute rate. The money figures count the real cost of every outcome — caught, missed, or a genuine customer inconvenienced.
+
+**Figures:** four figures — predicted vs actual risk, net savings across thresholds, savings by segment, and the excluded delivery-status signal. Files, captions and alt text are in Section 11.5.
+
+## Results
+
+A PR-AUC 9.7 times the base rate, 16.2× lift in the top 1%, and 43.2% of disputes caught by reviewing 5% of transactions. The chosen three-band policy catches 49.9% of disputes while letting 93.2% of transactions through untouched, for ₹11.99L net savings. By segment, travel transactions return about ₹1,094 per intervention, while manual review on wallet payments loses money (₹300 spent, nothing caught) — so the policy recommends skipping human review for low-value segments and keeping only the verification step there. Shipped as a Streamlit app with Score, Review Queue and Economics Explorer views.
+
+## Limitations
+
+- **Synthetic data.** The generator didn't model where customers or merchants are based, so location features carry no real signal. Patterns in real payments data would differ.
+- **The savings figure includes disputes raised after the cut-off date.** 72.2% of test disputes were raised after the dataset's stated observation date. The ranking isn't affected, but the rupee figures assume knowledge an operator on that date wouldn't yet have. This is the biggest caveat on ₹11.99L.
+- **A small basis for choosing the model.** Only 128 disputes were in the validation block, and the candidates were statistically tied on ranking. Choosing the simpler model is sound, but the evidence separating them is thin.
+- **Key costs are assumed, not measured.** The 25% verification-abandon rate, ₹300 review cost and 18% margin are assumptions. The abandon rate in particular moves the step-up threshold about threefold.
+- **A demo, not a production system.** The app reads saved results; there's no live transaction stream, latency target, drift monitoring or model versioning.
+
+## What I'd do next
+
+1. **Measure the verification-abandon rate on real traffic** — an A/B test of the 3-D Secure step would ground the threshold that matters most.
+2. **Monitor the score distribution** weekly, so thresholds are re-set before the model's behaviour drifts.
+3. **Find an early, decision-time proxy for fulfilment risk** — a signal like a missed processing deadline could capture some of the delivery-status pattern without using information from the future.
+4. **Break segment economics down to individual merchants** so routing can be tuned where it pays most.
+5. **Replace assumed costs with real merchant data** — actual margins and review costs by category.

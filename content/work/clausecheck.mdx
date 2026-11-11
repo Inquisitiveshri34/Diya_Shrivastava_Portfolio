@@ -1,0 +1,121 @@
+---
+{
+  "kind": "featured",
+  "slug": "clausecheck",
+  "order": 1,
+  "draft": false,
+  "name": "ClauseCheck",
+  "subtitle": "Procurement RAG Assistant",
+  "title": "ClauseCheck — Procurement RAG Assistant",
+  "label": "Legal & procurement · Sep–Oct 2026",
+  "cardLabel": "Legal & procurement · 2026",
+  "summary": "An assistant that answers plain-English questions about supplier contracts, backs every answer with the exact clause it came from, checks every figure against that clause — and refuses when the documents don't say.",
+  "cardLine": "Procurement teams lose hours hunting through supplier contracts. ClauseCheck answers their questions with the exact clause cited — and refuses when the contracts don't say.",
+  "cardTags": ["Python", "ChromaDB", "BM25", "FastAPI", "Streamlit"],
+  "details": "Group project (team of 2) · I built the document and retrieval pipeline — sourcing, loading and cleaning, chunking, the evaluation question set, vector and keyword search, fusion and re-ranking — then led integration and debugging, and built versions 2 and 3, including the redesigned interface and figure checking. My teammate built the answer generation, relevance gate, citation validator, API and first frontend.",
+  "stack":
+    [
+      "Python",
+      "ChromaDB",
+      "BM25",
+      "Sentence-Transformers",
+      "Groq",
+      "Gemini",
+      "SQLite",
+      "FastAPI",
+      "Streamlit",
+    ],
+  "contextNote": "Built during a simulated industry sprint.",
+  "links": { "github": "https://github.com/kalviumcommunity/S66-0926-DY-RAG-ClauseCheck" },
+  "linkNote": "View code → [GitHub](https://github.com/kalviumcommunity/S66-0926-DY-RAG-ClauseCheck)",
+  "glanceNote": "Retrieval and refusal figures are from the 40-question tuning set; see Limitations.",
+  "glance":
+    [
+      {
+        "number": "93.5% recall@5",
+        "meaning": "The correct clause was in the top 5 results for 29 of 31 answerable questions",
+      },
+      {
+        "number": "9 of 9 refused",
+        "meaning": "Every question the contracts can't answer was refused rather than guessed",
+      },
+      {
+        "number": "1 of 31 wrongly refused",
+        "meaning": "A 3.2% false-refusal rate on answerable questions",
+      },
+      {
+        "number": "158 documents",
+        "meaning": "From 69 suppliers, split into 8,062 clause-level chunks",
+      },
+      {
+        "number": "375 tests",
+        "meaning": "Passing in the final version, up from 262 at version 1",
+      },
+      { "number": "1–5 s", "meaning": "Typical time to a checked answer" },
+    ],
+  "metrics":
+    [
+      {
+        "value": "93.5%",
+        "label": "recall@5",
+        "context": "gold clause in the top 5 for 29 of 31 questions",
+        "viz": { "kind": "dots", "filled": 29, "total": 31 },
+      },
+      {
+        "value": "9 of 9",
+        "label": "refused",
+        "context": "every unanswerable question, with 1 of 31 wrongly refused",
+      },
+    ],
+}
+---
+
+## The problem
+
+Procurement teams hold contracts with 100–200 suppliers, but the answer to a simple question — what are our payment terms? — can be spread across a master agreement, a statement of work, later amendments and price schedules. Checking one term by hand takes about ten minutes: find the document, make sure no amendment changed it, then find the exact clause. So people skip it — and invoices get overpaid, early-payment discounts and renewal deadlines get missed, and expired supplier certificates go unnoticed. A generic chatbot doesn't help: in a contract, a confident wrong answer is worse than none.
+
+## The data
+
+Mostly real, public documents: 58 commercial contracts from the CUAD dataset (Atticus Project), chosen for procurement relevance; 12 SEC EDGAR amendments paired with their original agreements; and 18 public data-processing and service-level agreements from vendors including Google Cloud, Amazon, Atlassian, Stripe, Twilio and HubSpot. I added 70 synthetic price schedules and compliance certificates, generated with a fixed seed, so every file type (PDF, HTML, Word, text) and clause type was covered.
+
+In total: 158 documents from 69 suppliers. Cleaning stripped headers, footers and redaction marks and standardised dates, so each chunk keeps a stable ID that citations can point to.
+
+## Approach
+
+- **Clause-aware chunking.** Contracts are split at clause boundaries, not fixed lengths, so every retrieved piece is a complete clause a citation can point to.
+- **Hybrid retrieval.** Meaning-based vector search finds paraphrases; keyword search (BM25) finds exact terms like "Net 45" that embeddings can blur. The two ranked lists are merged with Reciprocal Rank Fusion, then a cross-encoder re-ranks the top results.
+- **Local embeddings.** Embeddings run on the machine instead of through an API. With 158 documents this costs nothing and keeps the free-tier model quota for answering questions.
+- **Amendments follow their originals.** When an amendment is retrieved, the clause it changes in the original agreement comes with it, and vice versa, up to three links deep. In the example below, Amendment 1 replaces the payment period: the answer gives the new 45 days and says which clause it replaced.
+- **Refuse before guessing.** If the best match scores below a tuned relevance threshold, the system refuses before calling the language model at all — no answer is invented, and no quota is spent.
+- **Check every answer.** After an answer is written, code — not the model — confirms that every citation exists in the documents and every number appears in the cited clause. Passing answers get a "Checked" seal; anything else is marked for a person to verify.
+
+## Integration and debugging
+
+When the two halves of the system first ran together, 3 of 223 tests failed and generation didn't work at all. I led the integration and kept a debugging log of 37 findings — from installation failures and retired model names to answers refused after an amendment upload — and fixed 24 of them. The rest are recorded as open, partly fixed or by design. The log also records why the relevance threshold was re-tuned three times as real questions exposed where it was too strict.
+
+## Evaluation
+
+A labelled set of 67 questions: 30 drawn from real CUAD contracts (renewal, termination, liability, pricing, compliance), 22 exact-value questions (unit prices, payment terms, certificate expiry dates), and 15 questions the documents cannot answer. The set was split into 40 tuning and 27 held-out questions. Measured on the tuning set with real models and caching off: the correct clause was in the top 5 for 29 of 31 answerable questions, all 9 unanswerable questions were refused, and 1 answerable question was wrongly refused.
+
+**Figure:** a checked answer, showing the cited clause and the amendment that changed it (Section 11).
+
+## Results
+
+93.5% recall@5, every unanswerable question refused, a 3.2% false-refusal rate, and checked answers in one to five seconds. The final version has a redesigned interface with per-contract conversations, a "Terms found" table showing which clause is in force and since when, and an insights page tracking answer rate and speed against targets.
+
+## Limitations
+
+- **Tuned, not yet held out.** All headline figures come from the 40 tuning questions — the same ones used to set the threshold. The 27 held-out questions haven't been run, so the figures may be optimistic.
+- **Citation accuracy isn't measured.** The checks confirm citations exist and numbers match, but whether the cited clause is the right one hasn't been scored by the evaluation judge yet.
+- **A small evaluation set.** Forty questions is a thin basis for a threshold that decides when to refuse.
+- **Smaller than a real repository.** 158 documents is a simulation; the price schedules and certificates are synthetic, and performance on a large, messy enterprise collection is untested.
+- **Fragile when free models fail.** If both model providers hit rate limits, a request can take over 40 seconds and end in a generic error. There's no retry or circuit breaker yet.
+- **Upload order matters.** An amendment uploaded before its original agreement isn't linked to it.
+
+## What I'd do next
+
+1. **Run the held-out set** and re-check the threshold on questions it was never tuned on.
+2. **Measure citation accuracy** with the evaluation judge, since it's what users actually trust.
+3. **Compare each retriever on its own** — vector only, keyword only and hybrid — to show what each part contributes.
+4. **Link amendments automatically** by supplier and date, so upload order stops mattering.
+5. **Add retries and clear errors** for when model providers are rate-limited.

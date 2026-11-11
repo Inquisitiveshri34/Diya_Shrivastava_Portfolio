@@ -1,0 +1,4 @@
+{
+  "alt": "Two histograms. Left: raw travel times, bunched below 50 minutes with a long tail to about 600 minutes. Right: the same times on a log scale, close to bell-shaped.",
+  "caption": "Travel times are heavily right-skewed (mean 21.8 min, median 12.3, skewness 8.47); on a log scale they become close to bell-shaped, which makes them usable for modelling."
+}

@@ -7,15 +7,18 @@ Open placeholders, missing assets and decisions. Remove an item when it is resol
 Each PNG goes in the folder shown. Its caption and alt text are already in a `.meta.json` file beside where the PNG goes. Until a PNG exists, the media script skips its sidecar with a warning.
 
 ClauseCheck (1)
+
 - [ ] `public/media/images/clausecheck/fig-checked-answer.png`
 
 ChargebackLens (4)
+
 - [ ] `public/media/images/chargebacklens/fig-calibration.png`
 - [ ] `public/media/images/chargebacklens/fig-savings-thresholds.png`
 - [ ] `public/media/images/chargebacklens/fig-segment-economics.png`
 - [ ] `public/media/images/chargebacklens/fig-delivery-status.png`
 
 StreakForge (5)
+
 - [ ] `public/media/images/streakforge/fig-funnel.png`
 - [ ] `public/media/images/streakforge/fig-activation-by-year.png`
 - [ ] `public/media/images/streakforge/fig-activation-by-plan.png`
@@ -23,6 +26,7 @@ StreakForge (5)
 - [ ] `public/media/images/streakforge/fig-branch-churn.png`
 
 DeliverIQ (5). Re-export with the clean titles in `docs/content.md` §11.5 first, as §11.1 asks.
+
 - [ ] `public/media/images/deliveriq/fig-target-distribution.png`
 - [ ] `public/media/images/deliveriq/fig-road-type.png`
 - [ ] `public/media/images/deliveriq/fig-hour-day-heatmap.png`

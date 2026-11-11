@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Work — Diya Shrivastava</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&amp;family=Public+Sans:wght@400;500;600&amp;family=Roboto+Mono:wght@500;600&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#6C3E66;text-decoration:none}
+a:hover{color:#5A3355;text-decoration:underline;text-underline-offset:3px}
+</style>
+</helmet>
+<div style="background: #F5F7F2; color: #23262B; font-family: 'Public Sans', system-ui, sans-serif; font-size: 18px; line-height: 1.65; width: 100%; min-height: 100vh">
+
+  <header style="position: sticky; top: 0; z-index: 5; background: rgba(245,247,242,0.92); border-bottom: 1px solid #DEE5D8; backdrop-filter: blur(6px)">
+    <div style="max-width: 1040px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+      <a href="Main.dc.html" style="display: flex; align-items: center; gap: 10px; color: #23262B; text-decoration: none">
+        <span aria-hidden="true" style="width: 34px; height: 34px; box-sizing: border-box; border: 3px double #6C3E66; border-radius: 5px; color: #6C3E66; font-family: 'Literata', Georgia, serif; font-weight: 600; font-size: 13px; display: flex; align-items: center; justify-content: center; transform: rotate(-3deg)">DS</span>
+        <span style="font-family: 'Literata', Georgia, serif; font-weight: 600; font-size: 20px; letter-spacing: -0.01em">Diya Shrivastava</span>
+      </a>
+      <nav aria-label="Main" style="display: flex; gap: 28px; font-size: 15.5px">
+        <a href="Work.dc.html" aria-current="page" style="color: #6C3E66; font-weight: 600">Work</a>
+        <a href="About.dc.html" style="color: #23262B">About</a>
+        <a href="#" style="color: #23262B">Résumé</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="max-width: 1040px; margin: 0 auto; padding: 96px 32px 112px">
+    <h1 style="margin: 0; font-family: 'Literata', Georgia, serif; font-weight: 600; font-size: 46px; line-height: 1.15; letter-spacing: -0.015em">Work</h1>
+    <p style="margin: 14px 0 48px; font-size: 19px; color: #5D626A; max-width: 680px">Projects where I owned the path from raw data to something people could use.</p>
+
+    <div style="display: flex; flex-direction: column; gap: 20px">
+      <sc-for list="{{featured}}" as="p" hint-placeholder-count="4">
+        <a href="{{p.href}}" style="display: flex; flex-wrap: wrap; gap: 24px 48px; background: #EBF0E7; border-radius: 16px; padding: 32px; color: #23262B; text-decoration: none">
+          <div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+            <p style="margin: 0; font-size: 14px; color: #5D626A">{{p.domain}}</p>
+            <h2 style="margin: 0; font-family: 'Literata', Georgia, serif; font-weight: 600; font-size: 27px; line-height: 1.2">{{p.name}}<span style="display: block; font-family: 'Public Sans', sans-serif; font-weight: 400; font-size: 15px; color: #5D626A; margin-top: 2px">{{p.sub}}</span></h2>
+            <p style="margin: 0; font-size: 16.5px">{{p.line}}</p>
+            <p style="margin: 0; font-size: 13.5px; color: #5D626A">{{p.stack}}</p>
+            <span style="font-size: 15px; font-weight: 600; color: #6C3E66">Read case study →</span>
+          </div>
+          <div style="flex: 1 1 260px; min-width: 0; align-self: center; display: flex; flex-direction: column; gap: 8px">
+            <p style="margin: 0; font-family: 'Roboto Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1.15; color: #6C3E66"><span style="border-bottom: 3px double #6C3E66; padding-bottom: 1px">{{p.v1}}</span> <span style="font-size: 15px; font-weight: 500; color: #23262B">{{p.l1}}</span></p>
+            <sc-if value="{{p.isDots}}" hint-placeholder-val="{{ false }}">
+              <div aria-hidden="true" style="display: flex; flex-wrap: wrap; gap: 4px; max-width: 260px; margin-top: 4px"><sc-for list="{{p.dots}}" as="d" hint-placeholder-count="31"><span style="width: 8px; height: 8px; border-radius: 50%; box-sizing: border-box; border: 1.5px solid #6C3E66; background: {{d.fill}}"></span></sc-for></div>
+            </sc-if>
+            <sc-if value="{{p.isLift}}" hint-placeholder-val="{{ false }}">
+              <div aria-hidden="true" style="display: flex; flex-direction: column; gap: 5px; max-width: 260px; margin-top: 4px">
+                <div style="display: flex; align-items: center; gap: 8px"><span style="flex: 1 1 auto; position: relative; height: 8px; border-radius: 999px; background: #FFFFFF; border: 1px solid #D3DBCD; overflow: hidden"><span style="position: absolute; left: 0; top: 0; bottom: 0; width: 97.3%; background: #6C3E66"></span></span><span style="flex: none; width: 64px; font-family: 'Roboto Mono', monospace; font-size: 11.5px; color: #23262B">top 1%</span></div>
+                <div style="display: flex; align-items: center; gap: 8px"><span style="flex: 1 1 auto; position: relative; height: 8px; border-radius: 999px; background: #FFFFFF; border: 1px solid #D3DBCD; overflow: hidden"><span style="position: absolute; left: 0; top: 0; bottom: 0; width: 6%; background: #8B9089"></span></span><span style="flex: none; width: 64px; font-family: 'Roboto Mono', monospace; font-size: 11.5px; color: #5D626A">all</span></div>
+              </div>
+            </sc-if>
+            <sc-if value="{{p.isBar}}" hint-placeholder-val="{{ false }}">
+              <div aria-hidden="true" style="position: relative; height: 8px; max-width: 260px; border-radius: 999px; background: #FFFFFF; border: 1px solid #D3DBCD; overflow: hidden; margin-top: 6px"><span style="position: absolute; left: 0; top: 0; bottom: 0; width: {{p.barPct}}; background: #6C3E66"></span></div>
+            </sc-if>
+            <sc-if value="{{p.isScale}}" hint-placeholder-val="{{ false }}">
+              <div aria-hidden="true" style="position: relative; height: 26px; max-width: 260px; margin-top: 4px">
+                <span style="position: absolute; left: 0; right: 0; top: 12px; height: 1px; background: #C9D3C2"></span>
+                <span style="position: absolute; left: 0; top: 7px; width: 1px; height: 11px; background: #C9D3C2"></span>
+                <span style="position: absolute; right: 0; top: 7px; width: 1px; height: 11px; background: #C9D3C2"></span>
+                <span style="position: absolute; left: 39.2%; width: 48.2%; top: 11px; height: 3px; background: #E3D3E0"></span>
+                <span style="position: absolute; left: calc(39.2% - 5px); top: 7px; width: 10px; height: 10px; border-radius: 50%; background: #6C3E66"></span>
+                <span style="position: absolute; left: calc(87.4% - 5px); top: 7px; width: 10px; height: 10px; border-radius: 50%; box-sizing: border-box; border: 1.5px solid #5D626A; background: #EBF0E7"></span>
+              </div>
+            </sc-if>
+            <p style="margin: 0; font-size: 13.5px; color: #5D626A; line-height: 1.45">{{p.c1}}</p>
+            <p style="margin: 6px 0 0; padding-top: 10px; border-top: 1px solid #D3DBCD; font-size: 14px; color: #5D626A; line-height: 1.45"><span style="font-family: 'Roboto Mono', monospace; color: #23262B">{{p.v2}}</span> — {{p.c2}}</p>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+
+    <div style="margin-top: 48px">
+      <button type="button" onClick="{{toggle}}" aria-expanded="{{open}}" aria-controls="learning" style="min-height: 46px; padding: 0 24px; border-radius: 999px; border: 1px solid rgba(35,38,43,0.22); background: transparent; color: #23262B; font-family: 'Public Sans', sans-serif; font-weight: 600; font-size: 15.5px; cursor: pointer">{{toggleLabel}}</button>
+      <sc-if value="{{open}}" hint-placeholder-val="{{ false }}">
+        <div id="learning" style="margin-top: 36px">
+          <h2 style="margin: 0; font-family: 'Literata', Georgia, serif; font-weight: 600; font-size: 30px; line-height: 1.25">Learning projects</h2>
+          <p style="margin: 10px 0 24px; font-size: 17px; color: #5D626A; max-width: 680px">Smaller projects I built earlier in 2026 while learning. They're here as a record of how I got to the work above.</p>
+          <div style="border-bottom: 1px solid #DEE5D8">
+            <sc-for list="{{learning}}" as="l" hint-placeholder-count="3">
+              <div style="display: flex; flex-wrap: wrap; gap: 8px 32px; align-items: baseline; padding: 20px 0; border-top: 1px solid #DEE5D8">
+                <div style="flex: 999 1 460px; min-width: 0">
+                  <h3 style="margin: 0; font-family: 'Literata', Georgia, serif; font-weight: 600; font-size: 21px; line-height: 1.3">{{l.name}} <span style="font-family: 'Public Sans', sans-serif; font-weight: 400; font-size: 15px; color: #5D626A">— {{l.sub}}</span></h3>
+                  <p style="margin: 6px 0 4px; font-size: 16px">{{l.line}}</p>
+                  <p style="margin: 0; font-size: 13.5px; color: #5D626A">{{l.domain}} · {{l.stack}}</p>
+                </div>
+                <a href="#" style="flex: none; font-size: 15px; font-weight: 600">View project →</a>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+
+    <h2 style="margin: 96px 0 0; font-family: 'Literata', Georgia, serif; font-weight: 600; font-size: 30px; line-height: 1.25">Learning record</h2>
+    <p style="margin: 10px 0 24px; font-size: 17px; color: #5D626A; max-width: 680px">Job simulations I completed on Forage to practise real-world data problems.</p>
+    <div style="overflow-x: auto">
+      <table style="width: 100%; min-width: 760px; border-collapse: collapse; font-size: 15.5px">
+        <thead>
+          <tr style="text-align: left; color: #5D626A; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase">
+            <th style="padding: 0 16px 10px 0; font-weight: 600">Company</th>
+            <th style="padding: 0 16px 10px 0; font-weight: 600">Simulation</th>
+            <th style="padding: 0 16px 10px 0; font-weight: 600">Date</th>
+            <th style="padding: 0 16px 10px 0; font-weight: 600">What I did</th>
+            <th style="padding: 0 0 10px; font-weight: 600"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Link</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <sc-for list="{{forage}}" as="f" hint-placeholder-count="5">
+            <tr style="border-top: 1px solid #DEE5D8; vertical-align: top">
+              <td style="padding: 14px 16px 14px 0; font-weight: 600; white-space: nowrap">{{f.co}}</td>
+              <td style="padding: 14px 16px 14px 0; white-space: nowrap">{{f.sim}}</td>
+              <td style="padding: 14px 16px 14px 0; white-space: nowrap; font-family: 'Roboto Mono', monospace; font-size: 14px; color: #5D626A">{{f.date}}</td>
+              <td style="padding: 14px 16px 14px 0; color: #23262B">{{f.did}}</td>
+              <td style="padding: 14px 0; white-space: nowrap"><a href="#">Certificate</a></td>
+            </tr>
+          </sc-for>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer style="border-top: 1px solid #DEE5D8; padding: 44px 0 52px">
+    <div style="max-width: 1040px; margin: 0 auto; padding: 0 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px; font-size: 15px">
+      <div style="display: flex; flex-direction: column; gap: 6px"><p style="margin: 0; font-family: 'Literata', Georgia, serif; font-size: 17px">Built with care by Diya Shrivastava.</p><p style="margin: 0; font-size: 13.5px; color: #5D626A">Last updated: November 2026</p></div>
+      <div style="display: flex; flex-direction: column; gap: 6px"><p style="margin: 0 0 4px; font-size: 12.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5D626A">Contact</p><a href="#">Email</a><a href="#">GitHub</a><a href="#">LinkedIn</a></div>
+      <div style="display: flex; flex-direction: column; gap: 6px"><p style="margin: 0 0 4px; font-size: 12.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #5D626A">Pages</p><a href="Work.dc.html">Work</a><a href="About.dc.html">About</a><a href="#">Résumé</a></div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":2900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { open: false };
+  }
+  renderVals() {
+    const open = !!this.state.open;
+    const dots = [];
+    for (let i = 0; i < 31; i++) dots.push({ fill: i < 29 ? '#6C3E66' : '#FFFFFF' });
+    return {
+      open: open,
+      toggle: () => this.setState({ open: !open }),
+      toggleLabel: open ? 'Hide learning projects' : 'Show 3 earlier learning projects',
+      featured: [
+        { href: 'CaseStudy.dc.html', domain: 'Legal & procurement · 2026', name: 'ClauseCheck', sub: 'Procurement RAG Assistant', line: "Procurement teams lose hours hunting through supplier contracts. ClauseCheck answers their questions with the exact clause cited — and refuses when the contracts don't say.", stack: 'Python · ChromaDB · BM25 · FastAPI · Streamlit', v1: '93.5%', l1: 'recall@5', c1: 'Gold clause in the top 5 for 29 of 31 questions — one dot per question.', isDots: true, dots: dots, v2: '9 of 9 refused', c2: 'every unanswerable question, with 1 of 31 wrongly refused' },
+        { href: '#', domain: 'Payments & fintech risk · 2026', name: 'ChargebackLens', sub: 'Transaction Dispute Risk & Decision Engine', line: 'Payment teams have to decide, transaction by transaction, whether to allow, challenge or review. ChargebackLens turns dispute risk into the rupee-optimal decision.', stack: 'Python · Scikit-learn · Pandas · Streamlit', v1: '16.2×', l1: 'lift', c1: 'Dispute rate in the riskiest 1% (66 of 452) against 0.90% across all transactions.', isLift: true, v2: '₹11.99L net savings', c2: '39.1% of exposure' },
+        { href: '#', domain: 'Product analytics · 2026 · Team project', name: 'StreakForge', sub: 'Fitness Engagement & Retention Insight Platform', line: 'Fitness apps can see who stops showing up, but not why. StreakForge shows which engagement habits keep members coming back — and finds the biggest leak is members who never get started.', stack: 'Python · Pandas · Plotly · Streamlit', v1: '81.2%', l1: 'drop-off', c1: 'Only 18.8% of members activate in their first 7 days.', isBar: true, barPct: '18.8%', v2: '27.9% vs 15.6%', c2: 'activation on the PT-Combo plan vs Basic' },
+        { href: '#', domain: 'Logistics · 2026', name: 'DeliverIQ', sub: 'Delivery ETA Predictor', line: 'Customers and dispatchers need delivery times they can plan around. DeliverIQ predicts urban delivery ETAs from traffic, weather and road data.', stack: 'Python · Scikit-learn · Pandas · Streamlit', v1: '7.83 min', l1: 'MAE', c1: 'Model (filled) against the 17.48-min baseline (open), on a 0–20 min scale.', isScale: true, v2: '55% better', c2: 'than the baseline' }
+      ],
+      learning: [
+        { name: 'HealthOps', sub: 'Hospital Resource Intelligence', domain: 'Healthcare operations · Mar–Apr 2026', stack: 'Python · Pandas · Streamlit', line: 'Hospitals need to see resource pressure before it becomes a crisis. HealthOps cleans and analyses 4,926 synthetic patient records to show patterns in inflow, ICU demand, oxygen use and bed occupancy.' },
+        { name: 'ParkEase', sub: 'Smart Parking Management System', domain: 'Urban mobility · Feb–Mar 2026', stack: 'Next.js · PostgreSQL · Prisma · Redis', line: 'Drivers lose time circling for parking, and booking systems break when two people book the same spot. ParkEase checks every booking for overlaps inside a single database transaction.' },
+        { name: 'CraftBridge', sub: 'Marketplace for Local Artisans', domain: 'Marketplace · Feb–Mar 2026', stack: 'Flutter · Firebase', line: 'Local artisans struggle to reach buyers. CraftBridge is a mobile marketplace prototype where approved artisans list products and buyers browse, order and track them.' }
+      ],
+      forage: [
+        { co: 'British Airways', sim: 'Data Science', date: 'May 2026', did: 'Analysed customer reviews to find what drives sentiment, and modelled the factors behind buying behaviour.' },
+        { co: 'BCG', sim: 'Data Science', date: 'Apr 2026', did: 'Scoped a customer-churn investigation, tuned a random-forest churn model to 50% recall, and wrote an executive summary.' },
+        { co: 'Commonwealth Bank', sim: 'Intro to Data Science', date: 'Apr 2026', did: 'Built data pipelines, anonymised personal data for privacy, and designed a database schema.' },
+        { co: 'JPMorgan Chase', sim: 'Quantitative Research', date: 'Apr 2026', did: "Estimated customers' probability of default on a loan book, and bucketed FICO scores with dynamic programming." },
+        { co: 'Deloitte', sim: 'Data Analytics', date: 'Apr 2026', did: 'Built a Tableau dashboard for a forensic-technology investigation and drew business conclusions from classified data.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

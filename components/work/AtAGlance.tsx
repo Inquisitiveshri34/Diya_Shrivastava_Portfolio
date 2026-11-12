@@ -35,7 +35,7 @@ export function AtAGlance({
       <div className="grid gap-4 lg:grid-cols-[300px_minmax(0,1fr)_300px] lg:gap-0">
         <div className="flex flex-col gap-4">
           {left.map((row) => (
-            <GlanceCard key={row.number} row={row} />
+            <GlanceCard key={row.number} row={row} alone={left.length === 1} />
           ))}
         </div>
 
@@ -55,7 +55,7 @@ export function AtAGlance({
 
         <div className="flex flex-col gap-4">
           {right.map((row) => (
-            <GlanceCard key={row.number} row={row} />
+            <GlanceCard key={row.number} row={row} alone={right.length === 1} />
           ))}
         </div>
       </div>
@@ -100,30 +100,37 @@ function Connectors({ count }: { count: number }): ReactElement {
   );
 }
 
-function GlanceCard({ row }: { row: GlanceRow }): ReactElement {
+/**
+ * One glance card. It fills its row's height. When it is the only card in its column, its content
+ * is centred vertically; otherwise the chart sits at the bottom, as the design has it.
+ */
+function GlanceCard({ row, alone }: { row: GlanceRow; alone: boolean }): ReactElement {
   const viz = row.viz;
   const isResult = viz !== undefined && viz.kind !== "split";
   return (
     <div
       className={`border-border flex min-h-[132px] flex-1 flex-col gap-2 rounded-[16px] border p-5 ${
-        isResult ? "bg-surface" : "bg-band"
-      }`}
+        alone ? "justify-center" : ""
+      } ${isResult ? "bg-surface" : "bg-band"}`}
     >
       <p className="text-accent m-0 font-mono text-[22px] leading-[1.25] font-semibold">
         <span className="border-accent border-b-[3px] border-double pb-px">{row.number}</span>
       </p>
       <p className="text-ink-muted m-0 text-[14px] leading-[1.45]">{row.meaning}</p>
-      {viz?.kind === "dots" ? <GlanceDots viz={viz} /> : null}
-      {viz?.kind === "split" ? <SplitBar viz={viz} /> : null}
+      {viz?.kind === "dots" ? <GlanceDots viz={viz} pinned={!alone} /> : null}
+      {viz?.kind === "split" ? <SplitBar viz={viz} pinned={!alone} /> : null}
       {viz && viz.kind !== "dots" && viz.kind !== "split" ? <MetricViz viz={viz} /> : null}
     </div>
   );
 }
 
 /** One dot per item. Filled dots are plum, or sage when `tone` is muted; the rest are hollow rings. */
-function GlanceDots({ viz }: { viz: DotsViz }): ReactElement {
+function GlanceDots({ viz, pinned }: { viz: DotsViz; pinned: boolean }): ReactElement {
   return (
-    <div aria-hidden="true" className="mt-auto flex max-w-[260px] flex-wrap gap-1">
+    <div
+      aria-hidden="true"
+      className={`flex max-w-[260px] flex-wrap gap-1 ${pinned ? "mt-auto" : ""}`}
+    >
       {Array.from({ length: viz.total }, (_, i) => {
         const filled = i < viz.filled;
         const tone = !filled
@@ -138,12 +145,12 @@ function GlanceDots({ viz }: { viz: DotsViz }): ReactElement {
 }
 
 /** A bar of two parts: the base (sage) and what was added since (plum), e.g. 262 of 375 tests. */
-function SplitBar({ viz }: { viz: SplitViz }): ReactElement {
+function SplitBar({ viz, pinned }: { viz: SplitViz; pinned: boolean }): ReactElement {
   const basePercent = (viz.base / viz.total) * 100;
   return (
     <div
       aria-hidden="true"
-      className="rounded-pill border-border bg-surface relative mt-auto h-2 max-w-[260px] overflow-hidden border"
+      className={`rounded-pill border-border bg-surface relative h-2 max-w-[260px] overflow-hidden border ${pinned ? "mt-auto" : ""}`}
     >
       <span className="bg-border absolute inset-y-0 left-0" style={{ width: `${basePercent}%` }} />
       <span

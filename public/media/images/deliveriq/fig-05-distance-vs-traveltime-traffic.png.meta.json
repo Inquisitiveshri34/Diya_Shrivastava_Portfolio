@@ -1,0 +1,4 @@
+{
+  "alt": "Scatter plot of travel time against distance, with points coloured by traffic level (low, medium, high). Most trips are very short and sit in a dense band near zero kilometres; longer trips are sparse.",
+  "caption": "Distance against travel time, coloured by traffic level. Most trips are very short; the few long trips are sparse."
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Excluded on Purpose: Delivery Status is Only Known After the Decision",
+  "data": {
+    "delivered": {
+      "disputed": 441,
+      "total": 51480
+    },
+    "in_transit": {
+      "disputed": 125,
+      "total": 9240
+    },
+    "lost": {
+      "disputed": 53,
+      "total": 1980
+    },
+    "returned": {
+      "disputed": 43,
+      "total": 3300
+    }
+  },
+  "type": "delivery"
+}

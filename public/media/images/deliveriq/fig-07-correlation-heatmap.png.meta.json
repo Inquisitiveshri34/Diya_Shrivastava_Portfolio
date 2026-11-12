@@ -1,0 +1,4 @@
+{
+  "alt": "Correlation heatmap of trip features and travel time. Travel time correlates most with distance (0.39) and with the number of signals (0.12). Traffic level and average speed are strongly negatively correlated (−0.90).",
+  "caption": "Pearson correlations between trip features. Traffic level and speed move in opposite directions (−0.90), and distance is the strongest link to travel time (0.39)."
+}

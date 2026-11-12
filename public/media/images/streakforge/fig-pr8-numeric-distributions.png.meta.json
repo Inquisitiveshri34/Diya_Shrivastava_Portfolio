@@ -1,0 +1,4 @@
+{
+  "alt": "Nine histograms with density curves: age, amount paid, streak length, duration in seconds, tenure, price per day, session consistency, plan-to-engagement ratio and engagement trend slope. Most are right-skewed, with long tails.",
+  "caption": "Distributions of the numeric member and activity features. Most are right-skewed."
+}

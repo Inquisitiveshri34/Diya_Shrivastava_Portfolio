@@ -324,7 +324,7 @@ test.describe("education on About", () => {
       "Operating Systems",
       "Database Management Systems",
       "Discrete Mathematics",
-      "Object-Oriented Programming",
+      "Object-Oriented Programming Lab",
       "Problem Solving Using Programming",
       "Front-End Web Development",
       "Back-End Web Development",

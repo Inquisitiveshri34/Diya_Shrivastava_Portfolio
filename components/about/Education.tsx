@@ -18,7 +18,7 @@ const COURSE_GROUPS: { name: string; courses: string[] }[] = [
   },
   {
     name: "Programming",
-    courses: ["Object-Oriented Programming", "Problem Solving Using Programming"],
+    courses: ["Object-Oriented Programming Lab", "Problem Solving Using Programming"],
   },
   {
     name: "Web & product",

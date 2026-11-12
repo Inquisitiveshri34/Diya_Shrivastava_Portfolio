@@ -1,3 +1,5 @@
+import { existsSync, readdirSync } from "node:fs";
+import path from "node:path";
 import { expect, test } from "@playwright/test";
 
 const PHONE = "mobile-390";
@@ -242,5 +244,173 @@ test.describe("work pages", () => {
       await expect(toc).toBeVisible();
       await expect(page.getByRole("img", { name: "誠 (makoto) — sincerity" })).toBeVisible();
     }
+  });
+});
+
+// ---------- PR 5: About, Résumé, 404 and the threshold explorer ----------
+
+const THRESHOLDS_JSON = path.join(
+  process.cwd(),
+  "public/media/data/chargebacklens-thresholds.json",
+);
+const ARCHIVE_DIR = path.join(process.cwd(), "public/media/resume/archive");
+const hasThresholds = existsSync(THRESHOLDS_JSON);
+
+test.describe("about page", () => {
+  test("renders the heading, the story and the My path band", async ({ page }) => {
+    await page.goto("/about");
+    await expect(page.getByRole("heading", { level: 1, name: "About" })).toBeVisible();
+    await expect(
+      page.getByText("I build machine-learning systems that are honest about what they know."),
+    ).toBeVisible();
+    await expect(page.getByRole("heading", { level: 2, name: "My path" })).toBeVisible();
+    await expect(page.getByRole("heading", { level: 2, name: "Certifications" })).toBeVisible();
+  });
+
+  test("contains no robotics text and no school details", async ({ page }) => {
+    await page.goto("/about");
+    const text = (await page.locator("main").innerText()).toLowerCase();
+    expect(text).not.toContain("robot");
+    expect(text).not.toContain("cbse");
+    expect(text).not.toContain("school education");
+  });
+
+  test("the ClauseCheck link in the story goes to its case study", async ({ page }) => {
+    await page.goto("/about");
+    await expect(page.getByRole("link", { name: "ClauseCheck" }).first()).toHaveAttribute(
+      "href",
+      "/work/clausecheck",
+    );
+  });
+
+  test("the checkpoint buttons are a pressed group and the counts match timeline.ts", async ({
+    page,
+  }) => {
+    await page.goto("/about");
+    const group = page.getByRole("group", { name: "Choose a checkpoint" });
+    const count = page.locator('[aria-live="polite"]').filter({ hasText: /^\d+$/ }).first();
+    const expected: [string, string][] = [
+      ["Now", "19"],
+      ["1 month", "18"],
+      ["3 months", "13"],
+      ["6 months", "7"],
+    ];
+    for (const [label, total] of expected) {
+      const button = group.getByRole("button", { name: label, exact: true });
+      await button.click();
+      await expect(button).toHaveAttribute("aria-pressed", "true");
+      await expect(count).toHaveText(total);
+    }
+  });
+
+  test("the trail is newest first, with the summit on 2028 and the Currently badge on Now", async ({
+    page,
+  }) => {
+    await page.goto("/about");
+    const whens = await page.locator("main ol > li p:first-child").allInnerTexts();
+    expect(whens[0]).toBe("2028");
+    expect(whens[1]).toMatch(/^Now/);
+    expect(whens[whens.length - 1]).toBe("2024");
+    await expect(page.getByText("Currently", { exact: true })).toBeVisible();
+    await expect(page.getByText("Before 2024")).toHaveCount(0);
+  });
+});
+
+test.describe("résumé page", () => {
+  test("shows the latest PDF with a download button", async ({ page }) => {
+    await page.goto("/resume");
+    await expect(page.getByRole("heading", { level: 1, name: "Résumé" })).toBeVisible();
+    const download = page.getByRole("link", { name: "Download PDF" }).last();
+    await expect(download).toHaveAttribute("href", "/media/resume/Diya_Shrivastava.pdf");
+  });
+
+  test("phones show the download button and no preview", async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== PHONE, "phone only");
+    await page.goto("/resume");
+    await expect(page.locator('object[aria-label="Latest résumé"]')).toBeHidden();
+    await expect(page.getByRole("link", { name: "Download PDF" }).last()).toBeVisible();
+  });
+
+  test("earlier versions are listed newest first, or the heading is absent with no archive", async ({
+    page,
+  }) => {
+    await page.goto("/resume");
+    const archives = existsSync(ARCHIVE_DIR)
+      ? readdirSync(ARCHIVE_DIR).filter((f) => /^Diya_Shrivastava_\d{4}-\d{2}-\d{2}\.pdf$/.test(f))
+      : [];
+    const heading = page.getByRole("heading", { name: "Earlier versions" });
+    if (archives.length === 0) {
+      await expect(heading).toHaveCount(0);
+    } else {
+      await expect(heading).toBeVisible();
+      const labels = await page.locator("section ul li span").allInnerTexts();
+      expect(labels).toHaveLength(archives.length);
+      expect(labels[0]).toMatch(/^Version of \d{1,2} [A-Z][a-z]+ \d{4}$/);
+    }
+  });
+});
+
+test.describe("404 page", () => {
+  test("says the page does not exist and links to Home, Work and About", async ({ page }) => {
+    await page.goto("/this-page-does-not-exist");
+    await expect(
+      page.getByRole("heading", { level: 1, name: "This page doesn't exist — but these do:" }),
+    ).toBeVisible();
+    await expect(page.getByRole("link", { name: "Home", exact: true })).toHaveAttribute(
+      "href",
+      "/",
+    );
+    await expect(
+      page.locator("main").getByRole("link", { name: "Work", exact: true }),
+    ).toHaveAttribute("href", "/work");
+    await expect(
+      page.locator("main").getByRole("link", { name: "About", exact: true }),
+    ).toHaveAttribute("href", "/about");
+  });
+});
+
+test.describe("threshold explorer", () => {
+  test("shows the placeholder when the JSON is missing or invalid, and the explorer when it is valid", async ({
+    page,
+  }) => {
+    await page.goto("/work/chargebacklens");
+    const section = page.locator("section:has(> #try-the-thresholds-yourself)");
+    if (!hasThresholds) {
+      await expect(section.getByText("Interactive explorer coming soon")).toBeVisible();
+      await expect(section.getByRole("slider")).toHaveCount(0);
+    } else {
+      await expect(section.getByRole("slider")).toHaveCount(2);
+    }
+  });
+
+  test("works by keyboard alone when the JSON exists", async ({ page }) => {
+    test.skip(!hasThresholds, "no thresholds JSON yet: placeholder is shown instead");
+    await page.goto("/work/chargebacklens");
+    const stepUp = page.getByRole("slider", { name: "Step-up threshold" });
+    const review = page.getByRole("slider", { name: "Review threshold" });
+    const live = page.locator('section:has(> #try-the-thresholds-yourself) [aria-live="polite"]');
+
+    await stepUp.focus();
+    const before = await live.innerText();
+    await page.keyboard.press("ArrowRight");
+    await expect(live).not.toHaveText(before);
+    await expect(stepUp).toHaveAttribute(
+      "aria-valuetext",
+      /Step-up threshold .+ of transactions stepped up/,
+    );
+
+    // Pushing step-up to its maximum must keep review above it, compared as threshold values.
+    const thresholdOf = async (slider: typeof stepUp) =>
+      Number((await slider.getAttribute("aria-valuetext"))!.match(/threshold ([\d.]+)/)![1]);
+    await page.keyboard.press("End");
+    const stepValue = await thresholdOf(stepUp);
+    await review.focus();
+    await page.keyboard.press("Home");
+    expect(await thresholdOf(review)).toBeGreaterThan(stepValue);
+
+    await page.getByRole("button", { name: "Reset to chosen policy" }).focus();
+    await page.keyboard.press("Enter");
+    await expect(page.getByText("Chosen policy:")).toBeVisible();
+    await expect(page.getByText("Computed on the held-out test period")).toBeVisible();
   });
 });

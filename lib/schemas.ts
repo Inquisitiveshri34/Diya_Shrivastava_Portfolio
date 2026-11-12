@@ -172,11 +172,28 @@ export const ForageSimulation = z.object({
 export type ForageSimulation = z.infer<typeof ForageSimulation>;
 
 export const TimelineKind = z.enum(["Projects", "Certifications", "Simulations", "Programs"]);
-export const TimelineRow = z.object({
-  when: text,
-  what: text,
-  kinds: z.array(TimelineKind),
-});
+export const TimelineRow = z
+  .object({
+    when: text,
+    what: text,
+    kinds: z.array(TimelineKind),
+    // Milestones in this row per kind (one row can hold several). Keys must match `kinds`.
+    counts: z.object({
+      Projects: z.number().int().nonnegative().optional(),
+      Certifications: z.number().int().nonnegative().optional(),
+      Simulations: z.number().int().nonnegative().optional(),
+      Programs: z.number().int().nonnegative().optional(),
+    }),
+  })
+  .refine(
+    (row) => {
+      const keys = Object.keys(row.counts).filter(
+        (k) => row.counts[k as keyof typeof row.counts] !== undefined,
+      );
+      return keys.length === row.kinds.length && row.kinds.every((k) => keys.includes(k));
+    },
+    { message: "counts must have one entry for each kind in kinds" },
+  );
 export type TimelineRow = z.infer<typeof TimelineRow>;
 
 export const Value = z.object({ title: text, text });
@@ -224,7 +241,17 @@ export const Thresholds = z.object({
       })
       .refine((g) => g.stepUp < g.review, { message: "stepUp must be lower than review" }),
   ),
-  chosen: z.object({ stepUp: z.number().nonnegative(), review: z.number().nonnegative() }),
+  // The chosen policy, with its full outputs. Percentages are percents (93.2 means 93.2%);
+  // base_rate is a percent too (0.90 means 0.90%). netSavingsINR is in rupees.
+  chosen: z.object({
+    stepUp: z.number().nonnegative(),
+    review: z.number().nonnegative(),
+    pctAllowed: z.number(),
+    pctStepUp: z.number(),
+    pctReview: z.number(),
+    recall: z.number(),
+    netSavingsINR: z.number(),
+  }),
 });
 export type Thresholds = z.infer<typeof Thresholds>;
 

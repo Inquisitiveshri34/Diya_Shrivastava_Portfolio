@@ -1,18 +1,34 @@
+import type { Metadata } from "next";
 import type { ReactElement } from "react";
-import { Container } from "@/components/layout/Container";
-import { Section } from "@/components/layout/Section";
-import { HERO_HEADING_ID } from "@/content/site";
+import { ApproachStrip } from "@/components/home/ApproachStrip";
+import { CertificationsShowcase } from "@/components/home/CertificationsShowcase";
+import { ClosingContact } from "@/components/home/ClosingContact";
+import { FeaturedWork } from "@/components/home/FeaturedWork";
+import { Hero } from "@/components/home/Hero";
+import { Toolkit } from "@/components/home/Toolkit";
+import { Values } from "@/components/home/Values";
+import { featuredProjects } from "@/lib/content";
+import { pageMetadata } from "@/lib/seo";
 
-// Placeholder Home: one heading, carrying the hero id the header watches.
-// PR 3 replaces this page with the full hero.
+export const metadata: Metadata = pageMetadata({
+  title: "",
+  description:
+    "Third-year CSE student building ML and GenAI systems people can rely on — calibrated risk models and RAG assistants that cite their sources.",
+  path: "/",
+});
+
+// Seven sections in Design Source order.
 export default function HomePage(): ReactElement {
+  const projects = featuredProjects();
   return (
-    <Section>
-      <Container>
-        <h1 id={HERO_HEADING_ID}>
-          {"I'm Diya. I build machine-learning systems people can rely on."}
-        </h1>
-      </Container>
-    </Section>
+    <>
+      <Hero />
+      <FeaturedWork projects={projects} />
+      <Values />
+      <ApproachStrip />
+      <CertificationsShowcase />
+      <Toolkit />
+      <ClosingContact />
+    </>
   );
 }

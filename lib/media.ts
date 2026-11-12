@@ -41,6 +41,11 @@ export function certificatePdf(certSlug: string): string | undefined {
   return mediaManifest.documents.certificates[certSlug];
 }
 
+/** First-page thumbnail for a certification slug, if one exists. */
+export function certificateThumbnail(certSlug: string): string | undefined {
+  return mediaManifest.documents.thumbnails[certSlug];
+}
+
 /** ChargebackLens threshold grid and chosen policy, or null when the JSON is missing. */
 export function thresholds(): Thresholds | null {
   return mediaManifest.thresholds;

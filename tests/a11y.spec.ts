@@ -9,16 +9,23 @@ const WCAG_TAGS = ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"];
  * every revealed block is fully opaque. Otherwise axe measures text that is still fading in.
  */
 async function settleReveals(page: Page) {
+  // Wait for hydration first: until then there are no reveal blocks, and an empty check passes.
+  await page.waitForFunction(() => document.querySelectorAll("[data-reveal]").length > 0);
   await page.evaluate(async () => {
     for (let y = 0; y < document.body.scrollHeight; y += 300) {
       window.scrollTo({ top: y, behavior: "instant" });
       await new Promise((r) => setTimeout(r, 40));
     }
-    window.scrollTo({ top: 0, behavior: "instant" });
+  });
+  // Stay at the bottom: the header mark is hidden at the top of Home by design, and is
+  // visible here. Wait for its fade to finish too.
+  await page.waitForFunction(() => {
+    const mark = document.querySelector('header a[href="/"]');
+    return !mark || getComputedStyle(mark).opacity === "1";
   });
   await page.waitForFunction(() =>
     Array.from(document.querySelectorAll("[data-reveal]")).every(
-      (el) => getComputedStyle(el).opacity === "1",
+      (el) => el.getAttribute("data-reveal") === "shown" && getComputedStyle(el).opacity === "1",
     ),
   );
 }

@@ -193,3 +193,12 @@ test("/resume has zero axe violations", async ({ page }) => {
   const results = await new AxeBuilder({ page }).withTags(WCAG_TAGS).analyze();
   expect(results.violations, JSON.stringify(results.violations, null, 2)).toEqual([]);
 });
+
+test("the threshold explorer section has zero axe violations", async ({ page }) => {
+  await page.goto("/work/chargebacklens");
+  const results = await new AxeBuilder({ page })
+    .include("section:has(> #try-the-thresholds-yourself)")
+    .withTags(WCAG_TAGS)
+    .analyze();
+  expect(results.violations, JSON.stringify(results.violations, null, 2)).toEqual([]);
+});

@@ -1,0 +1,4 @@
+{
+  "alt": "Correlation heatmap of ten retention-related numeric member features. The strongest pair is session consistency with sessions per week over four weeks (0.54).",
+  "caption": "Correlations between member-level numeric features. Session consistency and recent session volume move together (0.54)."
+}

@@ -26,7 +26,8 @@ type Geometry = {
  * The "At a glance" grid, as the Design Source lays it out on laptops: result cards with a
  * mini-chart on the left, curved connectors into a centre note, and the remaining cards on the
  * right. Rows whose chart is a split bar (the tests card) go on the right, as in the design.
- * Cards keep their natural height. A lone card on the left is centred against the row. The
+ * Cards keep their natural height. All three columns are centred on one vertical midline, so the
+ * connectors and the note meet that line whatever the number of cards. The
  * connectors and the note follow the cards' measured positions. On phones the three parts stack.
  */
 export function AtAGlance({
@@ -80,7 +81,7 @@ export function AtAGlance({
         ref={gridRef}
         className="relative grid gap-4 lg:grid-cols-[300px_minmax(0,1fr)_300px] lg:gap-0"
       >
-        <div className={`flex flex-col gap-4 ${left.length === 1 ? "lg:self-center" : ""}`}>
+        <div className="flex flex-col gap-4 lg:self-center">
           {left.map((row) => (
             <GlanceCard key={row.number} row={row} isLeft />
           ))}
@@ -105,7 +106,7 @@ export function AtAGlance({
           </div>
         </div>
 
-        <div className={`flex flex-col gap-4 ${right.length === 1 ? "lg:self-center" : ""}`}>
+        <div className="flex flex-col gap-4 lg:self-center">
           {right.map((row) => (
             <GlanceCard key={row.number} row={row} isLeft={false} />
           ))}

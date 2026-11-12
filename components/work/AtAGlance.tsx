@@ -7,11 +7,19 @@ type Viz = NonNullable<GlanceRow["viz"]>;
 type DotsViz = Extract<Viz, { kind: "dots" }>;
 type SplitViz = Extract<Viz, { kind: "split" }>;
 
+// Laptop geometry, in pixels. Every card on laptops is CARD_HEIGHT tall (the `lg:h-[210px]` class
+// below must match), and the cards in a column are GAP apart (the `gap-4` class). The connectors
+// are drawn from these numbers, so they meet each card's middle.
+const CARD_HEIGHT = 210;
+const GAP = 16;
+const CONNECTOR_WIDTH = 130;
+
 /**
  * The "At a glance" grid, as the Design Source lays it out on laptops: result cards with a
  * mini-chart on the left, curved connectors into a centre note, and the remaining cards on the
  * right. Rows whose chart is a split bar (the tests card) go on the right, as in the design.
- * On phones the three parts stack: left cards, the note, then right cards.
+ * Every card is the same height on laptops. On phones the three parts stack: left cards, the
+ * note, then right cards.
  */
 export function AtAGlance({
   rows,
@@ -24,6 +32,9 @@ export function AtAGlance({
 }): ReactElement {
   const left = rows.filter((row) => row.viz && row.viz.kind !== "split");
   const right = rows.filter((row) => !left.includes(row));
+  // The connectors meet the left column's middle. The note starts level with that point on laptops.
+  const height = left.length * CARD_HEIGHT + Math.max(0, left.length - 1) * GAP;
+  const noteTop = Math.max(0, height / 2 - 12);
   return (
     <section id="glance" className="mt-22 scroll-mt-24">
       <span
@@ -33,15 +44,18 @@ export function AtAGlance({
       <h2 className="m-0 mb-8 font-serif text-[30px] leading-[1.25] font-semibold">At a glance</h2>
 
       <div className="grid gap-4 lg:grid-cols-[300px_minmax(0,1fr)_300px] lg:gap-0">
-        <div className={`flex flex-col gap-4 ${left.length === 1 ? "lg:self-center" : ""}`}>
+        <div className="flex flex-col gap-4">
           {left.map((row) => (
-            <GlanceCard key={row.number} row={row} alone={left.length === 1} />
+            <GlanceCard key={row.number} row={row} />
           ))}
         </div>
 
-        <div className="relative min-h-0">
+        <div className="relative">
           {left.length > 0 ? <Connectors count={left.length} /> : null}
-          <div className="flex flex-col justify-center gap-3 py-6 text-[16px] leading-[1.5] lg:h-full lg:pr-6 lg:pl-[150px]">
+          <div
+            className="flex flex-col gap-3 py-6 text-[16px] leading-[1.5] lg:absolute lg:inset-x-0 lg:pr-6 lg:pl-[150px]"
+            style={{ top: noteTop }}
+          >
             {note ? <p className="m-0 font-serif text-[18px] italic">{note}</p> : null}
             {hasApproach ? (
               <p className="m-0">
@@ -53,9 +67,9 @@ export function AtAGlance({
           </div>
         </div>
 
-        <div className={`flex flex-col gap-4 ${right.length === 1 ? "lg:self-center" : ""}`}>
+        <div className="flex flex-col gap-4">
           {right.map((row) => (
-            <GlanceCard key={row.number} row={row} alone={right.length === 1} />
+            <GlanceCard key={row.number} row={row} />
           ))}
         </div>
       </div>
@@ -64,74 +78,71 @@ export function AtAGlance({
 }
 
 /**
- * The curves from each left card into the centre. The drawing is one box, stretched to the
- * centre column's height; the left cards share that height, so the curves meet each card's middle.
+ * The curves from each left card into the centre, drawn in pixels so they line up with the cards
+ * at CARD_HEIGHT and GAP. They meet at the middle of the left column.
  */
 function Connectors({ count }: { count: number }): ReactElement {
+  const height = count * CARD_HEIGHT + (count - 1) * GAP;
+  const middle = height / 2;
+  const half = CONNECTOR_WIDTH / 2;
   const paths = Array.from({ length: count }, (_, i) => {
-    const y = ((i + 0.5) / count) * 100;
-    return `M0 ${y} C 50 ${y}, 50 50, 100 50`;
+    const y = i * (CARD_HEIGHT + GAP) + CARD_HEIGHT / 2;
+    return `M0 ${y} C ${half} ${y}, ${half} ${middle}, ${CONNECTOR_WIDTH} ${middle}`;
   });
   return (
     <>
       <svg
         aria-hidden="true"
         focusable="false"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-        className="absolute inset-y-0 left-0 hidden h-full w-[130px] lg:block"
+        viewBox={`0 0 ${CONNECTOR_WIDTH} ${height}`}
+        className="absolute top-0 left-0 hidden lg:block"
+        style={{ width: CONNECTOR_WIDTH, height }}
       >
         {paths.map((d) => (
-          <path
-            key={d}
-            d={d}
-            fill="none"
-            strokeWidth={1.2}
-            vectorEffect="non-scaling-stroke"
-            className="stroke-accent opacity-75"
-          />
+          <path key={d} d={d} fill="none" strokeWidth={1.2} className="stroke-accent opacity-75" />
         ))}
       </svg>
       <span
         aria-hidden="true"
-        className="bg-surface border-accent absolute top-1/2 left-[130px] hidden size-2.5 -translate-y-1/2 rounded-full border-[1.5px] lg:block"
+        className="bg-surface border-accent absolute hidden size-2.5 rounded-full border-[1.5px] lg:block"
+        style={{ top: middle - 5, left: CONNECTOR_WIDTH - 5 }}
       />
     </>
   );
 }
 
 /**
- * One glance card. A column of several cards fills the row's height, with each chart at the bottom,
- * as the design has it. A column with one card keeps its natural height and is centred against
- * the row, so the connector still meets its middle.
+ * One glance card. On laptops it is CARD_HEIGHT tall, the same as every other card; the chart sits
+ * at the bottom. On phones it takes the height its content needs.
  */
-function GlanceCard({ row, alone }: { row: GlanceRow; alone: boolean }): ReactElement {
+function GlanceCard({ row }: { row: GlanceRow }): ReactElement {
   const viz = row.viz;
   const isResult = viz !== undefined && viz.kind !== "split";
   return (
     <div
-      className={`border-border flex min-h-[132px] flex-col gap-2 ${alone ? "" : "flex-1"} rounded-[16px] border p-5 ${
-        alone ? "justify-center" : ""
-      } ${isResult ? "bg-surface" : "bg-band"}`}
+      className={`border-border flex min-h-[132px] flex-col gap-2 rounded-[16px] border p-5 lg:h-[210px] ${
+        isResult ? "bg-surface" : "bg-band"
+      }`}
     >
       <p className="text-accent m-0 font-mono text-[22px] leading-[1.25] font-semibold">
         <span className="border-accent border-b-[3px] border-double pb-px">{row.number}</span>
       </p>
       <p className="text-ink-muted m-0 text-[14px] leading-[1.45]">{row.meaning}</p>
-      {viz?.kind === "dots" ? <GlanceDots viz={viz} pinned={!alone} /> : null}
-      {viz?.kind === "split" ? <SplitBar viz={viz} pinned={!alone} /> : null}
-      {viz && viz.kind !== "dots" && viz.kind !== "split" ? <MetricViz viz={viz} /> : null}
+      {viz?.kind === "dots" ? <GlanceDots viz={viz} /> : null}
+      {viz?.kind === "split" ? <SplitBar viz={viz} /> : null}
+      {viz && viz.kind !== "dots" && viz.kind !== "split" ? (
+        <div className="mt-auto">
+          <MetricViz viz={viz} />
+        </div>
+      ) : null}
     </div>
   );
 }
 
 /** One dot per item. Filled dots are plum, or sage when `tone` is muted; the rest are hollow rings. */
-function GlanceDots({ viz, pinned }: { viz: DotsViz; pinned: boolean }): ReactElement {
+function GlanceDots({ viz }: { viz: DotsViz }): ReactElement {
   return (
-    <div
-      aria-hidden="true"
-      className={`flex max-w-[260px] flex-wrap gap-1 ${pinned ? "mt-auto" : ""}`}
-    >
+    <div aria-hidden="true" className="mt-auto flex max-w-[260px] flex-wrap gap-1">
       {Array.from({ length: viz.total }, (_, i) => {
         const filled = i < viz.filled;
         const tone = !filled
@@ -146,12 +157,12 @@ function GlanceDots({ viz, pinned }: { viz: DotsViz; pinned: boolean }): ReactEl
 }
 
 /** A bar of two parts: the base (sage) and what was added since (plum), e.g. 262 of 375 tests. */
-function SplitBar({ viz, pinned }: { viz: SplitViz; pinned: boolean }): ReactElement {
+function SplitBar({ viz }: { viz: SplitViz }): ReactElement {
   const basePercent = (viz.base / viz.total) * 100;
   return (
     <div
       aria-hidden="true"
-      className={`rounded-pill border-border bg-surface relative h-2 max-w-[260px] overflow-hidden border ${pinned ? "mt-auto" : ""}`}
+      className="rounded-pill border-border bg-surface relative mt-auto h-2 max-w-[260px] overflow-hidden border"
     >
       <span className="bg-border absolute inset-y-0 left-0" style={{ width: `${basePercent}%` }} />
       <span

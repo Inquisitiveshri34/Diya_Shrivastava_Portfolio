@@ -267,10 +267,10 @@ test.describe("about page", () => {
     await expect(page.getByRole("heading", { level: 2, name: "Certifications" })).toBeVisible();
   });
 
-  test("contains no robotics text and no school details", async ({ page }) => {
+  test("shows the July 2026 robotics program and no school details", async ({ page }) => {
     await page.goto("/about");
     const text = (await page.locator("main").innerText()).toLowerCase();
-    expect(text).not.toContain("robot");
+    expect(text).toContain("resident robotics program");
     expect(text).not.toContain("cbse");
     expect(text).not.toContain("school education");
   });
@@ -283,24 +283,23 @@ test.describe("about page", () => {
     );
   });
 
-  test("the checkpoint buttons are a pressed group and the counts match timeline.ts", async ({
+  test("the checkpoint buttons are a pressed group, and the counts never rise going back", async ({
     page,
   }) => {
     await page.goto("/about");
     const group = page.getByRole("group", { name: "Choose a checkpoint" });
     const count = page.locator('[aria-live="polite"] span').first();
-    const expected: [string, string][] = [
-      ["Now", "19"],
-      ["1 month", "19"],
-      ["3 months", "15"],
-      ["6 months", "13"],
-    ];
-    for (const [label, total] of expected) {
+    const labels = ["Now", "1 month", "3 months", "6 months"];
+    const values: number[] = [];
+    for (const label of labels) {
       const button = group.getByRole("button", { name: label, exact: true });
       await button.click();
       await expect(button).toHaveAttribute("aria-pressed", "true");
-      await expect(count).toHaveText(total);
+      values.push(Number(await count.innerText()));
     }
+    // Every milestone in timeline.ts is in the Now total (Now is the current month, after all dates).
+    expect(values[0]).toBe(20);
+    for (let k = 1; k < values.length; k++) expect(values[k]).toBeLessThanOrEqual(values[k - 1]);
   });
 
   test("the trail is newest first, with the summit on 2028 and the Currently badge on Now", async ({

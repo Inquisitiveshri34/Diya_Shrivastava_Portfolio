@@ -8,7 +8,7 @@ import { timeline } from "@/content/data/timeline";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-const KINDS = ["Projects", "Certifications", "Simulations"] as const;
+const KINDS = ["Projects", "Certifications", "Simulations", "Programs"] as const;
 type Kind = (typeof KINDS)[number];
 
 type Milestone = { month: number; kind: Kind; n: number };
@@ -41,12 +41,17 @@ const MILESTONES: Milestone[] = timeline.flatMap((row) => {
 
 /** Counts per kind for every milestone completed on or before `cutoff`. */
 function totalsAt(cutoff: MonthIndex): Record<Kind, number> {
-  const totals: Record<Kind, number> = { Projects: 0, Certifications: 0, Simulations: 0 };
+  const totals: Record<Kind, number> = {
+    Projects: 0,
+    Certifications: 0,
+    Simulations: 0,
+    Programs: 0,
+  };
   for (const m of MILESTONES) if (m.month <= cutoff) totals[m.kind] += m.n;
   return totals;
 }
 
-const sum = (t: Record<Kind, number>) => t.Projects + t.Certifications + t.Simulations;
+const sum = (t: Record<Kind, number>) => KINDS.reduce((total, kind) => total + t[kind], 0);
 
 /** The chart starts at January of the first year that has a milestone. */
 const START: MonthIndex = Math.floor(Math.min(...MILESTONES.map((m) => m.month)) / 12) * 12;

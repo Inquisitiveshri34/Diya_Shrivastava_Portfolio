@@ -1,4 +1,4 @@
-// Copied word for word from docs/content.md section 8.2. Keep the text in step with that document.
+// Copied word for word from docs/content.md section 8.2, plus the July 2026 robotics row from docs/design-source.md (added on request).
 import type { TimelineRow } from "@/lib/schemas";
 
 export const timeline: TimelineRow[] = [
@@ -55,6 +55,12 @@ export const timeline: TimelineRow[] = [
     what: "Completed four semesters with a CGPA of 9.10/10.",
     kinds: [],
     counts: {},
+  },
+  {
+    when: "Jul 2026",
+    what: "Took part in My Equation’s 15-day Resident Robotics Program, working with ROS2, Gazebo simulation and Sim2Real methods.",
+    kinds: ["Programs"],
+    counts: { Programs: 1 },
   },
   {
     when: "Aug 2026",

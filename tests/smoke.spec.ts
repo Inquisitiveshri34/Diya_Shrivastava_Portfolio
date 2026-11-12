@@ -396,3 +396,17 @@ test.describe("404 page", () => {
     ).toHaveAttribute("href", "/about");
   });
 });
+
+test.describe("writing is hidden while SHOW_WRITING is false", () => {
+  test("/writing and a post URL return 404 and are not in the navigation", async ({
+    page,
+    request,
+  }) => {
+    expect((await request.get("/writing")).status()).toBe(404);
+    expect((await request.get("/writing/any-post")).status()).toBe(404);
+    await page.goto("/");
+    await expect(page.getByRole("contentinfo").getByRole("link", { name: "Writing" })).toHaveCount(
+      0,
+    );
+  });
+});

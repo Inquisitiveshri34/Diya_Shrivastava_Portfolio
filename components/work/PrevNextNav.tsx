@@ -42,7 +42,7 @@ function PrevNextCard({
     <a
       href={href}
       className={`bg-band text-ink hover:bg-accent-tint block rounded-[16px] px-6 py-5.5 no-underline transition-colors ${
-        previous ? "" : "sm:text-right"
+        previous ? "" : "text-right"
       }`}
     >
       <span className="text-ink-muted block text-[13.5px]">

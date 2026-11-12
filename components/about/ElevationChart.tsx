@@ -48,11 +48,8 @@ function totalsAt(cutoff: MonthIndex): Record<Kind, number> {
 
 const sum = (t: Record<Kind, number>) => t.Projects + t.Certifications + t.Simulations;
 
-/** The latest dated month in the timeline is "Now". */
-const NOW: MonthIndex = Math.max(...MILESTONES.map((m) => m.month));
 /** The chart starts at January of the first year that has a milestone. */
 const START: MonthIndex = Math.floor(Math.min(...MILESTONES.map((m) => m.month)) / 12) * 12;
-const AXIS: MonthIndex[] = Array.from({ length: NOW - START + 1 }, (_, i) => START + i);
 
 const CHECKPOINTS = [
   { label: "Now", back: 0, asOf: "Now" },
@@ -66,33 +63,43 @@ const W = 868;
 const BASE_Y = 200;
 const TOP_Y = 20;
 const X0 = 40;
+const MONTH_X0 = 140;
 const X1 = 850;
-
-const xAt = (i: number) => (AXIS.length === 1 ? X0 : X0 + (i * (X1 - X0)) / (AXIS.length - 1));
 
 function pathFor(points: { x: number; y: number }[]): string {
   return points.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.y}`).join(" ");
 }
 
-export function ElevationChart(): ReactElement {
+/**
+ * Axis: a 2024–25 baseline (zero), then every month from January of the first milestone year up
+ * to Now, the current month. The baseline sits apart from the months, with a break mark between.
+ */
+export function ElevationChart({ now }: { now: MonthIndex }): ReactElement {
   const [picked, setPicked] = useState(0);
   const checkpoint = CHECKPOINTS[picked];
+  const NOW: MonthIndex = Math.max(now, Math.max(...MILESTONES.map((m) => m.month)));
+  const months: MonthIndex[] = Array.from({ length: NOW - START + 1 }, (_, i) => START + i);
   const cutoff = NOW - checkpoint.back;
-  const cutoffIndex = cutoff - START;
+  // Index 0 is the baseline; months follow it.
+  const cutoffIndex = cutoff - START + 1;
 
-  const totals = AXIS.map((m) => sum(totalsAt(m)));
+  const totals = [0, ...months.map((m) => sum(totalsAt(m)))];
   const yMax = Math.max(10, Math.ceil(sum(totalsAt(NOW)) / 10) * 10);
   const yAt = (value: number) => BASE_Y - (value / yMax) * (BASE_Y - TOP_Y);
+  const monthX = (k: number) => MONTH_X0 + (k * (X1 - MONTH_X0)) / Math.max(1, months.length - 1);
+  const xOf = (i: number) => (i === 0 ? X0 : monthX(i - 1));
 
-  const points = totals.map((value, i) => ({ x: xAt(i), y: yAt(value) }));
+  const points = totals.map((value, i) => ({ x: xOf(i), y: yAt(value) }));
   const fullPath = pathFor(points);
   const activePoints = points.slice(0, cutoffIndex + 1);
   const activePath = pathFor(activePoints);
-  const areaPath = `${activePath} L ${xAt(cutoffIndex)} ${BASE_Y} L ${X0} ${BASE_Y} Z`;
+  const areaPath = `${activePath} L ${xOf(cutoffIndex)} ${BASE_Y} L ${X0} ${BASE_Y} Z`;
   const dot = points[cutoffIndex];
 
   const at = totalsAt(cutoff);
   const count = sum(at);
+  // Milestones completed in the last full month before the checkpoint month.
+  const gained = sum(totalsAt(cutoff - 1)) - sum(totalsAt(cutoff - 2));
   const asOfLabel = `${checkpoint.asOf}`;
   const note = `${count} milestones, as of ${monthLabel(cutoff)}.`;
 
@@ -112,11 +119,13 @@ export function ElevationChart(): ReactElement {
           <p className="text-ink-muted m-0 mt-0.5 text-[13.5px]">
             Milestones completed since 2024 — projects, certifications and simulations
           </p>
-          <p
-            aria-live="polite"
-            className="m-0 mt-2 font-mono text-[34px] leading-[1.15] font-semibold"
-          >
-            <span className="border-ink border-b-[3px] border-double pb-px">{count}</span>
+          <p aria-live="polite" className="m-0 mt-2 flex flex-wrap items-baseline gap-3 font-mono">
+            <span className="border-ink border-b-[3px] border-double pb-px text-[34px] leading-[1.15] font-semibold">
+              {count}
+            </span>
+            <span className="text-accent text-[14px] font-medium">
+              ▲ +{gained} in the last month
+            </span>
           </p>
         </div>
         <div
@@ -208,15 +217,15 @@ export function ElevationChart(): ReactElement {
       </svg>
 
       <div aria-hidden="true" className="relative mt-[-24px] h-[18px]">
-        {AXIS.map((m, i) => (
+        {points.map((p, i) => (
           <span
-            key={m}
+            key={i}
             className={`text-ink-muted absolute -translate-x-1/2 font-mono text-[11px] whitespace-nowrap ${
-              i % 2 === 0 ? "" : "hidden sm:block"
+              i === 0 || i % 2 === 1 ? "" : "hidden sm:block"
             }`}
-            style={{ left: `${(xAt(i) / W) * 100}%` }}
+            style={{ left: `${(p.x / W) * 100}%` }}
           >
-            {MONTHS[m % 12]}
+            {i === 0 ? "2024–25" : MONTHS[months[i - 1] % 12]}
           </span>
         ))}
       </div>

@@ -17,18 +17,26 @@ export const metadata: Metadata = pageMetadata({
   path: "/about",
 });
 
+/** The current month as year * 12 + month, read at build time (the site is static). */
+function currentMonth(): number {
+  const today = new Date();
+  return today.getFullYear() * 12 + today.getMonth();
+}
+
 export default function AboutPage(): ReactElement {
   return (
     <>
       <Section className="pt-24 pb-20 xl:pt-28">
-        <Container width="reading">
-          <h1 className="m-0 font-serif text-[40px] leading-[1.15] font-semibold tracking-[-0.015em] lg:text-[46px]">
-            About
-          </h1>
-          <p className="m-0 mt-4 mb-10 font-serif text-[24px] leading-[1.35] font-semibold [text-wrap:balance] lg:text-[27px]">
-            I build machine-learning systems that are honest about what they know.
-          </p>
-          <Story />
+        <Container width="wide">
+          <div className="max-w-[680px]">
+            <h1 className="m-0 font-serif text-[40px] leading-[1.15] font-semibold tracking-[-0.015em] lg:text-[46px]">
+              About
+            </h1>
+            <p className="m-0 mt-4 mb-10 font-serif text-[24px] leading-[1.35] font-semibold [text-wrap:balance] lg:text-[27px]">
+              I build machine-learning systems that are honest about what they know.
+            </p>
+            <Story />
+          </div>
         </Container>
       </Section>
 
@@ -41,7 +49,7 @@ export default function AboutPage(): ReactElement {
             The climb so far, then every step of the trail — newest first.
           </p>
           <div className="mx-auto mb-16 max-w-[920px]">
-            <ElevationChart />
+            <ElevationChart now={currentMonth()} />
           </div>
           <TrailTimeline />
         </Container>

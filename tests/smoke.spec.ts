@@ -288,12 +288,12 @@ test.describe("about page", () => {
   }) => {
     await page.goto("/about");
     const group = page.getByRole("group", { name: "Choose a checkpoint" });
-    const count = page.locator('[aria-live="polite"]').filter({ hasText: /^\d+$/ }).first();
+    const count = page.locator('[aria-live="polite"] span').first();
     const expected: [string, string][] = [
       ["Now", "19"],
-      ["1 month", "18"],
-      ["3 months", "13"],
-      ["6 months", "7"],
+      ["1 month", "19"],
+      ["3 months", "15"],
+      ["6 months", "13"],
     ];
     for (const [label, total] of expected) {
       const button = group.getByRole("button", { name: label, exact: true });
@@ -312,6 +312,7 @@ test.describe("about page", () => {
     expect(whens[1]).toMatch(/^Now/);
     expect(whens[whens.length - 1]).toBe("2024");
     await expect(page.getByText("Currently", { exact: true })).toBeVisible();
+    await expect(page.getByText("▲ +1 in the last month")).toBeVisible();
     await expect(page.getByText("Before 2024")).toHaveCount(0);
   });
 });

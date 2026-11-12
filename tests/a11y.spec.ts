@@ -144,3 +144,37 @@ test("every colour on Home comes from a design token", async ({ page }) => {
     .map(({ value, source }) => `${value}  (first seen on ${source})`);
   expect(offPalette, "colours that are not design tokens").toEqual([]);
 });
+
+test("/work has zero axe violations with the learning section closed", async ({ page }) => {
+  await page.goto("/work");
+  const results = await new AxeBuilder({ page }).withTags(WCAG_TAGS).analyze();
+  expect(results.violations, JSON.stringify(results.violations, null, 2)).toEqual([]);
+});
+
+test("/work has zero axe violations with the learning section open", async ({ page }) => {
+  await page.goto("/work");
+  // Opened by keyboard, as a reader would. Playwright's pointer click waits on this button's
+  // actionability checks at 390px, though a real tap toggles it.
+  const toggle = page.locator('button[aria-controls="learning"]');
+  await toggle.focus();
+  await page.keyboard.press("Enter");
+  await expect(page.locator("#learning")).toBeVisible();
+  const results = await new AxeBuilder({ page }).withTags(WCAG_TAGS).analyze();
+  expect(results.violations, JSON.stringify(results.violations, null, 2)).toEqual([]);
+});
+
+for (const slug of [
+  "clausecheck",
+  "chargebacklens",
+  "streakforge",
+  "deliveriq",
+  "healthops",
+  "parkease",
+  "craftbridge",
+]) {
+  test(`/work/${slug} has zero axe violations`, async ({ page }) => {
+    await page.goto(`/work/${slug}`);
+    const results = await new AxeBuilder({ page }).withTags(WCAG_TAGS).analyze();
+    expect(results.violations, JSON.stringify(results.violations, null, 2)).toEqual([]);
+  });
+}

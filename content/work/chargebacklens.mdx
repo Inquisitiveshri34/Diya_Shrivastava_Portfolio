@@ -28,15 +28,17 @@
       },
       {
         "number": "16.2× lift",
+        "viz": { "kind": "lift", "disputes": 66, "transactions": 452, "baseRate": "0.90%" },
         "meaning": "66 disputes among the 452 highest-risk transactions (top 1%)",
       },
       {
         "number": "43.2% recall at 5% reviewed",
+        "viz": { "kind": "bar", "percent": 43.2 },
         "meaning": "Reviewing the riskiest 5% (2,262 transactions) catches 175 of the 407 disputes",
       },
       {
         "number": "₹11.99L net savings",
-        "meaning": "39.1% of the ₹30.7L that allowing every transaction would cost, under assumed costs — see Limitations",
+        "meaning": "39.1% of the ₹30.7L that allowing every transaction would cost, under assumed costs",
       },
       {
         "number": "+₹1.19L from the third band",
@@ -77,6 +79,8 @@ Synthetic data for Indian payments: 120,000 transactions from 35,000 customers a
 - **Sigmoid calibration instead of isotonic.** Isotonic calibration is a step function that can merge different scores and blur the top of the review queue; cross-validated calibration would also mix time periods. Sigmoid calibration on one held-out time block keeps the ranking intact.
 - **Testing the assumptions, not just the model.** I varied each of the four cost assumptions to see how the thresholds and savings moved. Savings stayed positive in every case, but one assumption — how many customers abandon when asked to verify — shifts the step-up threshold about 3×, so it's the one number a merchant must measure.
 
+<Figure name="fig-delivery-status.png" />
+
 ## Interactive: try the thresholds
 
 - **Heading:** Try the thresholds yourself
@@ -85,6 +89,10 @@ Synthetic data for Indian payments: 120,000 transactions from 35,000 customers a
 - **Outputs:** Allowed · Stepped up · Reviewed · Disputes caught · Net savings
 - **Chosen policy (shown on reset):** 93.2% allowed, 6.2% stepped up, 0.7% reviewed — catching 49.9% of disputes (203 of 407) and saving ₹11.99L.
 - **Footnote:** Computed on the held-out test period (45,246 transactions, 0.90% dispute rate). Assumed costs: ₹1,500 fee per dispute, ₹300 per manual review, an 18% merchant margin, and 25% of customers abandoning when asked to verify.
+
+<Figure name="fig-calibration.png" />
+
+<Figure name="fig-savings-thresholds.png" />
 
 ## Evaluation
 
@@ -95,6 +103,8 @@ Candidates were compared on a separate validation block (14,947 transactions, 12
 ## Results
 
 A PR-AUC 9.7 times the base rate, 16.2× lift in the top 1%, and 43.2% of disputes caught by reviewing 5% of transactions. The chosen three-band policy catches 49.9% of disputes while letting 93.2% of transactions through untouched, for ₹11.99L net savings. By segment, travel transactions return about ₹1,094 per intervention, while manual review on wallet payments loses money (₹300 spent, nothing caught) — so the policy recommends skipping human review for low-value segments and keeping only the verification step there. Shipped as a Streamlit app with Score, Review Queue and Economics Explorer views.
+
+<Figure name="fig-segment-economics.png" />
 
 ## Limitations
 

@@ -146,3 +146,101 @@ test.describe("header mark on Home", () => {
     await expect(mark).toHaveAttribute("aria-hidden", "false");
   });
 });
+
+const FEATURED = ["clausecheck", "chargebacklens", "streakforge", "deliveriq"];
+const LEARNING = ["healthops", "parkease", "craftbridge"];
+
+test.describe("work pages", () => {
+  for (const slug of [...FEATURED, ...LEARNING]) {
+    test(`/work/${slug} returns 200`, async ({ request }) => {
+      const response = await request.get(`/work/${slug}`);
+      expect(response.status()).toBe(200);
+    });
+  }
+
+  test("an unknown slug returns the 404", async ({ request }) => {
+    const response = await request.get("/work/not-a-project");
+    expect(response.status()).toBe(404);
+  });
+
+  test("the learning section is closed on load and opens and closes with Enter and Space", async ({
+    page,
+  }) => {
+    await page.goto("/work");
+    // Located by aria-controls: the button's name changes when it opens.
+    const toggle = page.locator('button[aria-controls="learning"]');
+    await expect(toggle).toHaveText("Show 3 earlier learning projects");
+    const region = page.locator("#learning");
+    await expect(toggle).toHaveAttribute("aria-expanded", "false");
+    await expect(region).toBeHidden();
+    await expect(page.getByRole("link", { name: "View project →" })).toHaveCount(0);
+
+    await toggle.focus();
+    await page.keyboard.press("Enter");
+    await expect(toggle).toHaveAttribute("aria-expanded", "true");
+    await expect(toggle).toHaveText("Hide learning projects");
+    await expect(region).toBeVisible();
+    await expect(page.getByRole("link", { name: "View project →" })).toHaveCount(3);
+
+    await toggle.focus();
+    await page.keyboard.press("Space");
+    await expect(toggle).toHaveAttribute("aria-expanded", "false");
+    await expect(region).toBeHidden();
+  });
+
+  test("previous and next cycle through the four featured projects and wrap around", async ({
+    page,
+  }) => {
+    const order: Record<string, [string, string]> = {
+      clausecheck: ["deliveriq", "chargebacklens"],
+      chargebacklens: ["clausecheck", "streakforge"],
+      streakforge: ["chargebacklens", "deliveriq"],
+      deliveriq: ["streakforge", "clausecheck"],
+    };
+    for (const [slug, [previous, next]] of Object.entries(order)) {
+      await page.goto(`/work/${slug}`);
+      const nav = page.getByRole("navigation", { name: "More projects" });
+      await expect(nav.getByRole("link", { name: /Previous/ })).toHaveAttribute(
+        "href",
+        `/work/${previous}`,
+      );
+      await expect(nav.getByRole("link", { name: /Next/ })).toHaveAttribute(
+        "href",
+        `/work/${next}`,
+      );
+    }
+  });
+
+  test("learning pages have no At a glance and no previous / next", async ({ page }) => {
+    for (const slug of LEARNING) {
+      await page.goto(`/work/${slug}`);
+      await expect(page.getByRole("heading", { name: "At a glance" })).toHaveCount(0);
+      await expect(page.getByRole("navigation", { name: "More projects" })).toHaveCount(0);
+    }
+  });
+
+  test("every featured case study shows its Limitations section in the callout", async ({
+    page,
+  }) => {
+    for (const slug of FEATURED) {
+      await page.goto(`/work/${slug}`);
+      await expect(page.getByRole("heading", { name: "Limitations" })).toBeVisible();
+      const callout = page.locator('[data-callout="limitation"]');
+      await expect(callout).toHaveCount(1);
+      await expect(callout.locator("li").first()).toBeVisible();
+    }
+  });
+
+  test("the 誠 stamp is labelled, and the table of contents is only shown at 1024px and up", async ({
+    page,
+  }, testInfo) => {
+    await page.goto("/work/clausecheck");
+    const toc = page.getByRole("navigation", { name: "On this page" });
+    if (testInfo.project.name === PHONE) {
+      await expect(toc).toBeHidden();
+    } else {
+      await expect(toc).toBeVisible();
+      await expect(page.getByRole("img", { name: "誠 (makoto) — sincerity" })).toBeVisible();
+    }
+  });
+});

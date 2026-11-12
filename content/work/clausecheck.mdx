@@ -28,19 +28,22 @@
   "contextNote": "Built during a simulated industry sprint.",
   "links": { "github": "https://github.com/kalviumcommunity/S66-0926-DY-RAG-ClauseCheck" },
   "linkNote": "View code → [GitHub](https://github.com/kalviumcommunity/S66-0926-DY-RAG-ClauseCheck)",
-  "glanceNote": "Retrieval and refusal figures are from the 40-question tuning set; see Limitations.",
+  "glanceNote": "Retrieval and refusal figures are from the 40-question tuning set.",
   "glance":
     [
       {
         "number": "93.5% recall@5",
+        "viz": { "kind": "dots", "filled": 29, "total": 31 },
         "meaning": "The correct clause was in the top 5 results for 29 of 31 answerable questions",
       },
       {
         "number": "9 of 9 refused",
+        "viz": { "kind": "dots", "filled": 9, "total": 9 },
         "meaning": "Every question the contracts can't answer was refused rather than guessed",
       },
       {
         "number": "1 of 31 wrongly refused",
+        "viz": { "kind": "dots", "filled": 30, "total": 31, "tone": "muted" },
         "meaning": "A 3.2% false-refusal rate on answerable questions",
       },
       {
@@ -49,6 +52,7 @@
       },
       {
         "number": "375 tests",
+        "viz": { "kind": "split", "base": 262, "total": 375 },
         "meaning": "Passing in the final version, up from 262 at version 1",
       },
       { "number": "1–5 s", "meaning": "Typical time to a checked answer" },
@@ -98,6 +102,8 @@ When the two halves of the system first ran together, 3 of 223 tests failed and 
 A labelled set of 67 questions: 30 drawn from real CUAD contracts (renewal, termination, liability, pricing, compliance), 22 exact-value questions (unit prices, payment terms, certificate expiry dates), and 15 questions the documents cannot answer. The set was split into 40 tuning and 27 held-out questions. Measured on the tuning set with real models and caching off: the correct clause was in the top 5 for 29 of 31 answerable questions, all 9 unanswerable questions were refused, and 1 answerable question was wrongly refused.
 
 **Figure:** a checked answer, showing the cited clause and the amendment that changed it (Section 11).
+
+<Figure name="fig-checked-answer.png" />
 
 ## Results
 

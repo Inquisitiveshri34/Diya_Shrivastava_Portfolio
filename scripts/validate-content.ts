@@ -65,32 +65,37 @@ async function main() {
   runSchemaCheck(
     "certifications",
     "content/data/certifications.ts",
-    z.array(schemas.Certification),
+    z.array(schemas.Certification).min(1, "must not be empty"),
     certs.certifications,
   );
   runSchemaCheck(
     "forageSimulations",
     "content/data/forage.ts",
-    z.array(schemas.ForageSimulation),
+    z.array(schemas.ForageSimulation).min(1, "must not be empty"),
     forage.forageSimulations,
   );
   runSchemaCheck(
     "timeline",
     "content/data/timeline.ts",
-    z.array(schemas.TimelineRow),
+    z.array(schemas.TimelineRow).min(1, "must not be empty"),
     timeline.timeline,
   );
-  runSchemaCheck("values", "content/data/values.ts", z.array(schemas.Value), values.values);
+  runSchemaCheck(
+    "values",
+    "content/data/values.ts",
+    z.array(schemas.Value).min(1, "must not be empty"),
+    values.values,
+  );
   runSchemaCheck(
     "approachSteps",
     "content/data/values.ts",
-    z.array(schemas.ApproachStep),
+    z.array(schemas.ApproachStep).min(1, "must not be empty"),
     values.approachSteps,
   );
   runSchemaCheck(
     "toolkit",
     "content/data/toolkit.ts",
-    z.array(schemas.ToolkitGroup),
+    z.array(schemas.ToolkitGroup).min(1, "must not be empty"),
     toolkit.toolkit,
   );
   runSchemaCheck("education", "content/data/education.ts", schemas.Education, education.education);

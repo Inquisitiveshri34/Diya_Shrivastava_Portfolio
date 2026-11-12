@@ -33,7 +33,7 @@ export function AtAGlance({
       <h2 className="m-0 mb-8 font-serif text-[30px] leading-[1.25] font-semibold">At a glance</h2>
 
       <div className="grid gap-4 lg:grid-cols-[300px_minmax(0,1fr)_300px] lg:gap-0">
-        <div className="flex flex-col gap-4">
+        <div className={`flex flex-col gap-4 ${left.length === 1 ? "lg:self-center" : ""}`}>
           {left.map((row) => (
             <GlanceCard key={row.number} row={row} alone={left.length === 1} />
           ))}
@@ -53,7 +53,7 @@ export function AtAGlance({
           </div>
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className={`flex flex-col gap-4 ${right.length === 1 ? "lg:self-center" : ""}`}>
           {right.map((row) => (
             <GlanceCard key={row.number} row={row} alone={right.length === 1} />
           ))}
@@ -101,15 +101,16 @@ function Connectors({ count }: { count: number }): ReactElement {
 }
 
 /**
- * One glance card. It fills its row's height. When it is the only card in its column, its content
- * is centred vertically; otherwise the chart sits at the bottom, as the design has it.
+ * One glance card. A column of several cards fills the row's height, with each chart at the bottom,
+ * as the design has it. A column with one card keeps its natural height and is centred against
+ * the row, so the connector still meets its middle.
  */
 function GlanceCard({ row, alone }: { row: GlanceRow; alone: boolean }): ReactElement {
   const viz = row.viz;
   const isResult = viz !== undefined && viz.kind !== "split";
   return (
     <div
-      className={`border-border flex min-h-[132px] flex-1 flex-col gap-2 rounded-[16px] border p-5 ${
+      className={`border-border flex min-h-[132px] flex-col gap-2 ${alone ? "" : "flex-1"} rounded-[16px] border p-5 ${
         alone ? "justify-center" : ""
       } ${isResult ? "bg-surface" : "bg-band"}`}
     >

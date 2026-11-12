@@ -5,8 +5,8 @@ import { Container } from "@/components/layout/Container";
 import { latestResume } from "@/lib/media";
 import { AVAILABILITY, CONTACT, HERO_HEADING_ID } from "@/content/site";
 
-// Content file, §2.1. The design's "4× Microsoft Certified" line is not in content.md, so it is left out.
-const LABEL = "Applied ML & GenAI · Ahmedabad, India";
+// Content file, §2.1. The "4× Microsoft Certified" prefix is not in content.md; it was added on request.
+const LABEL = "4× Microsoft Certified · Applied ML & GenAI · Ahmedabad, India";
 const SUBLINE =
   "Models that know how confident they are, and AI assistants that show their sources — or say \"I don't know.\" I care about work that's useful beyond the demo.";
 
@@ -15,15 +15,13 @@ function RisingLine(): ReactElement {
   return (
     <svg
       aria-hidden="true"
-      width="48"
-      height="48"
       viewBox="0 0 48 48"
       fill="none"
       stroke="currentColor"
       strokeWidth="1.8"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="text-accent"
+      className="text-accent size-9 sm:size-12"
     >
       <path d="M4 40c6-.5 9-3 12-7.5s5.5-6 9.5-6.5S33 23 36 17s4.5-8 8-9.5" />
       <circle cx="44" cy="7.5" r="2.4" fill="currentColor" stroke="none" />
@@ -40,12 +38,12 @@ function RisingLine(): ReactElement {
 export function Hero(): ReactElement {
   const resume = latestResume();
   return (
-    <section className="pt-8 pb-20 sm:pt-16 xl:pt-24 xl:pb-28">
+    <section className="pt-6 pb-20 sm:pt-16 xl:pt-24 xl:pb-28">
       <Container
         width="wide"
         className="grid gap-x-12 gap-y-10 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start"
       >
-        <div className="flex min-w-0 flex-col gap-6 lg:col-span-2">
+        <div className="flex min-w-0 flex-col gap-5 sm:gap-6 lg:col-span-2">
           <RisingLine />
           <p className="text-ink-muted m-0 text-[16px]">{LABEL}</p>
           <h1

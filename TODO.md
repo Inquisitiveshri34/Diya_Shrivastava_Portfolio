@@ -43,7 +43,7 @@ DeliverIQ (5). Re-export with the clean titles in `docs/content.md` §11.5 first
 - [ ] **ParkEase dates.** `docs/content.md` says Feb–Mar 2026 in three places. PR 2 copies them as written. If the dates change, correct `docs/content.md` first and regenerate.
 - [ ] **Certification slugs.** Slugs in `content/data/certifications.ts` are derived from the codes and names (for example `pl-200`, `databricks-fundamentals`). The content doc has none. Confirm them before adding certificate PDFs.
 - [ ] **Home words not in `content.md`.** The design headings "Major certifications" and "More certifications" were used, as you asked; they are not in `content.md`. The design's sentence under the heading and the "View certificate" link text are also not in `content.md`. Add them to the content doc, or confirm they stay.
-- [ ] **Hero extra line.** The design's "4× Microsoft Certified · Applied ML & GenAI Developer" line is not in `docs/content.md`, so it is left out. Add it to the content doc to show it.
+- [ ] **Hero line.** "4× Microsoft Certified" is added to the hero label on request. It is not in `docs/content.md`. Add it there to keep the content doc and the site in step.
 - [ ] **Certificate preview boxes.** The design shows each certificate's file name in its preview box. The site shows the code on the Microsoft cards. The three "More" cards have no code, so their boxes are blank. Decide what they should show.
 
 ## Pages that the Home links point to

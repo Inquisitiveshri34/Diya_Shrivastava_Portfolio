@@ -27,8 +27,8 @@ The full list of names the page uses:
 
 ## Data still to add
 
-- [ ] `public/media/data/chargebacklens-thresholds.json`, exported from the ChargebackLens repo (`docs/build-spec.md` §8.1). Until it exists, the threshold explorer shows no data.
-- [ ] Certificate PDFs under `public/media/documents/certificates/<slug>.pdf` (for example `pl-200.pdf`). Until a PDF exists, its card has no "View certificate" link.
+- [ ] `public/media/data/chargebacklens-thresholds.json`, exported from the ChargebackLens repo (`docs/build-spec.md` §8.1). **Status (PR 5):** not present. The threshold explorer was removed from PR 5 and is not on the site yet.
+- [ ] Certificate PDFs under `public/media/documents/certificates/<slug>.pdf` (for example `pl-200.pdf`). **Status (PR 5):** none present; the About table shows only Verify links until they are added.
 
 ## Content to confirm
 

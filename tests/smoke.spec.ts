@@ -1,3 +1,5 @@
+import { existsSync, readdirSync } from "node:fs";
+import path from "node:path";
 import { expect, test } from "@playwright/test";
 
 const PHONE = "mobile-390";
@@ -242,5 +244,155 @@ test.describe("work pages", () => {
       await expect(toc).toBeVisible();
       await expect(page.getByRole("img", { name: "誠 (makoto) — sincerity" })).toBeVisible();
     }
+  });
+});
+
+// ---------- PR 5: About, Résumé, 404 and the threshold explorer ----------
+
+const THRESHOLDS_JSON = path.join(
+  process.cwd(),
+  "public/media/data/chargebacklens-thresholds.json",
+);
+const ARCHIVE_DIR = path.join(process.cwd(), "public/media/resume/archive");
+
+test.describe("about page", () => {
+  test("renders the heading, the story and the My path band", async ({ page }) => {
+    await page.goto("/about");
+    await expect(page.getByRole("heading", { level: 1, name: "About" })).toBeVisible();
+    await expect(
+      page.getByText("I build machine-learning systems that are honest about what they know."),
+    ).toBeVisible();
+    await expect(page.getByRole("heading", { level: 2, name: "My path" })).toBeVisible();
+    await expect(page.getByRole("heading", { level: 2, name: "Certifications" })).toBeVisible();
+  });
+
+  test("shows the July 2026 robotics program and no school details", async ({ page }) => {
+    await page.goto("/about");
+    const text = (await page.locator("main").innerText()).toLowerCase();
+    expect(text).toContain("resident robotics program");
+    expect(text).not.toContain("cbse");
+    expect(text).not.toContain("school education");
+  });
+
+  test("the ClauseCheck link in the story goes to its case study", async ({ page }) => {
+    await page.goto("/about");
+    await expect(page.getByRole("link", { name: "ClauseCheck" }).first()).toHaveAttribute(
+      "href",
+      "/work/clausecheck",
+    );
+  });
+
+  test("the checkpoint buttons are a pressed group, and the counts never rise going back", async ({
+    page,
+  }) => {
+    await page.goto("/about");
+    const group = page.getByRole("group", { name: "Choose a checkpoint" });
+    const count = page.locator('[aria-live="polite"] span').first();
+    const labels = ["Now", "1 month", "3 months", "6 months"];
+    const values: number[] = [];
+    for (const label of labels) {
+      const button = group.getByRole("button", { name: label, exact: true });
+      await button.click();
+      await expect(button).toHaveAttribute("aria-pressed", "true");
+      values.push(Number(await count.innerText()));
+    }
+    // Every milestone in timeline.ts is in the Now total (Now is the current month, after all dates).
+    expect(values[0]).toBe(20);
+    for (let k = 1; k < values.length; k++) expect(values[k]).toBeLessThanOrEqual(values[k - 1]);
+  });
+
+  test("the trail is newest first, with the summit on 2028 and the Currently badge on Now", async ({
+    page,
+  }) => {
+    await page.goto("/about");
+    const whens = await page.locator("main ol > li p:first-child").allInnerTexts();
+    expect(whens[0]).toBe("2028");
+    expect(whens[1]).toMatch(/^Now/);
+    expect(whens[whens.length - 1]).toBe("2024");
+    await expect(page.getByText("Currently", { exact: true })).toBeVisible();
+    await expect(page.getByText("▲ +1 in the last month")).toBeVisible();
+    await expect(page.getByText("Before 2024")).toHaveCount(0);
+  });
+});
+
+test.describe("education on About", () => {
+  test("every relevant course and studying course appears once, in its group", async ({ page }) => {
+    await page.goto("/about");
+    const expected = [
+      "Data Structures & Algorithms",
+      "Operating Systems",
+      "Database Management Systems",
+      "Discrete Mathematics",
+      "Object-Oriented Programming Lab",
+      "Problem Solving Using Programming",
+      "Front-End Web Development",
+      "Back-End Web Development",
+      "Full-Stack Development",
+      "Design for Developers",
+      "Design & Analysis of Algorithms",
+      "DevOps Fundamentals",
+    ];
+    const cards = page.locator("main ul li");
+    const texts = await cards.allInnerTexts();
+    for (const course of expected) {
+      expect(
+        texts.filter((t) => t === course),
+        course,
+      ).toHaveLength(1);
+    }
+    await expect(page.getByRole("heading", { name: "Currently studying" })).toBeVisible();
+  });
+});
+
+test.describe("résumé page", () => {
+  test("shows the latest PDF with a download button", async ({ page }) => {
+    await page.goto("/resume");
+    await expect(page.getByRole("heading", { level: 1, name: "Résumé" })).toBeVisible();
+    const download = page.getByRole("link", { name: "Download PDF" }).last();
+    await expect(download).toHaveAttribute("href", "/media/resume/Diya_Shrivastava.pdf");
+  });
+
+  test("phones show the download button and no preview", async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== PHONE, "phone only");
+    await page.goto("/resume");
+    await expect(page.locator('object[aria-label="Latest résumé"]')).toBeHidden();
+    await expect(page.getByRole("link", { name: "Download PDF" }).last()).toBeVisible();
+  });
+
+  test("earlier versions are listed newest first, or the heading is absent with no archive", async ({
+    page,
+  }) => {
+    await page.goto("/resume");
+    const archives = existsSync(ARCHIVE_DIR)
+      ? readdirSync(ARCHIVE_DIR).filter((f) => /^Diya_Shrivastava_\d{4}-\d{2}-\d{2}\.pdf$/.test(f))
+      : [];
+    const heading = page.getByRole("heading", { name: "Earlier versions" });
+    if (archives.length === 0) {
+      await expect(heading).toHaveCount(0);
+    } else {
+      await expect(heading).toBeVisible();
+      const labels = await page.locator("section ul li span").allInnerTexts();
+      expect(labels).toHaveLength(archives.length);
+      expect(labels[0]).toMatch(/^Version of \d{1,2} [A-Z][a-z]+ \d{4}$/);
+    }
+  });
+});
+
+test.describe("404 page", () => {
+  test("says the page does not exist and links to Home, Work and About", async ({ page }) => {
+    await page.goto("/this-page-does-not-exist");
+    await expect(
+      page.getByRole("heading", { level: 1, name: "This page doesn't exist — but these do:" }),
+    ).toBeVisible();
+    await expect(page.getByRole("link", { name: "Home", exact: true })).toHaveAttribute(
+      "href",
+      "/",
+    );
+    await expect(
+      page.locator("main").getByRole("link", { name: "Work", exact: true }),
+    ).toHaveAttribute("href", "/work");
+    await expect(
+      page.locator("main").getByRole("link", { name: "About", exact: true }),
+    ).toHaveAttribute("href", "/about");
   });
 });

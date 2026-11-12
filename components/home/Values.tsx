@@ -4,13 +4,13 @@ import { Reveal } from "@/components/ui/Reveal";
 import { values } from "@/content/data/values";
 
 /** "How I try to work." Three values with a plum rule. Reused on the About page. */
-export function Values(): ReactElement {
+export function Values({ heading = "How I try to work." }: { heading?: string }): ReactElement {
   return (
     <HomeSection band>
       <HomeContainer>
         <Reveal>
           <h2 className="m-0 font-serif text-[26px] leading-[1.25] font-semibold tracking-[-0.01em] [text-wrap:wrap] lg:text-[32px]">
-            How I try to work.
+            {heading}
           </h2>
           <ul className="m-0 mt-10 flex list-none flex-col gap-[34px] p-0">
             {values.map((value) => (

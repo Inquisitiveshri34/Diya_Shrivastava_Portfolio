@@ -16,11 +16,11 @@ type SplitViz = Extract<Viz, { kind: "split" }>;
 export function AtAGlance({
   rows,
   note,
-  hasLimitations,
+  hasApproach,
 }: {
   rows: GlanceRow[];
   note?: string;
-  hasLimitations: boolean;
+  hasApproach: boolean;
 }): ReactElement {
   const left = rows.filter((row) => row.viz && row.viz.kind !== "split");
   const right = rows.filter((row) => !left.includes(row));
@@ -43,10 +43,10 @@ export function AtAGlance({
           {left.length > 0 ? <Connectors count={left.length} /> : null}
           <div className="flex flex-col justify-center gap-3 py-6 text-[16px] leading-[1.5] lg:h-full lg:pr-6 lg:pl-[150px]">
             {note ? <p className="m-0 font-serif text-[18px] italic">{note}</p> : null}
-            {hasLimitations ? (
+            {hasApproach ? (
               <p className="m-0">
-                <TextLink href="#limitations" className="text-accent font-semibold">
-                  Read the limitation ↓
+                <TextLink href="#approach" className="text-accent font-semibold">
+                  See the approach ↓
                 </TextLink>
               </p>
             ) : null}

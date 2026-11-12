@@ -43,7 +43,7 @@ export default async function CaseStudyPage({ params }: PageProps): Promise<Reac
 
   const featured = project.kind === "featured";
   const sections = splitSections(project.body);
-  const hasLimitations = sections.some((section) => slugify(section.title) === "limitations");
+  const hasApproach = sections.some((section) => section.id === "approach");
   const tocItems = [
     ...(featured ? [{ id: "glance", title: "At a glance" }] : []),
     ...sections.map((section) => ({ id: section.id, title: section.title })),
@@ -70,11 +70,7 @@ export default async function CaseStudyPage({ params }: PageProps): Promise<Reac
           />
         ) : null}
         {featured && project.glance ? (
-          <AtAGlance
-            rows={project.glance}
-            note={project.glanceNote}
-            hasLimitations={hasLimitations}
-          />
+          <AtAGlance rows={project.glance} note={project.glanceNote} hasApproach={hasApproach} />
         ) : null}
       </Container>
 

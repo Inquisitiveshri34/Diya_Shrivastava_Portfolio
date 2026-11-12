@@ -2,36 +2,28 @@
 
 Open placeholders, missing assets and decisions. Remove an item when it is resolved.
 
-## Figures still to add (you drop these in; the site picks them up)
+## Figures still to add or fix (you drop these in; the site picks them up)
 
-Each PNG goes in the folder shown. Its caption and alt text are already in a `.meta.json` file beside where the PNG goes. Until a PNG exists, the media script skips its sidecar with a warning.
+Each PNG goes in the folder shown, under the exact file name. Its caption and alt text come from the `.meta.json` beside it. Until a PNG has that name, its sidecar is skipped with a warning and the page shows no figure.
 
-ClauseCheck (1)
+Figures already on the site: `clausecheck/fig-checked-answer.png`, `streakforge/fig-funnel.png`, and the five DeliverIQ figures below.
 
-- [ ] `public/media/images/clausecheck/fig-checked-answer.png`
+- **DeliverIQ: re-export the five figures.** The charts match their captions, but each still has a "Plot N —" title and raw axis names (for example `avg_speed_kmph`). `docs/content.md` §11.5 asks for clean titles. Re-export under the same file names.
+- **ChargebackLens (4 needed).** No PNGs yet. The chart data (`fig-*.json`) and the README that explains how to render it are in `~/Desktop/Portfolio-media-held/chargebacklens/`.
+- **StreakForge (4 needed).**
+  - `fig-activation-by-year.png`: the PNGs you have do not match this caption (grouped bars by sign-up year).
+  - `fig-activation-by-plan.png`: the PNGs you have do not match this caption (bars by membership type and trainer access). `pr12_activation_by_branch.png` is by branch, so it does not fit.
+  - `fig-weekly-anomalies.png`: `pr11_weekly_engagement_anomalies.png` is close, but it includes the partial final week that the caption says is excluded. Re-export without it.
+  - `fig-branch-churn.png`: `pr11_branch_churn_anomalies.png` is close, but it has no dashed average line at 94.2% and no red outlier marks, which the caption describes. Re-export to match.
+- Files moved out of the repo, not deleted: `~/Desktop/Portfolio-media-held/` (unused or mismatched charts, the landing-page screenshot, the ChargebackLens data, and the StreakForge interactive HTML).
 
-ChargebackLens (4)
+The full list of names the page uses:
 
-- [ ] `public/media/images/chargebacklens/fig-calibration.png`
-- [ ] `public/media/images/chargebacklens/fig-savings-thresholds.png`
-- [ ] `public/media/images/chargebacklens/fig-segment-economics.png`
-- [ ] `public/media/images/chargebacklens/fig-delivery-status.png`
-
-StreakForge (5)
-
-- [ ] `public/media/images/streakforge/fig-funnel.png`
-- [ ] `public/media/images/streakforge/fig-activation-by-year.png`
-- [ ] `public/media/images/streakforge/fig-activation-by-plan.png`
-- [ ] `public/media/images/streakforge/fig-weekly-anomalies.png`
-- [ ] `public/media/images/streakforge/fig-branch-churn.png`
-
-DeliverIQ (5). Re-export with the clean titles in `docs/content.md` §11.5 first, as §11.1 asks.
-
-- [ ] `public/media/images/deliveriq/fig-target-distribution.png`
-- [ ] `public/media/images/deliveriq/fig-road-type.png`
-- [ ] `public/media/images/deliveriq/fig-hour-day-heatmap.png`
-- [ ] `public/media/images/deliveriq/fig-speed-traffic.png`
-- [ ] `public/media/images/deliveriq/fig-road-weather.png`
+- [x] `public/media/images/clausecheck/fig-checked-answer.png`
+- [ ] `public/media/images/chargebacklens/fig-calibration.png`, `fig-savings-thresholds.png`, `fig-segment-economics.png`, `fig-delivery-status.png`
+- [x] `public/media/images/streakforge/fig-funnel.png`
+- [ ] `public/media/images/streakforge/fig-activation-by-year.png`, `fig-activation-by-plan.png`, `fig-weekly-anomalies.png`, `fig-branch-churn.png`
+- [x] `public/media/images/deliveriq/fig-target-distribution.png`, `fig-road-type.png`, `fig-hour-day-heatmap.png`, `fig-speed-traffic.png`, `fig-road-weather.png` (re-export, see above)
 
 ## Data still to add
 
@@ -45,12 +37,12 @@ DeliverIQ (5). Re-export with the clean titles in `docs/content.md` §11.5 first
 - [ ] **Home words not in `content.md`.** The design headings "Major certifications" and "More certifications" were used, as you asked; they are not in `content.md`. The design's sentence under the heading and the "View certificate" link text are also not in `content.md`. Add them to the content doc, or confirm they stay.
 - [ ] **Hero line.** "4× Microsoft Certified" is added to the hero label on request. It is not in `docs/content.md`. Add it there to keep the content doc and the site in step.
 - [ ] **Certificate preview boxes.** The design shows each certificate's file name in its preview box. The site shows the code on the Microsoft cards. The three "More" cards have no code, so their boxes are blank. Decide what they should show.
+- [ ] **ClauseCheck figure paragraph.** The Evaluation section still has a `**Figure:**` line that repeats the figure's caption. Keep it or remove it.
+- [ ] **Case-study descriptions.** Each case-study page uses its summary as its meta description. `docs/content.md` §10 has its own wording for each page; PR 6 sets those.
 
 ## Pages that the Home links point to
 
 - "See all certifications →" was removed: the design has no such link (it is in `content.md` §2.7). Add it back if you want it.
-
-- [ ] `/work/<slug>`, `/work`: built in PR 4. Until then, the card links and "All projects →" return 404.
 
 ## Design colours outside the PR 1 tokens (PR 4–5)
 

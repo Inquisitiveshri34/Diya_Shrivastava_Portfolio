@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { ReactElement } from "react";
 import { NowCard } from "@/components/home/NowCard";
 import { HomeContainer } from "@/components/home/HomeLayout";
@@ -76,12 +77,12 @@ export function Hero(): ReactElement {
             {AVAILABILITY}
           </p>
           <div className="flex flex-wrap items-center gap-3">
-            <a
+            <Link
               href="/work"
               className="rounded-pill bg-accent text-surface hover:bg-accent-hover hover:text-surface inline-flex min-h-[46px] items-center justify-center px-[22px] text-[15px] font-semibold no-underline transition-colors hover:no-underline lg:px-6 lg:text-[15.5px]"
             >
               See my work
-            </a>
+            </Link>
             <a
               href={resume}
               target="_blank"

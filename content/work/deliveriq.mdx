@@ -21,7 +21,11 @@
     },
   "glance":
     [
-      { "number": "7.83 min MAE", "meaning": "Average prediction error on 47,984 held-out trips" },
+      {
+        "number": "7.83 min MAE",
+        "viz": { "kind": "scale", "value": 7.83, "baseline": 17.48, "max": 20, "unit": "min" },
+        "meaning": "Average prediction error on 47,984 held-out trips",
+      },
       {
         "number": "55% better",
         "meaning": "Than always predicting the average trip time, which is off by 17.48 min on average",
@@ -58,6 +62,8 @@ A synthetic, multi-table transportation dataset: 250,000 delivery trips joined w
 
 I standardised category spellings, clipped values to valid ranges (for example, speeds of 1–120 km/h), merged duplicate weather events (75,000 → 37,900), checked every foreign key and filled gaps with group-wise medians or modes, and removed 10,081 trips with no recorded travel time, leaving 239,919. Travel times were heavily skewed (skewness 8.47), so I modelled them on a log scale.
 
+<Figure name="fig-target-distribution.png" />
+
 ## Approach
 
 - **Log-scale target.** I predicted log(1 + minutes) instead of raw minutes. With a skewness of 8.47, raw times would let a few very long trips dominate training.
@@ -65,6 +71,12 @@ I standardised category spellings, clipped values to valid ranges (for example, 
 - **One end-to-end pipeline.** Scaling and encoding sit inside a single Scikit-learn pipeline, so they're learned only from training data. That prevents information from the test set leaking into the model.
 - **A step-by-step model progression.** Mean baseline → linear regression (18% better) → decision tree tuned with GridSearchCV over 60 combinations (55.3% better) → Random Forest (55.2% better). I chose the Random Forest despite near-identical error, because an ensemble generalises more reliably than one deep tree. Its settings were chosen by hand, informed by the tree search, because a randomised search ran out of memory.
 - **MAE as the main metric.** Dispatchers care about the typical error in minutes. RMSE (35.7 min) is far higher than MAE, which shows a few extreme trips dominate squared error.
+
+<Figure name="fig-road-type.png" />
+
+<Figure name="fig-hour-day-heatmap.png" />
+
+<Figure name="fig-speed-traffic.png" />
 
 ## Evaluation
 
@@ -81,6 +93,8 @@ An 80/20 random split — 191,935 trips for training, 47,984 for testing. The ba
 ## Results
 
 7.83 minutes mean absolute error against 17.48 for the baseline — a 55.2% improvement. Distance is the dominant feature, at 65% of the model's importance. RMSE is 35.7 minutes, R² 0.21 and MAPE 37.8%. Deployed as an interactive Streamlit dashboard for on-demand forecasts.
+
+<Figure name="fig-road-weather.png" />
 
 ## Limitations
 

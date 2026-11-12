@@ -49,10 +49,13 @@ export const Metric = z.object({
   viz: Viz.optional(),
 });
 
+// A glance row may carry a mini-chart. Rows with a `viz` sit in the left column on laptops.
 export const GlanceRow = z.object({
   number: text,
   meaning: text,
+  viz: Viz.optional(),
 });
+export type GlanceRow = z.infer<typeof GlanceRow>;
 
 const ProjectBase = z.object({
   kind: z.enum(["featured", "learning"]),

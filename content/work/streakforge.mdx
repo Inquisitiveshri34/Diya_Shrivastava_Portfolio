@@ -23,6 +23,7 @@
     [
       {
         "number": "81.2%",
+        "viz": { "kind": "bar", "percent": 81.2 },
         "meaning": "of members never activate — no visit or app session in their first 7 days. The single largest drop in the funnel.",
       },
       {
@@ -69,6 +70,8 @@ A synthetic dataset designed around realistic Indian gym patterns — city-tier 
 
 The team's cleaning removed 676 duplicate subscriptions and 25 duplicate streaks, parsed two conflicting date formats, and collapsed 81 spellings of city names into 27 cities (Bangalore and Bengaluru, Gurgaon and Gurugram). Missing values were kept as meaning rather than filled: a missing trainer means a self-guided session.
 
+<Figure name="fig-weekly-anomalies.png" />
+
 ## Approach
 
 - **One timeline of events.** Our pipeline combined gym check-ins and app events into a single table of 206,732 events and tagged each event with the member's subscription and streak status at that exact moment. Alternative: analysing gym and app data separately, or summarising straight to one row per member — both lose the timing that churn and activation depend on. Eleven merge checks confirmed no rows were duplicated or lost.
@@ -85,9 +88,17 @@ The team's cleaning removed 676 duplicate subscriptions and 25 duplicate streaks
 - Guided plans help members start: activation was 27.9% on PT-Combo plans against 15.6% on Basic, and 23.5% with a personal trainer against 17.6% without — the only statistically significant differences. Activation also improved: outside January it held at 15–16% for four years, then rose to 23.7% in 2025. January sign-ups activate best every year.
 - Twelve currently active members show almost every risk signal at once, and were listed for outreach.
 
+<Figure name="fig-funnel.png" />
+
+<Figure name="fig-activation-by-year.png" />
+
+<Figure name="fig-activation-by-plan.png" />
+
 ## Results
 
 A deployed six-page Streamlit dashboard — cached loading, filters, error handling, health checks and export — presenting 15 KPIs and five insights, each routed to the audience that should act on it (leadership, product, operations or customer success), across seven interactive charts.
+
+<Figure name="fig-branch-churn.png" />
 
 ## Limitations
 

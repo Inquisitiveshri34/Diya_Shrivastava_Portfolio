@@ -6,7 +6,7 @@ test.describe("home page shell", () => {
   test("loads with the header, the placeholder heading and the footer", async ({ page }) => {
     await page.goto("/");
     await expect(page).toHaveTitle(/Diya Shrivastava — Applied ML & GenAI/);
-    await expect(page.getByRole("heading", { level: 1 })).toContainText("machine-learning systems");
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("I build machine-learning");
     await expect(page.getByRole("banner")).toBeVisible();
     await expect(page.getByRole("contentinfo")).toBeVisible();
   });

@@ -1,4 +1,7 @@
+"use client";
+
 import type { ReactElement } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { MetricViz } from "@/components/work/MetricViz";
 import { TextLink } from "@/components/ui/TextLink";
 import type { GlanceRow } from "@/lib/schemas";
@@ -7,19 +10,24 @@ type Viz = NonNullable<GlanceRow["viz"]>;
 type DotsViz = Extract<Viz, { kind: "dots" }>;
 type SplitViz = Extract<Viz, { kind: "split" }>;
 
-// Laptop geometry, in pixels. Every card on laptops is CARD_HEIGHT tall (the `lg:h-[210px]` class
-// below must match), and the cards in a column are GAP apart (the `gap-4` class). The connectors
-// are drawn from these numbers, so they meet each card's middle.
-const CARD_HEIGHT = 210;
-const GAP = 16;
 const CONNECTOR_WIDTH = 130;
+
+/** Where the connectors go, measured from the rendered cards on laptops. */
+type Geometry = {
+  /** Height of the whole grid. */
+  height: number;
+  /** Middle of each left card, from the top of the grid. */
+  ys: number[];
+  /** Middle of the left column, where the connectors meet. */
+  middle: number;
+};
 
 /**
  * The "At a glance" grid, as the Design Source lays it out on laptops: result cards with a
  * mini-chart on the left, curved connectors into a centre note, and the remaining cards on the
  * right. Rows whose chart is a split bar (the tests card) go on the right, as in the design.
- * Every card is the same height on laptops. On phones the three parts stack: left cards, the
- * note, then right cards.
+ * Cards keep their natural height. A lone card on the left is centred against the row. The
+ * connectors and the note follow the cards' measured positions. On phones the three parts stack.
  */
 export function AtAGlance({
   rows,
@@ -32,9 +40,34 @@ export function AtAGlance({
 }): ReactElement {
   const left = rows.filter((row) => row.viz && row.viz.kind !== "split");
   const right = rows.filter((row) => !left.includes(row));
-  // The connectors meet the left column's middle. The note starts level with that point on laptops.
-  const height = left.length * CARD_HEIGHT + Math.max(0, left.length - 1) * GAP;
-  const noteTop = Math.max(0, height / 2 - 12);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const [geometry, setGeometry] = useState<Geometry | null>(null);
+
+  // Measure after layout, and again whenever the grid's size changes (window resize, fonts).
+  // The left count is in the dependencies because it changes which cards are measured.
+  const leftCount = left.length;
+  useLayoutEffect(() => {
+    const grid = gridRef.current;
+    if (!grid) return;
+    const measure = () => {
+      const gridTop = grid.getBoundingClientRect().top;
+      const cards = Array.from(grid.querySelectorAll<HTMLElement>("[data-glance-left]"));
+      const rects = cards.map((card) => card.getBoundingClientRect());
+      setGeometry({
+        height: grid.getBoundingClientRect().height,
+        ys: rects.map((r) => r.top - gridTop + r.height / 2),
+        middle:
+          rects.length > 0 ? (rects[0].top + rects[rects.length - 1].bottom) / 2 - gridTop : 0,
+      });
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(grid);
+    return () => observer.disconnect();
+  }, [leftCount]);
+
+  const noteTop = geometry ? Math.max(0, geometry.middle - 12) : 0;
+
   return (
     <section id="glance" className="mt-22 scroll-mt-24">
       <span
@@ -43,15 +76,20 @@ export function AtAGlance({
       />
       <h2 className="m-0 mb-8 font-serif text-[30px] leading-[1.25] font-semibold">At a glance</h2>
 
-      <div className="grid gap-4 lg:grid-cols-[300px_minmax(0,1fr)_300px] lg:gap-0">
-        <div className="flex flex-col gap-4">
+      <div
+        ref={gridRef}
+        className="relative grid gap-4 lg:grid-cols-[300px_minmax(0,1fr)_300px] lg:gap-0"
+      >
+        <div className={`flex flex-col gap-4 ${left.length === 1 ? "lg:self-center" : ""}`}>
           {left.map((row) => (
-            <GlanceCard key={row.number} row={row} />
+            <GlanceCard key={row.number} row={row} isLeft />
           ))}
         </div>
 
         <div className="relative">
-          {left.length > 0 ? <Connectors count={left.length} /> : null}
+          {left.length > 0 && geometry ? (
+            <Connectors geometry={geometry} count={left.length} />
+          ) : null}
           <div
             className="flex flex-col gap-3 py-6 text-[16px] leading-[1.5] lg:absolute lg:inset-x-0 lg:pr-6 lg:pl-[150px]"
             style={{ top: noteTop }}
@@ -67,9 +105,9 @@ export function AtAGlance({
           </div>
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className={`flex flex-col gap-4 ${right.length === 1 ? "lg:self-center" : ""}`}>
           {right.map((row) => (
-            <GlanceCard key={row.number} row={row} />
+            <GlanceCard key={row.number} row={row} isLeft={false} />
           ))}
         </div>
       </div>
@@ -77,16 +115,12 @@ export function AtAGlance({
   );
 }
 
-/**
- * The curves from each left card into the centre, drawn in pixels so they line up with the cards
- * at CARD_HEIGHT and GAP. They meet at the middle of the left column.
- */
-function Connectors({ count }: { count: number }): ReactElement {
-  const height = count * CARD_HEIGHT + (count - 1) * GAP;
-  const middle = height / 2;
+/** The curves from each left card into the centre, drawn to the measured positions. */
+function Connectors({ geometry, count }: { geometry: Geometry; count: number }): ReactElement {
+  const { height, ys, middle } = geometry;
   const half = CONNECTOR_WIDTH / 2;
   const paths = Array.from({ length: count }, (_, i) => {
-    const y = i * (CARD_HEIGHT + GAP) + CARD_HEIGHT / 2;
+    const y = ys[i] ?? middle;
     return `M0 ${y} C ${half} ${y}, ${half} ${middle}, ${CONNECTOR_WIDTH} ${middle}`;
   });
   return (
@@ -111,16 +145,14 @@ function Connectors({ count }: { count: number }): ReactElement {
   );
 }
 
-/**
- * One glance card. On laptops it is CARD_HEIGHT tall, the same as every other card; the chart sits
- * at the bottom. On phones it takes the height its content needs.
- */
-function GlanceCard({ row }: { row: GlanceRow }): ReactElement {
+/** One glance card, at its natural height. Left cards are marked so the connectors can find them. */
+function GlanceCard({ row, isLeft }: { row: GlanceRow; isLeft: boolean }): ReactElement {
   const viz = row.viz;
   const isResult = viz !== undefined && viz.kind !== "split";
   return (
     <div
-      className={`border-border flex min-h-[132px] flex-col gap-2 rounded-[16px] border p-5 lg:h-[210px] ${
+      data-glance-left={isLeft ? "" : undefined}
+      className={`border-border flex min-h-[132px] flex-col gap-2 rounded-[16px] border p-5 ${
         isResult ? "bg-surface" : "bg-band"
       }`}
     >
@@ -131,7 +163,7 @@ function GlanceCard({ row }: { row: GlanceRow }): ReactElement {
       {viz?.kind === "dots" ? <GlanceDots viz={viz} /> : null}
       {viz?.kind === "split" ? <SplitBar viz={viz} /> : null}
       {viz && viz.kind !== "dots" && viz.kind !== "split" ? (
-        <div className="mt-auto">
+        <div className="mt-2">
           <MetricViz viz={viz} />
         </div>
       ) : null}
@@ -142,7 +174,7 @@ function GlanceCard({ row }: { row: GlanceRow }): ReactElement {
 /** One dot per item. Filled dots are plum, or sage when `tone` is muted; the rest are hollow rings. */
 function GlanceDots({ viz }: { viz: DotsViz }): ReactElement {
   return (
-    <div aria-hidden="true" className="mt-auto flex max-w-[260px] flex-wrap gap-1">
+    <div aria-hidden="true" className="mt-2 flex max-w-[260px] flex-wrap gap-1">
       {Array.from({ length: viz.total }, (_, i) => {
         const filled = i < viz.filled;
         const tone = !filled
@@ -162,7 +194,7 @@ function SplitBar({ viz }: { viz: SplitViz }): ReactElement {
   return (
     <div
       aria-hidden="true"
-      className="rounded-pill border-border bg-surface relative mt-auto h-2 max-w-[260px] overflow-hidden border"
+      className="rounded-pill border-border bg-surface relative mt-2 h-2 max-w-[260px] overflow-hidden border"
     >
       <span className="bg-border absolute inset-y-0 left-0" style={{ width: `${basePercent}%` }} />
       <span

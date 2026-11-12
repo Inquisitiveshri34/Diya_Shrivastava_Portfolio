@@ -8,7 +8,7 @@ import { DemoVideo } from "@/components/work/DemoVideo";
 import { DocumentList } from "@/components/work/DocumentList";
 import { PrevNextNav } from "@/components/work/PrevNextNav";
 import { TableOfContents } from "@/components/work/TableOfContents";
-import { CaseStudyBody, slugify, splitSections } from "@/lib/mdx";
+import { CaseStudyBody, splitSections } from "@/lib/mdx";
 import { featuredProjects, getProject, loadProjects } from "@/lib/content";
 import { demoVideo } from "@/lib/media";
 import { pageMetadata } from "@/lib/seo";

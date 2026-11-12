@@ -6,7 +6,7 @@ test.describe("home page shell", () => {
   test("loads with the header, the placeholder heading and the footer", async ({ page }) => {
     await page.goto("/");
     await expect(page).toHaveTitle(/Diya Shrivastava — Applied ML & GenAI/);
-    await expect(page.getByRole("heading", { level: 1 })).toContainText("machine-learning systems");
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("I build machine-learning");
     await expect(page.getByRole("banner")).toBeVisible();
     await expect(page.getByRole("contentinfo")).toBeVisible();
   });
@@ -76,5 +76,73 @@ test.describe("navigation", () => {
     await expect(menuButton).toHaveAttribute("aria-expanded", "false");
     await expect(menuButton).toBeFocused();
     await expect(mobileNav).toBeHidden();
+  });
+});
+
+test.describe("home page content", () => {
+  test("the hero is visible with the headline and the availability badge", async ({ page }) => {
+    await page.goto("/");
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText(/I'm Diya Shrivastava\./);
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("people can rely on.");
+    await expect(
+      page.getByText("Open to AI/ML and Data Science internships — available now."),
+    ).toBeVisible();
+  });
+
+  test("phone: the résumé button and the email link are in the viewport without scrolling", async ({
+    page,
+  }, testInfo) => {
+    test.skip(testInfo.project.name !== PHONE, "phone only");
+    await page.goto("/");
+    const viewport = page.viewportSize();
+    for (const link of [
+      page.getByRole("link", { name: "Download résumé" }),
+      page.getByRole("link", { name: "Email", exact: true }),
+    ]) {
+      await expect(link).toBeInViewport();
+      const box = await link.boundingBox();
+      expect(box, "link has a box").not.toBeNull();
+      expect(box!.y + box!.height).toBeLessThanOrEqual(viewport!.height);
+    }
+  });
+
+  test("the résumé button opens the latest PDF in a new tab", async ({ page }) => {
+    await page.goto("/");
+    const resume = page.getByRole("link", { name: "Download résumé" });
+    await expect(resume).toHaveAttribute("href", "/media/resume/Diya_Shrivastava.pdf");
+    await expect(resume).toHaveAttribute("target", "_blank");
+  });
+
+  test("four featured cards appear in the order ClauseCheck, ChargebackLens, StreakForge, DeliverIQ", async ({
+    page,
+  }) => {
+    await page.goto("/");
+    const hrefs = await page
+      .locator('main a[href^="/work/"]')
+      .evaluateAll((links) => links.map((a) => a.getAttribute("href")));
+    expect(hrefs).toEqual([
+      "/work/clausecheck",
+      "/work/chargebacklens",
+      "/work/streakforge",
+      "/work/deliveriq",
+    ]);
+  });
+
+  test("no learning project appears on Home", async ({ page }) => {
+    await page.goto("/");
+    const text = await page.locator("main").innerText();
+    for (const name of ["HealthOps", "ParkEase", "CraftBridge"]) {
+      expect(text, `${name} must not appear on Home`).not.toContain(name);
+    }
+  });
+});
+
+test.describe("header mark on Home", () => {
+  test("appears once the hero heading has scrolled away", async ({ page }) => {
+    await page.goto("/");
+    const mark = page.locator('header a[href="/"]');
+    await expect(mark).toHaveAttribute("aria-hidden", "true");
+    await page.evaluate(() => window.scrollTo({ top: 1200, behavior: "instant" }));
+    await expect(mark).toHaveAttribute("aria-hidden", "false");
   });
 });

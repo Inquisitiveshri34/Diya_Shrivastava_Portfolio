@@ -32,9 +32,6 @@ export function Footer(): ReactElement {
           <a href={CONTACT.linkedin.href} className={LINK}>
             {CONTACT.linkedin.label}
           </a>
-          <a href={CONTACT.leetcode.href} className={LINK}>
-            {CONTACT.leetcode.label}
-          </a>
         </div>
 
         <nav aria-label="Footer" className="flex flex-col gap-2 text-[15.5px]">

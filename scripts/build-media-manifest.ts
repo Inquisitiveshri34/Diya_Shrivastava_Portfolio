@@ -162,8 +162,15 @@ function main() {
 
   // Documents: certificates by cert slug; project documents by project slug.
   const certificates: Record<string, string> = {};
+  // Certificate thumbnails: <slug>.png beside <slug>.pdf (first page, cropped for the Home card).
+  const thumbnails: Record<string, string> = {};
   const projectDocs: Record<string, { src: string; title: string }[]> = {};
   for (const rel of mediaFiles.filter((f) => f.startsWith("documents/"))) {
+    const isThumb = rel.startsWith("documents/certificates/") && rel.toLowerCase().endsWith(".png");
+    if (isThumb) {
+      thumbnails[path.posix.basename(rel, ".png")] = `/media/${rel}`;
+      continue;
+    }
     if (!rel.toLowerCase().endsWith(".pdf")) continue;
     const parts = rel.split("/");
     if (parts[1] === "certificates" && parts.length === 3) {
@@ -216,7 +223,7 @@ function main() {
       resume: { latest: `/media/${RESUME_LATEST}`, archive },
       images,
       videos,
-      documents: { certificates, projects: projectDocs },
+      documents: { certificates, thumbnails, projects: projectDocs },
       thresholds,
     };
     fs.writeFileSync(

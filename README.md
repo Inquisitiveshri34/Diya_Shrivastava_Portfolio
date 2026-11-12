@@ -88,7 +88,7 @@ Put the video at `public/media/videos/<project-slug>/demo.mp4`. An optional `dem
 
 ### Add the ChargebackLens thresholds
 
-Export the thresholds JSON from the ChargebackLens repository to `public/media/data/chargebacklens-thresholds.json`. The build validates it when present. Note: the threshold explorer was removed from PR 5 and is not on the site yet, so this file is loaded but not shown.
+Export the thresholds JSON from the ChargebackLens repository to `public/media/data/chargebacklens-thresholds.json`. The build validates it when present. The threshold explorer on the ChargeBack case study reads this file. Without it, the section shows "Interactive explorer coming soon".
 
 ### Turn on Writing
 

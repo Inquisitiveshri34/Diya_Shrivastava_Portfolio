@@ -16,8 +16,3 @@ Each PNG goes in the folder shown, under the exact file name. Its caption and al
 - Files moved out of the repo, not deleted: `~/Desktop/Portfolio-media-held/` (unused or mismatched charts, the landing-page screenshot, the ChargebackLens data and the StreakForge interactive HTML).
 
 Already on the site: `clausecheck/fig-checked-answer.png`, `streakforge/fig-funnel.png`, and the five DeliverIQ figures above (still to re-export).
-
-## Data
-
-- [ ] `public/media/data/chargebacklens-thresholds.json`, exported from the ChargebackLens repository (`docs/build-spec.md` §8.1). The threshold explorer is not on the site yet.
-- [ ] Certificate PDFs under `public/media/documents/certificates/<slug>.pdf` (for example `pl-200.pdf`). The About table shows only Verify links until they are added.

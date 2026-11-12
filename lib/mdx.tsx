@@ -3,7 +3,6 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { Callout } from "@/components/ui/Callout";
 import { MetricBlock } from "@/components/ui/MetricBlock";
 import { Decision } from "@/components/work/Decision";
-import { ThresholdExplorer } from "@/components/interactive/ThresholdExplorer";
 import { Figure } from "@/components/work/Figure";
 
 // Compiles case-study bodies with the component map below. A body is split at its "## " headings,
@@ -62,7 +61,6 @@ export function caseStudyComponents(slug: string): Record<string, ComponentType<
     Decision,
     Callout,
     MetricBlock,
-    ThresholdExplorer,
   };
 }
 

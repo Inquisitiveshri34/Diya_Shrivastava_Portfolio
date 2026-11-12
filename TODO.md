@@ -27,7 +27,7 @@ The full list of names the page uses:
 
 ## Data still to add
 
-- [ ] `public/media/data/chargebacklens-thresholds.json`, exported from the ChargebackLens repo (`docs/build-spec.md` §8.1). **Status (PR 5):** not present; the explorer shows "Interactive explorer coming soon". Percentages and `base_rate` are percents, and `chosen` carries its full outputs.
+- [ ] `public/media/data/chargebacklens-thresholds.json`, exported from the ChargebackLens repo (`docs/build-spec.md` §8.1). **Status (PR 5):** not present. The threshold explorer was removed from PR 5 and is not on the site yet.
 - [ ] Certificate PDFs under `public/media/documents/certificates/<slug>.pdf` (for example `pl-200.pdf`). **Status (PR 5):** none present; the About table shows only Verify links until they are added.
 
 ## Content to confirm

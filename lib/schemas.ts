@@ -241,17 +241,7 @@ export const Thresholds = z.object({
       })
       .refine((g) => g.stepUp < g.review, { message: "stepUp must be lower than review" }),
   ),
-  // The chosen policy, with its full outputs. Percentages are percents (93.2 means 93.2%);
-  // base_rate is a percent too (0.90 means 0.90%). netSavingsINR is in rupees.
-  chosen: z.object({
-    stepUp: z.number().nonnegative(),
-    review: z.number().nonnegative(),
-    pctAllowed: z.number(),
-    pctStepUp: z.number(),
-    pctReview: z.number(),
-    recall: z.number(),
-    netSavingsINR: z.number(),
-  }),
+  chosen: z.object({ stepUp: z.number().nonnegative(), review: z.number().nonnegative() }),
 });
 export type Thresholds = z.infer<typeof Thresholds>;
 

@@ -266,6 +266,7 @@ export type MediaManifest = {
   videos: Record<string, { src: string; poster?: string; externalUrl?: string }>;
   documents: {
     certificates: Record<string, string>;
+    thumbnails: Record<string, string>;
     projects: Record<string, { src: string; title: string }[]>;
   };
   thresholds: Thresholds | null;

@@ -1,8 +1,9 @@
+import Image from "next/image";
 import type { ReactElement } from "react";
 import { HomeContainer, HomeSection } from "@/components/home/HomeLayout";
 import { Reveal } from "@/components/ui/Reveal";
 import { certifications } from "@/content/data/certifications";
-import { certificatePdf } from "@/lib/media";
+import { certificatePdf, certificateThumbnail } from "@/lib/media";
 import type { Certification } from "@/lib/schemas";
 
 // The code (PL-200, AI-900, ...) is the slug when it has that shape, uppercased.
@@ -15,11 +16,13 @@ const titleOf = (c: Certification) => c.name.replace(/\s*\([A-Z]{2}-\d+\)$/, "")
 /**
  * One certificate. Microsoft cards stack the preview over the text in a two-column grid on phones.
  * The other cards are rows on phones (thumbnail left, text right) and stack from the laptop breakpoint.
- * The preview is a placeholder frame with the PDF's file name, as in the design.
+ * The preview is the certificate's first page when its thumbnail exists, otherwise a placeholder
+ * frame with the PDF's file name, as in the design.
  */
 function CertCard({ cert, major }: { cert: Certification; major: boolean }): ReactElement {
   const code = codeOf(cert);
   const pdf = certificatePdf(cert.slug);
+  const thumbnail = certificateThumbnail(cert.slug);
   return (
     <article
       className={`rounded-card border-border bg-surface min-w-0 overflow-hidden border ${
@@ -34,11 +37,23 @@ function CertCard({ cert, major }: { cert: Certification; major: boolean }): Rea
             : "w-[120px] shrink-0 self-stretch border-r p-2.5 lg:aspect-[297/210] lg:w-auto lg:self-auto lg:border-r-0 lg:border-b lg:p-3.5"
         }`}
       >
-        <div className="border-border bg-surface flex h-full flex-col items-center justify-center gap-1 rounded-[3px] border px-1">
-          <span className="text-ink font-mono text-[12px] font-medium">{cert.slug}.pdf</span>
-          <span className="text-ink-muted hidden text-[11.5px] lg:inline">
-            landscape certificate
-          </span>
+        <div className="border-border bg-surface relative flex h-full flex-col items-center justify-center gap-1 overflow-hidden rounded-[3px] border px-1">
+          {thumbnail ? (
+            <Image
+              src={thumbnail}
+              alt=""
+              fill
+              sizes="(min-width: 1024px) 280px, 45vw"
+              className="object-contain p-1"
+            />
+          ) : (
+            <>
+              <span className="text-ink font-mono text-[12px] font-medium">{cert.slug}.pdf</span>
+              <span className="text-ink-muted hidden text-[11.5px] lg:inline">
+                landscape certificate
+              </span>
+            </>
+          )}
         </div>
       </div>
       <div

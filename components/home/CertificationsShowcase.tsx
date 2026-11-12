@@ -1,8 +1,6 @@
 import type { ReactElement } from "react";
-import { Container } from "@/components/layout/Container";
-import { Section } from "@/components/layout/Section";
+import { HomeContainer, HomeSection } from "@/components/home/HomeLayout";
 import { Reveal } from "@/components/ui/Reveal";
-import { TextLink } from "@/components/ui/TextLink";
 import { certifications } from "@/content/data/certifications";
 import { certificatePdf } from "@/lib/media";
 import type { Certification } from "@/lib/schemas";
@@ -14,24 +12,57 @@ const codeOf = (c: Certification) =>
 // "Power Platform Fundamentals (PL-900)" shows as "Power Platform Fundamentals"; the code sits on the meta line.
 const titleOf = (c: Certification) => c.name.replace(/\s*\([A-Z]{2}-\d+\)$/, "");
 
-function CertCard({ cert, large }: { cert: Certification; large: boolean }): ReactElement {
+/**
+ * One certificate. Microsoft cards stack the preview over the text in a two-column grid on phones.
+ * The other cards are rows on phones (thumbnail left, text right) and stack from the laptop breakpoint.
+ * The preview is a placeholder frame with the PDF's file name, as in the design.
+ */
+function CertCard({ cert, major }: { cert: Certification; major: boolean }): ReactElement {
   const code = codeOf(cert);
   const pdf = certificatePdf(cert.slug);
-  const meta = [cert.issuer, code, cert.date].filter(Boolean).join(" · ");
   return (
-    <article className="rounded-card border-border bg-surface flex min-w-0 flex-col overflow-hidden border">
-      <div aria-hidden="true" className="border-border bg-band aspect-[297/210] border-b p-3">
-        <div className="border-border bg-surface flex h-full items-center justify-center rounded-[3px] border">
-          {code ? <span className="text-ink font-mono text-[12px]">{code}</span> : null}
+    <article
+      className={`rounded-card border-border bg-surface min-w-0 overflow-hidden border ${
+        major ? "flex flex-col" : "flex flex-row lg:flex-col"
+      }`}
+    >
+      <div
+        aria-hidden="true"
+        className={`border-border bg-band ${
+          major
+            ? "aspect-[297/210] border-b p-3"
+            : "w-[120px] shrink-0 self-stretch border-r p-2.5 lg:aspect-[297/210] lg:w-auto lg:self-auto lg:border-r-0 lg:border-b lg:p-3.5"
+        }`}
+      >
+        <div className="border-border bg-surface flex h-full flex-col items-center justify-center gap-1 rounded-[3px] border px-1">
+          <span className="text-ink font-mono text-[12px] font-medium">{cert.slug}.pdf</span>
+          <span className="text-ink-muted hidden text-[11.5px] lg:inline">
+            landscape certificate
+          </span>
         </div>
       </div>
-      <div className={`flex flex-1 flex-col gap-2 ${large ? "p-6" : "p-5"}`}>
+      <div
+        className={`flex min-w-0 flex-1 flex-col gap-1.5 ${
+          major
+            ? "p-4 lg:px-[22px] lg:pt-5 lg:pb-[22px]"
+            : "px-3.5 py-3.5 lg:px-5 lg:pt-[18px] lg:pb-5"
+        }`}
+      >
         <h3
-          className={`m-0 font-serif leading-[1.3] font-semibold ${large ? "text-[20px]" : "text-[17px]"}`}
+          className={`m-0 font-serif leading-[1.3] font-semibold ${major ? "text-[17px] lg:text-[20px]" : "text-[17px]"}`}
         >
           {titleOf(cert)}
         </h3>
-        <p className="text-ink-muted m-0 text-[13.5px]">{meta}</p>
+        <p className="text-ink-muted m-0 text-[13px] lg:text-[13.5px]">
+          {major ? "Microsoft · " : `${cert.issuer} · `}
+          {major && code ? (
+            <>
+              <span className="text-ink font-mono font-medium">{code}</span>
+              {" · "}
+            </>
+          ) : null}
+          <span className="text-ink font-mono font-medium">{cert.date}</span>
+        </p>
         <p className="m-0 mt-auto flex flex-wrap gap-x-4 gap-y-1 pt-2 text-[14px] font-semibold">
           {pdf ? (
             <a href={pdf} target="_blank" rel="noopener noreferrer">
@@ -48,41 +79,39 @@ function CertCard({ cert, large }: { cert: Certification; large: boolean }): Rea
 }
 
 /**
- * Certifications, as cards: four Microsoft ones, then the rest. Headings follow the design.
+ * Certifications: four Microsoft cards, then the rest. Headings and the intro follow the design.
  * "View certificate" appears only when the PDF is in the media manifest.
  */
 export function CertificationsShowcase(): ReactElement {
   const major = certifications.filter((c) => c.issuer === "Microsoft");
   const more = certifications.filter((c) => c.issuer !== "Microsoft");
   return (
-    <Section band id="certifications">
-      <Container width="wide">
+    <HomeSection band id="certifications">
+      <HomeContainer>
         <Reveal>
-          <h2 className="m-0 font-serif text-[32px] leading-[1.25] font-semibold tracking-[-0.01em]">
+          <h2 className="m-0 font-serif text-[26px] leading-[1.25] font-semibold tracking-[-0.01em] [text-wrap:wrap] lg:text-[32px]">
             Major certifications
           </h2>
-          <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <p className="text-ink-muted m-0 mt-2.5 max-w-[680px] text-[17px]">
+            Microsoft certifications earned alongside my degree in 2026. Each one links to
+            Microsoft&apos;s own verification page.
+          </p>
+          <div className="mt-7 grid grid-cols-2 gap-4 lg:grid-cols-4">
             {major.map((c) => (
-              <CertCard key={c.slug} cert={c} large />
+              <CertCard key={c.slug} cert={c} major />
             ))}
           </div>
 
-          <h2 className="m-0 mt-16 font-serif text-[26px] leading-[1.25] font-semibold">
+          <h2 className="m-0 mt-16 font-serif text-[26px] leading-[1.25] font-semibold [text-wrap:wrap]">
             More certifications
           </h2>
-          <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-5 grid gap-4 lg:grid-cols-3">
             {more.map((c) => (
-              <CertCard key={c.slug} cert={c} large={false} />
+              <CertCard key={c.slug} cert={c} major={false} />
             ))}
           </div>
-
-          <p className="m-0 mt-10">
-            <TextLink href="/about#certifications" className="text-[15.5px] font-semibold">
-              See all certifications →
-            </TextLink>
-          </p>
         </Reveal>
-      </Container>
-    </Section>
+      </HomeContainer>
+    </HomeSection>
   );
 }

@@ -94,7 +94,7 @@ function LiftRow({
           style={{ width }}
         />
       </span>
-      <span className="text-ink w-16 font-mono text-[11.5px]">{label}</span>
+      <span className="text-ink w-16 font-mono text-[11.5px] font-medium">{label}</span>
     </div>
   );
 }

@@ -43,13 +43,14 @@ export function Hero(): ReactElement {
           <RisingLine />
           <h1
             id={HERO_HEADING_ID}
-            className="m-0 font-serif text-[31px] leading-[1.18] font-semibold tracking-[-0.015em] lg:text-[60px] lg:leading-[1.1]"
+            className="m-0 font-serif text-[31px] leading-[1.18] font-semibold tracking-[-0.025em] lg:text-[60px] lg:leading-[1.1]"
           >
-            <span className="block">I&apos;m Diya.</span>
+            <span className="block">I&apos;m Diya Shrivastava.</span>
             <span className="block text-[26px] lg:text-[60px]">I build machine-learning</span>
             <span className="block text-[26px] lg:text-[60px]">
+              systems{" "}
               <span className="[box-shadow:inset_0_-0.42em_0_var(--accent-tint)]">
-                systems people can rely on.
+                people can rely on.
               </span>
             </span>
           </h1>

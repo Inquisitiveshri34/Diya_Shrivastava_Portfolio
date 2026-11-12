@@ -68,7 +68,7 @@ DeliverIQ (5). Re-export with the clean titles in `docs/content.md` §11.5 first
 Measured against `docs/Diya-Portfolio-Design/html` at 1280px and 390px. Laptop sections are within about 12px of the design. Phone sections are taller by roughly 20–130px in total, mostly the certifications and the cards.
 
 - [ ] Card heights differ by 15–27px on laptops, because the descriptions and context lines are the `content.md` text and the design's wording is different.
-- [ ] The phone headline keeps "I'm Diya." from `content.md`, where the design has "I'm Diya Shrivastava."
+- [ ] The headline is "I'm Diya Shrivastava." as the design has it, on request. `docs/content.md` §2.1 says "I'm Diya.". Update the content doc to match, or change the site back.
 - [ ] Design text kept as written: certification intro, "landscape certificate", "Applied ML & GenAI Developer". Confirm these are wanted in the content doc.
 - [ ] "View certificate" is hidden until the PDF exists, as agreed in PR 3. The design always shows it.
 - [ ] The header (PR 1) shows a "Menu" button on phones; the design shows an icon. The header and footer are shared with every page, so they were not changed here.

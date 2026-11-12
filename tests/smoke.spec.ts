@@ -82,7 +82,7 @@ test.describe("navigation", () => {
 test.describe("home page content", () => {
   test("the hero is visible with the headline and the availability badge", async ({ page }) => {
     await page.goto("/");
-    await expect(page.getByRole("heading", { level: 1 })).toHaveText(/I'm Diya\./);
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText(/I'm Diya Shrivastava\./);
     await expect(page.getByRole("heading", { level: 1 })).toContainText("people can rely on.");
     await expect(
       page.getByText("Open to AI/ML and Data Science internships — available now."),

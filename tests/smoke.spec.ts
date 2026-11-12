@@ -316,6 +316,35 @@ test.describe("about page", () => {
   });
 });
 
+test.describe("education on About", () => {
+  test("every relevant course and studying course appears once, in its group", async ({ page }) => {
+    await page.goto("/about");
+    const expected = [
+      "Data Structures & Algorithms",
+      "Operating Systems",
+      "Database Management Systems",
+      "Discrete Mathematics",
+      "Object-Oriented Programming",
+      "Problem Solving Using Programming",
+      "Front-End Web Development",
+      "Back-End Web Development",
+      "Full-Stack Development",
+      "Design for Developers",
+      "Design & Analysis of Algorithms",
+      "DevOps Fundamentals",
+    ];
+    const cards = page.locator("main ul li");
+    const texts = await cards.allInnerTexts();
+    for (const course of expected) {
+      expect(
+        texts.filter((t) => t === course),
+        course,
+      ).toHaveLength(1);
+    }
+    await expect(page.getByRole("heading", { name: "Currently studying" })).toBeVisible();
+  });
+});
+
 test.describe("résumé page", () => {
   test("shows the latest PDF with a download button", async ({ page }) => {
     await page.goto("/resume");

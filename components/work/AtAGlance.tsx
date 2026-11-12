@@ -67,7 +67,9 @@ export function AtAGlance({
     return () => observer.disconnect();
   }, [leftCount]);
 
-  const noteTop = geometry ? Math.max(0, geometry.middle - 12) : 0;
+  // On laptops the note is centred on the merge point: its top is the point's height, and it moves
+  // up by half its own height (lg:-translate-y-1/2).
+  const noteTop = geometry ? geometry.middle : 0;
 
   return (
     <section id="glance" className="mt-22 scroll-mt-24">
@@ -92,7 +94,7 @@ export function AtAGlance({
             <Connectors geometry={geometry} count={left.length} />
           ) : null}
           <div
-            className="flex flex-col gap-3 py-6 text-[16px] leading-[1.5] lg:absolute lg:inset-x-0 lg:pr-6 lg:pl-[150px]"
+            className="flex flex-col gap-3 py-6 text-[16px] leading-[1.5] lg:absolute lg:inset-x-0 lg:-translate-y-1/2 lg:pr-6 lg:pl-[150px]"
             style={{ top: noteTop }}
           >
             {note ? <p className="m-0 font-serif text-[18px] italic">{note}</p> : null}

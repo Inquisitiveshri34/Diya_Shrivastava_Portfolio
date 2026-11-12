@@ -1,9 +1,10 @@
 {
   "meta": {
+    "source": "ChargeBackLens repository: https://github.com/Inquisitiveshri34/ChargeBackLens-Transaction-Dispute-Risk-Decision-Engine",
     "n_transactions": 45246,
     "base_rate": 0.008995,
     "currency": "INR",
-    "cost_assumptions": "\u20b91,500 fee per dispute, \u20b9300 per manual review, 18% merchant margin, 25% verification abandon rate"
+    "cost_assumptions": "₹1,500 fee per dispute, ₹300 per manual review, 18% merchant margin, 25% verification abandon rate"
   },
   "grid": [
     {

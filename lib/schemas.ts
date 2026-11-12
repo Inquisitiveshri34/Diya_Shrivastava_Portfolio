@@ -17,6 +17,8 @@ export const DotsViz = z
     kind: z.literal("dots"),
     filled: z.number().int().nonnegative(),
     total: z.number().int().positive(),
+    /** "muted" draws the filled dots in sage, as the design does for the 30 correct answers. */
+    tone: z.enum(["accent", "muted"]).default("accent"),
   })
   .refine((v) => v.filled <= v.total, { message: "filled cannot exceed total" });
 
@@ -42,6 +44,15 @@ export const ScaleViz = z.object({
 
 export const Viz = z.discriminatedUnion("kind", [DotsViz, LiftViz, BarViz, ScaleViz]);
 
+/** A bar split into a base part (sage) and what was added since (plum), e.g. 262 of 375 tests. */
+export const SplitViz = z
+  .object({
+    kind: z.literal("split"),
+    base: z.number().int().nonnegative(),
+    total: z.number().int().positive(),
+  })
+  .refine((v) => v.base <= v.total, { message: "base cannot exceed total" });
+
 export const Metric = z.object({
   value: text,
   label: text.optional(),
@@ -53,7 +64,7 @@ export const Metric = z.object({
 export const GlanceRow = z.object({
   number: text,
   meaning: text,
-  viz: Viz.optional(),
+  viz: z.union([Viz, SplitViz]).optional(),
 });
 export type GlanceRow = z.infer<typeof GlanceRow>;
 

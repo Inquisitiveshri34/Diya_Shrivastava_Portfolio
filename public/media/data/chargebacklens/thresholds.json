@@ -1,0 +1,7039 @@
+{
+  "meta": {
+    "n_transactions": 45246,
+    "base_rate": 0.008995,
+    "currency": "INR",
+    "cost_assumptions": "\u20b91,500 fee per dispute, \u20b9300 per manual review, 18% merchant margin, 25% verification abandon rate"
+  },
+  "grid": [
+    {
+      "stepUp": 0.005,
+      "review": 0.01,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.215643,
+      "pctReview": 0.209764,
+      "recall": 0.855037,
+      "netSavingsINR": -1329407.91
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.015,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.294369,
+      "pctReview": 0.131039,
+      "recall": 0.855037,
+      "netSavingsINR": -1066535.19
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.02,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.336295,
+      "pctReview": 0.089113,
+      "recall": 0.855037,
+      "netSavingsINR": -953079.32
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.025,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.35928,
+      "pctReview": 0.066127,
+      "recall": 0.855037,
+      "netSavingsINR": -866028.34
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.03,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.37442,
+      "pctReview": 0.050988,
+      "recall": 0.855037,
+      "netSavingsINR": -793199.63
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.035,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.38536,
+      "pctReview": 0.040048,
+      "recall": 0.855037,
+      "netSavingsINR": -749015.04
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.04,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.393096,
+      "pctReview": 0.032312,
+      "recall": 0.855037,
+      "netSavingsINR": -720851.63
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.045,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.399704,
+      "pctReview": 0.025704,
+      "recall": 0.855037,
+      "netSavingsINR": -700120.25
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.05,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.40492,
+      "pctReview": 0.020488,
+      "recall": 0.855037,
+      "netSavingsINR": -690456.42
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.055,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.408589,
+      "pctReview": 0.016819,
+      "recall": 0.855037,
+      "netSavingsINR": -675235.07
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.06,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.411351,
+      "pctReview": 0.014056,
+      "recall": 0.855037,
+      "netSavingsINR": -671914.72
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.065,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.413694,
+      "pctReview": 0.011714,
+      "recall": 0.855037,
+      "netSavingsINR": -667923.81
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.07,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.415506,
+      "pctReview": 0.009901,
+      "recall": 0.855037,
+      "netSavingsINR": -664697.82
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.075,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.417076,
+      "pctReview": 0.008332,
+      "recall": 0.855037,
+      "netSavingsINR": -662924.67
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.08,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.417915,
+      "pctReview": 0.007492,
+      "recall": 0.855037,
+      "netSavingsINR": -658128.23
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.085,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.419197,
+      "pctReview": 0.00621,
+      "recall": 0.855037,
+      "netSavingsINR": -658177.14
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.09,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.420148,
+      "pctReview": 0.00526,
+      "recall": 0.855037,
+      "netSavingsINR": -661062.56
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.095,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.421076,
+      "pctReview": 0.004332,
+      "recall": 0.855037,
+      "netSavingsINR": -659939.66
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.1,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.421761,
+      "pctReview": 0.003647,
+      "recall": 0.855037,
+      "netSavingsINR": -659092.72
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.105,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.422291,
+      "pctReview": 0.003116,
+      "recall": 0.855037,
+      "netSavingsINR": -658555.35
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.11,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.422778,
+      "pctReview": 0.00263,
+      "recall": 0.855037,
+      "netSavingsINR": -660294.49
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.115,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.423198,
+      "pctReview": 0.00221,
+      "recall": 0.855037,
+      "netSavingsINR": -661035.01
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.12,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.423507,
+      "pctReview": 0.001901,
+      "recall": 0.855037,
+      "netSavingsINR": -662694.17
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.125,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.42375,
+      "pctReview": 0.001658,
+      "recall": 0.855037,
+      "netSavingsINR": -663397.99
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.13,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.424037,
+      "pctReview": 0.00137,
+      "recall": 0.855037,
+      "netSavingsINR": -666620.02
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.135,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.424281,
+      "pctReview": 0.001127,
+      "recall": 0.855037,
+      "netSavingsINR": -666664.41
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.14,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.424435,
+      "pctReview": 0.000972,
+      "recall": 0.855037,
+      "netSavingsINR": -666656.81
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.145,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.42448,
+      "pctReview": 0.000928,
+      "recall": 0.855037,
+      "netSavingsINR": -666624.34
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.15,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.424678,
+      "pctReview": 0.000729,
+      "recall": 0.855037,
+      "netSavingsINR": -673685.86
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.155,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.424723,
+      "pctReview": 0.000685,
+      "recall": 0.855037,
+      "netSavingsINR": -674025.25
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.16,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.424767,
+      "pctReview": 0.000641,
+      "recall": 0.855037,
+      "netSavingsINR": -676957.77
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.165,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.424855,
+      "pctReview": 0.000553,
+      "recall": 0.855037,
+      "netSavingsINR": -677070.63
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.17,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.424988,
+      "pctReview": 0.00042,
+      "recall": 0.855037,
+      "netSavingsINR": -679777.21
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.175,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.425054,
+      "pctReview": 0.000354,
+      "recall": 0.855037,
+      "netSavingsINR": -680600.33
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.18,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.425143,
+      "pctReview": 0.000265,
+      "recall": 0.855037,
+      "netSavingsINR": -684106.25
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.185,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.425143,
+      "pctReview": 0.000265,
+      "recall": 0.855037,
+      "netSavingsINR": -684106.25
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.19,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.425209,
+      "pctReview": 0.000199,
+      "recall": 0.855037,
+      "netSavingsINR": -687787.73
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.195,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.425209,
+      "pctReview": 0.000199,
+      "recall": 0.855037,
+      "netSavingsINR": -687787.73
+    },
+    {
+      "stepUp": 0.005,
+      "review": 0.2,
+      "pctAllowed": 0.574592,
+      "pctStepUp": 0.425253,
+      "pctReview": 0.000155,
+      "recall": 0.855037,
+      "netSavingsINR": -688223.51
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.015,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.078725,
+      "pctReview": 0.131039,
+      "recall": 0.734644,
+      "netSavingsINR": -27764.62
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.02,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.120652,
+      "pctReview": 0.089113,
+      "recall": 0.734644,
+      "netSavingsINR": 85691.24
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.025,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.143637,
+      "pctReview": 0.066127,
+      "recall": 0.734644,
+      "netSavingsINR": 172742.23
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.03,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.158776,
+      "pctReview": 0.050988,
+      "recall": 0.734644,
+      "netSavingsINR": 245570.93
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.035,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.169717,
+      "pctReview": 0.040048,
+      "recall": 0.734644,
+      "netSavingsINR": 289755.53
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.04,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.177452,
+      "pctReview": 0.032312,
+      "recall": 0.734644,
+      "netSavingsINR": 317918.94
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.045,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.18406,
+      "pctReview": 0.025704,
+      "recall": 0.734644,
+      "netSavingsINR": 338650.31
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.05,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.189276,
+      "pctReview": 0.020488,
+      "recall": 0.734644,
+      "netSavingsINR": 348314.15
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.055,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.192945,
+      "pctReview": 0.016819,
+      "recall": 0.734644,
+      "netSavingsINR": 363535.49
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.06,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.195708,
+      "pctReview": 0.014056,
+      "recall": 0.734644,
+      "netSavingsINR": 366855.84
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.065,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.198051,
+      "pctReview": 0.011714,
+      "recall": 0.734644,
+      "netSavingsINR": 370846.76
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.07,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.199863,
+      "pctReview": 0.009901,
+      "recall": 0.734644,
+      "netSavingsINR": 374072.74
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.075,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.201432,
+      "pctReview": 0.008332,
+      "recall": 0.734644,
+      "netSavingsINR": 375845.9
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.08,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.202272,
+      "pctReview": 0.007492,
+      "recall": 0.734644,
+      "netSavingsINR": 380642.33
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.085,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.203554,
+      "pctReview": 0.00621,
+      "recall": 0.734644,
+      "netSavingsINR": 380593.42
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.09,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.204504,
+      "pctReview": 0.00526,
+      "recall": 0.734644,
+      "netSavingsINR": 377708.0
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.095,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.205433,
+      "pctReview": 0.004332,
+      "recall": 0.734644,
+      "netSavingsINR": 378830.91
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.1,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.206118,
+      "pctReview": 0.003647,
+      "recall": 0.734644,
+      "netSavingsINR": 379677.84
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.105,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.206648,
+      "pctReview": 0.003116,
+      "recall": 0.734644,
+      "netSavingsINR": 380215.22
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.11,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.207134,
+      "pctReview": 0.00263,
+      "recall": 0.734644,
+      "netSavingsINR": 378476.07
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.115,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.207554,
+      "pctReview": 0.00221,
+      "recall": 0.734644,
+      "netSavingsINR": 377735.56
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.12,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.207864,
+      "pctReview": 0.001901,
+      "recall": 0.734644,
+      "netSavingsINR": 376076.4
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.125,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.208107,
+      "pctReview": 0.001658,
+      "recall": 0.734644,
+      "netSavingsINR": 375372.57
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.13,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.208394,
+      "pctReview": 0.00137,
+      "recall": 0.734644,
+      "netSavingsINR": 372150.55
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.135,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.208637,
+      "pctReview": 0.001127,
+      "recall": 0.734644,
+      "netSavingsINR": 372106.16
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.14,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.208792,
+      "pctReview": 0.000972,
+      "recall": 0.734644,
+      "netSavingsINR": 372113.75
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.145,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.208836,
+      "pctReview": 0.000928,
+      "recall": 0.734644,
+      "netSavingsINR": 372146.23
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.15,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.209035,
+      "pctReview": 0.000729,
+      "recall": 0.734644,
+      "netSavingsINR": 365084.7
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.155,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.209079,
+      "pctReview": 0.000685,
+      "recall": 0.734644,
+      "netSavingsINR": 364745.32
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.16,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.209123,
+      "pctReview": 0.000641,
+      "recall": 0.734644,
+      "netSavingsINR": 361812.79
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.165,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.209212,
+      "pctReview": 0.000553,
+      "recall": 0.734644,
+      "netSavingsINR": 361699.93
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.17,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.209344,
+      "pctReview": 0.00042,
+      "recall": 0.734644,
+      "netSavingsINR": 358993.35
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.175,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.209411,
+      "pctReview": 0.000354,
+      "recall": 0.734644,
+      "netSavingsINR": 358170.23
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.18,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.209499,
+      "pctReview": 0.000265,
+      "recall": 0.734644,
+      "netSavingsINR": 354664.32
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.185,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.209499,
+      "pctReview": 0.000265,
+      "recall": 0.734644,
+      "netSavingsINR": 354664.32
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.19,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.209565,
+      "pctReview": 0.000199,
+      "recall": 0.734644,
+      "netSavingsINR": 350982.83
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.195,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.209565,
+      "pctReview": 0.000199,
+      "recall": 0.734644,
+      "netSavingsINR": 350982.83
+    },
+    {
+      "stepUp": 0.01,
+      "review": 0.2,
+      "pctAllowed": 0.790236,
+      "pctStepUp": 0.20961,
+      "pctReview": 0.000155,
+      "recall": 0.734644,
+      "netSavingsINR": 350547.05
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.02,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.041926,
+      "pctReview": 0.089113,
+      "recall": 0.624079,
+      "netSavingsINR": 659727.78
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.025,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.064912,
+      "pctReview": 0.066127,
+      "recall": 0.624079,
+      "netSavingsINR": 746778.77
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.03,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.080051,
+      "pctReview": 0.050988,
+      "recall": 0.624079,
+      "netSavingsINR": 819607.47
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.035,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.090991,
+      "pctReview": 0.040048,
+      "recall": 0.624079,
+      "netSavingsINR": 863792.07
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.04,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.098727,
+      "pctReview": 0.032312,
+      "recall": 0.624079,
+      "netSavingsINR": 891955.48
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.045,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.105335,
+      "pctReview": 0.025704,
+      "recall": 0.624079,
+      "netSavingsINR": 912686.85
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.05,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.110551,
+      "pctReview": 0.020488,
+      "recall": 0.624079,
+      "netSavingsINR": 922350.69
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.055,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.11422,
+      "pctReview": 0.016819,
+      "recall": 0.624079,
+      "netSavingsINR": 937572.04
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.06,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.116983,
+      "pctReview": 0.014056,
+      "recall": 0.624079,
+      "netSavingsINR": 940892.39
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.065,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.119325,
+      "pctReview": 0.011714,
+      "recall": 0.624079,
+      "netSavingsINR": 944883.3
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.07,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.121138,
+      "pctReview": 0.009901,
+      "recall": 0.624079,
+      "netSavingsINR": 948109.29
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.075,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.122707,
+      "pctReview": 0.008332,
+      "recall": 0.624079,
+      "netSavingsINR": 949882.44
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.08,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.123547,
+      "pctReview": 0.007492,
+      "recall": 0.624079,
+      "netSavingsINR": 954678.88
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.085,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.124829,
+      "pctReview": 0.00621,
+      "recall": 0.624079,
+      "netSavingsINR": 954629.97
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.09,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.125779,
+      "pctReview": 0.00526,
+      "recall": 0.624079,
+      "netSavingsINR": 951744.55
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.095,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.126707,
+      "pctReview": 0.004332,
+      "recall": 0.624079,
+      "netSavingsINR": 952867.45
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.1,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.127392,
+      "pctReview": 0.003647,
+      "recall": 0.624079,
+      "netSavingsINR": 953714.38
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.105,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.127923,
+      "pctReview": 0.003116,
+      "recall": 0.624079,
+      "netSavingsINR": 954251.76
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.11,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.128409,
+      "pctReview": 0.00263,
+      "recall": 0.624079,
+      "netSavingsINR": 952512.62
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.115,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.128829,
+      "pctReview": 0.00221,
+      "recall": 0.624079,
+      "netSavingsINR": 951772.1
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.12,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.129138,
+      "pctReview": 0.001901,
+      "recall": 0.624079,
+      "netSavingsINR": 950112.94
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.125,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.129382,
+      "pctReview": 0.001658,
+      "recall": 0.624079,
+      "netSavingsINR": 949409.12
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.13,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.129669,
+      "pctReview": 0.00137,
+      "recall": 0.624079,
+      "netSavingsINR": 946187.09
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.135,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.129912,
+      "pctReview": 0.001127,
+      "recall": 0.624079,
+      "netSavingsINR": 946142.7
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.14,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.130067,
+      "pctReview": 0.000972,
+      "recall": 0.624079,
+      "netSavingsINR": 946150.3
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.145,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.130111,
+      "pctReview": 0.000928,
+      "recall": 0.624079,
+      "netSavingsINR": 946182.77
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.15,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.13031,
+      "pctReview": 0.000729,
+      "recall": 0.624079,
+      "netSavingsINR": 939121.24
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.155,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.130354,
+      "pctReview": 0.000685,
+      "recall": 0.624079,
+      "netSavingsINR": 938781.86
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.16,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.130398,
+      "pctReview": 0.000641,
+      "recall": 0.624079,
+      "netSavingsINR": 935849.33
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.165,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.130487,
+      "pctReview": 0.000553,
+      "recall": 0.624079,
+      "netSavingsINR": 935736.48
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.17,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.130619,
+      "pctReview": 0.00042,
+      "recall": 0.624079,
+      "netSavingsINR": 933029.9
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.175,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.130686,
+      "pctReview": 0.000354,
+      "recall": 0.624079,
+      "netSavingsINR": 932206.78
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.18,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.130774,
+      "pctReview": 0.000265,
+      "recall": 0.624079,
+      "netSavingsINR": 928700.86
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.185,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.130774,
+      "pctReview": 0.000265,
+      "recall": 0.624079,
+      "netSavingsINR": 928700.86
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.19,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.13084,
+      "pctReview": 0.000199,
+      "recall": 0.624079,
+      "netSavingsINR": 925019.38
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.195,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.13084,
+      "pctReview": 0.000199,
+      "recall": 0.624079,
+      "netSavingsINR": 925019.38
+    },
+    {
+      "stepUp": 0.015,
+      "review": 0.2,
+      "pctAllowed": 0.868961,
+      "pctStepUp": 0.130884,
+      "pctReview": 0.000155,
+      "recall": 0.624079,
+      "netSavingsINR": 924583.59
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.025,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.022985,
+      "pctReview": 0.066127,
+      "recall": 0.538084,
+      "netSavingsINR": 837739.33
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.03,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.038125,
+      "pctReview": 0.050988,
+      "recall": 0.538084,
+      "netSavingsINR": 910568.03
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.035,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.049065,
+      "pctReview": 0.040048,
+      "recall": 0.538084,
+      "netSavingsINR": 954752.63
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.04,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.056801,
+      "pctReview": 0.032312,
+      "recall": 0.538084,
+      "netSavingsINR": 982916.04
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.045,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.063409,
+      "pctReview": 0.025704,
+      "recall": 0.538084,
+      "netSavingsINR": 1003647.41
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.05,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.068625,
+      "pctReview": 0.020488,
+      "recall": 0.538084,
+      "netSavingsINR": 1013311.25
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.055,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.072294,
+      "pctReview": 0.016819,
+      "recall": 0.538084,
+      "netSavingsINR": 1028532.59
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.06,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.075056,
+      "pctReview": 0.014056,
+      "recall": 0.538084,
+      "netSavingsINR": 1031852.94
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.065,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.077399,
+      "pctReview": 0.011714,
+      "recall": 0.538084,
+      "netSavingsINR": 1035843.86
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.07,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.079211,
+      "pctReview": 0.009901,
+      "recall": 0.538084,
+      "netSavingsINR": 1039069.84
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.075,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.080781,
+      "pctReview": 0.008332,
+      "recall": 0.538084,
+      "netSavingsINR": 1040843.0
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.08,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.08162,
+      "pctReview": 0.007492,
+      "recall": 0.538084,
+      "netSavingsINR": 1045639.43
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.085,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.082902,
+      "pctReview": 0.00621,
+      "recall": 0.538084,
+      "netSavingsINR": 1045590.52
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.09,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.083853,
+      "pctReview": 0.00526,
+      "recall": 0.538084,
+      "netSavingsINR": 1042705.1
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.095,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.084781,
+      "pctReview": 0.004332,
+      "recall": 0.538084,
+      "netSavingsINR": 1043828.01
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.1,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.085466,
+      "pctReview": 0.003647,
+      "recall": 0.538084,
+      "netSavingsINR": 1044674.94
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.105,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.085997,
+      "pctReview": 0.003116,
+      "recall": 0.538084,
+      "netSavingsINR": 1045212.32
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.11,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.086483,
+      "pctReview": 0.00263,
+      "recall": 0.538084,
+      "netSavingsINR": 1043473.17
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.115,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.086903,
+      "pctReview": 0.00221,
+      "recall": 0.538084,
+      "netSavingsINR": 1042732.66
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.12,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.087212,
+      "pctReview": 0.001901,
+      "recall": 0.538084,
+      "netSavingsINR": 1041073.5
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.125,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.087455,
+      "pctReview": 0.001658,
+      "recall": 0.538084,
+      "netSavingsINR": 1040369.67
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.13,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.087743,
+      "pctReview": 0.00137,
+      "recall": 0.538084,
+      "netSavingsINR": 1037147.65
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.135,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.087986,
+      "pctReview": 0.001127,
+      "recall": 0.538084,
+      "netSavingsINR": 1037103.26
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.14,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.08814,
+      "pctReview": 0.000972,
+      "recall": 0.538084,
+      "netSavingsINR": 1037110.85
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.145,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.088185,
+      "pctReview": 0.000928,
+      "recall": 0.538084,
+      "netSavingsINR": 1037143.33
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.15,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.088384,
+      "pctReview": 0.000729,
+      "recall": 0.538084,
+      "netSavingsINR": 1030081.8
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.155,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.088428,
+      "pctReview": 0.000685,
+      "recall": 0.538084,
+      "netSavingsINR": 1029742.42
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.16,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.088472,
+      "pctReview": 0.000641,
+      "recall": 0.538084,
+      "netSavingsINR": 1026809.89
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.165,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.08856,
+      "pctReview": 0.000553,
+      "recall": 0.538084,
+      "netSavingsINR": 1026697.03
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.17,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.088693,
+      "pctReview": 0.00042,
+      "recall": 0.538084,
+      "netSavingsINR": 1023990.45
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.175,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.088759,
+      "pctReview": 0.000354,
+      "recall": 0.538084,
+      "netSavingsINR": 1023167.33
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.18,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.088848,
+      "pctReview": 0.000265,
+      "recall": 0.538084,
+      "netSavingsINR": 1019661.42
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.185,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.088848,
+      "pctReview": 0.000265,
+      "recall": 0.538084,
+      "netSavingsINR": 1019661.42
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.19,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.088914,
+      "pctReview": 0.000199,
+      "recall": 0.538084,
+      "netSavingsINR": 1015979.94
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.195,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.088914,
+      "pctReview": 0.000199,
+      "recall": 0.538084,
+      "netSavingsINR": 1015979.94
+    },
+    {
+      "stepUp": 0.02,
+      "review": 0.2,
+      "pctAllowed": 0.910887,
+      "pctStepUp": 0.088958,
+      "pctReview": 0.000155,
+      "recall": 0.538084,
+      "netSavingsINR": 1015544.15
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.03,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.015139,
+      "pctReview": 0.050988,
+      "recall": 0.4914,
+      "netSavingsINR": 1039732.65
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.035,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.02608,
+      "pctReview": 0.040048,
+      "recall": 0.4914,
+      "netSavingsINR": 1083917.25
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.04,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.033815,
+      "pctReview": 0.032312,
+      "recall": 0.4914,
+      "netSavingsINR": 1112080.66
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.045,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.040423,
+      "pctReview": 0.025704,
+      "recall": 0.4914,
+      "netSavingsINR": 1132812.03
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.05,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.045639,
+      "pctReview": 0.020488,
+      "recall": 0.4914,
+      "netSavingsINR": 1142475.87
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.055,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.049308,
+      "pctReview": 0.016819,
+      "recall": 0.4914,
+      "netSavingsINR": 1157697.21
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.06,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.052071,
+      "pctReview": 0.014056,
+      "recall": 0.4914,
+      "netSavingsINR": 1161017.56
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.065,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.054414,
+      "pctReview": 0.011714,
+      "recall": 0.4914,
+      "netSavingsINR": 1165008.48
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.07,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.056226,
+      "pctReview": 0.009901,
+      "recall": 0.4914,
+      "netSavingsINR": 1168234.46
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.075,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.057795,
+      "pctReview": 0.008332,
+      "recall": 0.4914,
+      "netSavingsINR": 1170007.62
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.08,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.058635,
+      "pctReview": 0.007492,
+      "recall": 0.4914,
+      "netSavingsINR": 1174804.06
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.085,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.059917,
+      "pctReview": 0.00621,
+      "recall": 0.4914,
+      "netSavingsINR": 1174755.15
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.09,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.060867,
+      "pctReview": 0.00526,
+      "recall": 0.4914,
+      "netSavingsINR": 1171869.72
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.095,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.061796,
+      "pctReview": 0.004332,
+      "recall": 0.4914,
+      "netSavingsINR": 1172992.63
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.1,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.062481,
+      "pctReview": 0.003647,
+      "recall": 0.4914,
+      "netSavingsINR": 1173839.56
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.105,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.063011,
+      "pctReview": 0.003116,
+      "recall": 0.4914,
+      "netSavingsINR": 1174376.94
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.11,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.063497,
+      "pctReview": 0.00263,
+      "recall": 0.4914,
+      "netSavingsINR": 1172637.8
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.115,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.063917,
+      "pctReview": 0.00221,
+      "recall": 0.4914,
+      "netSavingsINR": 1171897.28
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.12,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.064227,
+      "pctReview": 0.001901,
+      "recall": 0.4914,
+      "netSavingsINR": 1170238.12
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.125,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.06447,
+      "pctReview": 0.001658,
+      "recall": 0.4914,
+      "netSavingsINR": 1169534.3
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.13,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.064757,
+      "pctReview": 0.00137,
+      "recall": 0.4914,
+      "netSavingsINR": 1166312.27
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.135,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.065,
+      "pctReview": 0.001127,
+      "recall": 0.4914,
+      "netSavingsINR": 1166267.88
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.14,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.065155,
+      "pctReview": 0.000972,
+      "recall": 0.4914,
+      "netSavingsINR": 1166275.48
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.145,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.065199,
+      "pctReview": 0.000928,
+      "recall": 0.4914,
+      "netSavingsINR": 1166307.95
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.15,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.065398,
+      "pctReview": 0.000729,
+      "recall": 0.4914,
+      "netSavingsINR": 1159246.42
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.155,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.065442,
+      "pctReview": 0.000685,
+      "recall": 0.4914,
+      "netSavingsINR": 1158907.04
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.16,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.065486,
+      "pctReview": 0.000641,
+      "recall": 0.4914,
+      "netSavingsINR": 1155974.51
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.165,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.065575,
+      "pctReview": 0.000553,
+      "recall": 0.4914,
+      "netSavingsINR": 1155861.66
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.17,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.065707,
+      "pctReview": 0.00042,
+      "recall": 0.4914,
+      "netSavingsINR": 1153155.08
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.175,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.065774,
+      "pctReview": 0.000354,
+      "recall": 0.4914,
+      "netSavingsINR": 1152331.96
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.18,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.065862,
+      "pctReview": 0.000265,
+      "recall": 0.4914,
+      "netSavingsINR": 1148826.04
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.185,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.065862,
+      "pctReview": 0.000265,
+      "recall": 0.4914,
+      "netSavingsINR": 1148826.04
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.19,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.065928,
+      "pctReview": 0.000199,
+      "recall": 0.4914,
+      "netSavingsINR": 1145144.56
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.195,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.065928,
+      "pctReview": 0.000199,
+      "recall": 0.4914,
+      "netSavingsINR": 1145144.56
+    },
+    {
+      "stepUp": 0.025,
+      "review": 0.2,
+      "pctAllowed": 0.933873,
+      "pctStepUp": 0.065973,
+      "pctReview": 0.000155,
+      "recall": 0.4914,
+      "netSavingsINR": 1144708.77
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.035,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.01094,
+      "pctReview": 0.040048,
+      "recall": 0.437346,
+      "netSavingsINR": 1008943.05
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.04,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.018676,
+      "pctReview": 0.032312,
+      "recall": 0.437346,
+      "netSavingsINR": 1037106.46
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.045,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.025284,
+      "pctReview": 0.025704,
+      "recall": 0.437346,
+      "netSavingsINR": 1057837.83
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.05,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.0305,
+      "pctReview": 0.020488,
+      "recall": 0.437346,
+      "netSavingsINR": 1067501.67
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.055,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.034169,
+      "pctReview": 0.016819,
+      "recall": 0.437346,
+      "netSavingsINR": 1082723.01
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.06,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.036931,
+      "pctReview": 0.014056,
+      "recall": 0.437346,
+      "netSavingsINR": 1086043.36
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.065,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.039274,
+      "pctReview": 0.011714,
+      "recall": 0.437346,
+      "netSavingsINR": 1090034.28
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.07,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.041087,
+      "pctReview": 0.009901,
+      "recall": 0.437346,
+      "netSavingsINR": 1093260.26
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.075,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.042656,
+      "pctReview": 0.008332,
+      "recall": 0.437346,
+      "netSavingsINR": 1095033.42
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.08,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.043496,
+      "pctReview": 0.007492,
+      "recall": 0.437346,
+      "netSavingsINR": 1099829.85
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.085,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.044777,
+      "pctReview": 0.00621,
+      "recall": 0.437346,
+      "netSavingsINR": 1099780.94
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.09,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.045728,
+      "pctReview": 0.00526,
+      "recall": 0.437346,
+      "netSavingsINR": 1096895.52
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.095,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.046656,
+      "pctReview": 0.004332,
+      "recall": 0.437346,
+      "netSavingsINR": 1098018.43
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.1,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.047341,
+      "pctReview": 0.003647,
+      "recall": 0.437346,
+      "netSavingsINR": 1098865.36
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.105,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.047872,
+      "pctReview": 0.003116,
+      "recall": 0.437346,
+      "netSavingsINR": 1099402.74
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.11,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.048358,
+      "pctReview": 0.00263,
+      "recall": 0.437346,
+      "netSavingsINR": 1097663.59
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.115,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.048778,
+      "pctReview": 0.00221,
+      "recall": 0.437346,
+      "netSavingsINR": 1096923.08
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.12,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.049087,
+      "pctReview": 0.001901,
+      "recall": 0.437346,
+      "netSavingsINR": 1095263.92
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.125,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.04933,
+      "pctReview": 0.001658,
+      "recall": 0.437346,
+      "netSavingsINR": 1094560.09
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.13,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.049618,
+      "pctReview": 0.00137,
+      "recall": 0.437346,
+      "netSavingsINR": 1091338.07
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.135,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.049861,
+      "pctReview": 0.001127,
+      "recall": 0.437346,
+      "netSavingsINR": 1091293.68
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.14,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.050015,
+      "pctReview": 0.000972,
+      "recall": 0.437346,
+      "netSavingsINR": 1091301.27
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.145,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.05006,
+      "pctReview": 0.000928,
+      "recall": 0.437346,
+      "netSavingsINR": 1091333.75
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.15,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.050259,
+      "pctReview": 0.000729,
+      "recall": 0.437346,
+      "netSavingsINR": 1084272.22
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.155,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.050303,
+      "pctReview": 0.000685,
+      "recall": 0.437346,
+      "netSavingsINR": 1083932.84
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.16,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.050347,
+      "pctReview": 0.000641,
+      "recall": 0.437346,
+      "netSavingsINR": 1081000.31
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.165,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.050435,
+      "pctReview": 0.000553,
+      "recall": 0.437346,
+      "netSavingsINR": 1080887.45
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.17,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.050568,
+      "pctReview": 0.00042,
+      "recall": 0.437346,
+      "netSavingsINR": 1078180.87
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.175,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.050634,
+      "pctReview": 0.000354,
+      "recall": 0.437346,
+      "netSavingsINR": 1077357.75
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.18,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.050723,
+      "pctReview": 0.000265,
+      "recall": 0.437346,
+      "netSavingsINR": 1073851.84
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.185,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.050723,
+      "pctReview": 0.000265,
+      "recall": 0.437346,
+      "netSavingsINR": 1073851.84
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.19,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.050789,
+      "pctReview": 0.000199,
+      "recall": 0.437346,
+      "netSavingsINR": 1070170.36
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.195,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.050789,
+      "pctReview": 0.000199,
+      "recall": 0.437346,
+      "netSavingsINR": 1070170.36
+    },
+    {
+      "stepUp": 0.03,
+      "review": 0.2,
+      "pctAllowed": 0.949012,
+      "pctStepUp": 0.050833,
+      "pctReview": 0.000155,
+      "recall": 0.437346,
+      "netSavingsINR": 1069734.57
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.04,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.007735,
+      "pctReview": 0.032312,
+      "recall": 0.400491,
+      "netSavingsINR": 1074805.57
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.045,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.014344,
+      "pctReview": 0.025704,
+      "recall": 0.400491,
+      "netSavingsINR": 1095536.94
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.05,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.01956,
+      "pctReview": 0.020488,
+      "recall": 0.400491,
+      "netSavingsINR": 1105200.78
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.055,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.023229,
+      "pctReview": 0.016819,
+      "recall": 0.400491,
+      "netSavingsINR": 1120422.13
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.06,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.025991,
+      "pctReview": 0.014056,
+      "recall": 0.400491,
+      "netSavingsINR": 1123742.48
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.065,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.028334,
+      "pctReview": 0.011714,
+      "recall": 0.400491,
+      "netSavingsINR": 1127733.39
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.07,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.030146,
+      "pctReview": 0.009901,
+      "recall": 0.400491,
+      "netSavingsINR": 1130959.38
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.075,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.031716,
+      "pctReview": 0.008332,
+      "recall": 0.400491,
+      "netSavingsINR": 1132732.53
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.08,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.032555,
+      "pctReview": 0.007492,
+      "recall": 0.400491,
+      "netSavingsINR": 1137528.97
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.085,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.033837,
+      "pctReview": 0.00621,
+      "recall": 0.400491,
+      "netSavingsINR": 1137480.06
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.09,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.034788,
+      "pctReview": 0.00526,
+      "recall": 0.400491,
+      "netSavingsINR": 1134594.64
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.095,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.035716,
+      "pctReview": 0.004332,
+      "recall": 0.400491,
+      "netSavingsINR": 1135717.54
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.1,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.036401,
+      "pctReview": 0.003647,
+      "recall": 0.400491,
+      "netSavingsINR": 1136564.47
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.105,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.036931,
+      "pctReview": 0.003116,
+      "recall": 0.400491,
+      "netSavingsINR": 1137101.85
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.11,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.037418,
+      "pctReview": 0.00263,
+      "recall": 0.400491,
+      "netSavingsINR": 1135362.71
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.115,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.037838,
+      "pctReview": 0.00221,
+      "recall": 0.400491,
+      "netSavingsINR": 1134622.19
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.12,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.038147,
+      "pctReview": 0.001901,
+      "recall": 0.400491,
+      "netSavingsINR": 1132963.03
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.125,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.03839,
+      "pctReview": 0.001658,
+      "recall": 0.400491,
+      "netSavingsINR": 1132259.21
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.13,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.038677,
+      "pctReview": 0.00137,
+      "recall": 0.400491,
+      "netSavingsINR": 1129037.18
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.135,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.038921,
+      "pctReview": 0.001127,
+      "recall": 0.400491,
+      "netSavingsINR": 1128992.79
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.14,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.039075,
+      "pctReview": 0.000972,
+      "recall": 0.400491,
+      "netSavingsINR": 1129000.39
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.145,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.039119,
+      "pctReview": 0.000928,
+      "recall": 0.400491,
+      "netSavingsINR": 1129032.86
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.15,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.039318,
+      "pctReview": 0.000729,
+      "recall": 0.400491,
+      "netSavingsINR": 1121971.33
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.155,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.039363,
+      "pctReview": 0.000685,
+      "recall": 0.400491,
+      "netSavingsINR": 1121631.95
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.16,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.039407,
+      "pctReview": 0.000641,
+      "recall": 0.400491,
+      "netSavingsINR": 1118699.42
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.165,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.039495,
+      "pctReview": 0.000553,
+      "recall": 0.400491,
+      "netSavingsINR": 1118586.57
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.17,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.039628,
+      "pctReview": 0.00042,
+      "recall": 0.400491,
+      "netSavingsINR": 1115879.99
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.175,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.039694,
+      "pctReview": 0.000354,
+      "recall": 0.400491,
+      "netSavingsINR": 1115056.87
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.18,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.039783,
+      "pctReview": 0.000265,
+      "recall": 0.400491,
+      "netSavingsINR": 1111550.95
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.185,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.039783,
+      "pctReview": 0.000265,
+      "recall": 0.400491,
+      "netSavingsINR": 1111550.95
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.19,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.039849,
+      "pctReview": 0.000199,
+      "recall": 0.400491,
+      "netSavingsINR": 1107869.47
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.195,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.039849,
+      "pctReview": 0.000199,
+      "recall": 0.400491,
+      "netSavingsINR": 1107869.47
+    },
+    {
+      "stepUp": 0.035,
+      "review": 0.2,
+      "pctAllowed": 0.959952,
+      "pctStepUp": 0.039893,
+      "pctReview": 0.000155,
+      "recall": 0.400491,
+      "netSavingsINR": 1107433.69
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.045,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.006608,
+      "pctReview": 0.025704,
+      "recall": 0.363636,
+      "netSavingsINR": 1075612.44
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.05,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.011824,
+      "pctReview": 0.020488,
+      "recall": 0.363636,
+      "netSavingsINR": 1085276.28
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.055,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.015493,
+      "pctReview": 0.016819,
+      "recall": 0.363636,
+      "netSavingsINR": 1100497.62
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.06,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.018256,
+      "pctReview": 0.014056,
+      "recall": 0.363636,
+      "netSavingsINR": 1103817.97
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.065,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.020599,
+      "pctReview": 0.011714,
+      "recall": 0.363636,
+      "netSavingsINR": 1107808.89
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.07,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.022411,
+      "pctReview": 0.009901,
+      "recall": 0.363636,
+      "netSavingsINR": 1111034.87
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.075,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.02398,
+      "pctReview": 0.008332,
+      "recall": 0.363636,
+      "netSavingsINR": 1112808.03
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.08,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.02482,
+      "pctReview": 0.007492,
+      "recall": 0.363636,
+      "netSavingsINR": 1117604.47
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.085,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.026102,
+      "pctReview": 0.00621,
+      "recall": 0.363636,
+      "netSavingsINR": 1117555.56
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.09,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.027052,
+      "pctReview": 0.00526,
+      "recall": 0.363636,
+      "netSavingsINR": 1114670.13
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.095,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.02798,
+      "pctReview": 0.004332,
+      "recall": 0.363636,
+      "netSavingsINR": 1115793.04
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.1,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.028666,
+      "pctReview": 0.003647,
+      "recall": 0.363636,
+      "netSavingsINR": 1116639.97
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.105,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.029196,
+      "pctReview": 0.003116,
+      "recall": 0.363636,
+      "netSavingsINR": 1117177.35
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.11,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.029682,
+      "pctReview": 0.00263,
+      "recall": 0.363636,
+      "netSavingsINR": 1115438.21
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.115,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.030102,
+      "pctReview": 0.00221,
+      "recall": 0.363636,
+      "netSavingsINR": 1114697.69
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.12,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.030412,
+      "pctReview": 0.001901,
+      "recall": 0.363636,
+      "netSavingsINR": 1113038.53
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.125,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.030655,
+      "pctReview": 0.001658,
+      "recall": 0.363636,
+      "netSavingsINR": 1112334.71
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.13,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.030942,
+      "pctReview": 0.00137,
+      "recall": 0.363636,
+      "netSavingsINR": 1109112.68
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.135,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.031185,
+      "pctReview": 0.001127,
+      "recall": 0.363636,
+      "netSavingsINR": 1109068.29
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.14,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.03134,
+      "pctReview": 0.000972,
+      "recall": 0.363636,
+      "netSavingsINR": 1109075.89
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.145,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.031384,
+      "pctReview": 0.000928,
+      "recall": 0.363636,
+      "netSavingsINR": 1109108.36
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.15,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.031583,
+      "pctReview": 0.000729,
+      "recall": 0.363636,
+      "netSavingsINR": 1102046.83
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.155,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.031627,
+      "pctReview": 0.000685,
+      "recall": 0.363636,
+      "netSavingsINR": 1101707.45
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.16,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.031671,
+      "pctReview": 0.000641,
+      "recall": 0.363636,
+      "netSavingsINR": 1098774.92
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.165,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.03176,
+      "pctReview": 0.000553,
+      "recall": 0.363636,
+      "netSavingsINR": 1098662.07
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.17,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.031892,
+      "pctReview": 0.00042,
+      "recall": 0.363636,
+      "netSavingsINR": 1095955.49
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.175,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.031959,
+      "pctReview": 0.000354,
+      "recall": 0.363636,
+      "netSavingsINR": 1095132.37
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.18,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.032047,
+      "pctReview": 0.000265,
+      "recall": 0.363636,
+      "netSavingsINR": 1091626.45
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.185,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.032047,
+      "pctReview": 0.000265,
+      "recall": 0.363636,
+      "netSavingsINR": 1091626.45
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.19,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.032113,
+      "pctReview": 0.000199,
+      "recall": 0.363636,
+      "netSavingsINR": 1087944.97
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.195,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.032113,
+      "pctReview": 0.000199,
+      "recall": 0.363636,
+      "netSavingsINR": 1087944.97
+    },
+    {
+      "stepUp": 0.04,
+      "review": 0.2,
+      "pctAllowed": 0.967688,
+      "pctStepUp": 0.032158,
+      "pctReview": 0.000155,
+      "recall": 0.363636,
+      "netSavingsINR": 1087509.18
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.05,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.005216,
+      "pctReview": 0.020488,
+      "recall": 0.31941,
+      "netSavingsINR": 1058127.29
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.055,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.008885,
+      "pctReview": 0.016819,
+      "recall": 0.31941,
+      "netSavingsINR": 1073348.63
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.06,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.011647,
+      "pctReview": 0.014056,
+      "recall": 0.31941,
+      "netSavingsINR": 1076668.98
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.065,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.01399,
+      "pctReview": 0.011714,
+      "recall": 0.31941,
+      "netSavingsINR": 1080659.9
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.07,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.015803,
+      "pctReview": 0.009901,
+      "recall": 0.31941,
+      "netSavingsINR": 1083885.88
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.075,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.017372,
+      "pctReview": 0.008332,
+      "recall": 0.31941,
+      "netSavingsINR": 1085659.04
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.08,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.018212,
+      "pctReview": 0.007492,
+      "recall": 0.31941,
+      "netSavingsINR": 1090455.48
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.085,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.019493,
+      "pctReview": 0.00621,
+      "recall": 0.31941,
+      "netSavingsINR": 1090406.57
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.09,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.020444,
+      "pctReview": 0.00526,
+      "recall": 0.31941,
+      "netSavingsINR": 1087521.14
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.095,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.021372,
+      "pctReview": 0.004332,
+      "recall": 0.31941,
+      "netSavingsINR": 1088644.05
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.1,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.022057,
+      "pctReview": 0.003647,
+      "recall": 0.31941,
+      "netSavingsINR": 1089490.98
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.105,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.022588,
+      "pctReview": 0.003116,
+      "recall": 0.31941,
+      "netSavingsINR": 1090028.36
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.11,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.023074,
+      "pctReview": 0.00263,
+      "recall": 0.31941,
+      "netSavingsINR": 1088289.22
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.115,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.023494,
+      "pctReview": 0.00221,
+      "recall": 0.31941,
+      "netSavingsINR": 1087548.7
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.12,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.023803,
+      "pctReview": 0.001901,
+      "recall": 0.31941,
+      "netSavingsINR": 1085889.54
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.125,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.024046,
+      "pctReview": 0.001658,
+      "recall": 0.31941,
+      "netSavingsINR": 1085185.72
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.13,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.024334,
+      "pctReview": 0.00137,
+      "recall": 0.31941,
+      "netSavingsINR": 1081963.69
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.135,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.024577,
+      "pctReview": 0.001127,
+      "recall": 0.31941,
+      "netSavingsINR": 1081919.3
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.14,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.024731,
+      "pctReview": 0.000972,
+      "recall": 0.31941,
+      "netSavingsINR": 1081926.89
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.145,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.024776,
+      "pctReview": 0.000928,
+      "recall": 0.31941,
+      "netSavingsINR": 1081959.37
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.15,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.024975,
+      "pctReview": 0.000729,
+      "recall": 0.31941,
+      "netSavingsINR": 1074897.84
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.155,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.025019,
+      "pctReview": 0.000685,
+      "recall": 0.31941,
+      "netSavingsINR": 1074558.46
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.16,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.025063,
+      "pctReview": 0.000641,
+      "recall": 0.31941,
+      "netSavingsINR": 1071625.93
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.165,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.025151,
+      "pctReview": 0.000553,
+      "recall": 0.31941,
+      "netSavingsINR": 1071513.08
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.17,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.025284,
+      "pctReview": 0.00042,
+      "recall": 0.31941,
+      "netSavingsINR": 1068806.49
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.175,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.02535,
+      "pctReview": 0.000354,
+      "recall": 0.31941,
+      "netSavingsINR": 1067983.37
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.18,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.025439,
+      "pctReview": 0.000265,
+      "recall": 0.31941,
+      "netSavingsINR": 1064477.46
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.185,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.025439,
+      "pctReview": 0.000265,
+      "recall": 0.31941,
+      "netSavingsINR": 1064477.46
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.19,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.025505,
+      "pctReview": 0.000199,
+      "recall": 0.31941,
+      "netSavingsINR": 1060795.98
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.195,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.025505,
+      "pctReview": 0.000199,
+      "recall": 0.31941,
+      "netSavingsINR": 1060795.98
+    },
+    {
+      "stepUp": 0.045,
+      "review": 0.2,
+      "pctAllowed": 0.974296,
+      "pctStepUp": 0.025549,
+      "pctReview": 0.000155,
+      "recall": 0.31941,
+      "netSavingsINR": 1060360.19
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.055,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.003669,
+      "pctReview": 0.016819,
+      "recall": 0.275184,
+      "netSavingsINR": 939992.65
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.06,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.006432,
+      "pctReview": 0.014056,
+      "recall": 0.275184,
+      "netSavingsINR": 943313.0
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.065,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.008774,
+      "pctReview": 0.011714,
+      "recall": 0.275184,
+      "netSavingsINR": 947303.92
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.07,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.010587,
+      "pctReview": 0.009901,
+      "recall": 0.275184,
+      "netSavingsINR": 950529.91
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.075,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.012156,
+      "pctReview": 0.008332,
+      "recall": 0.275184,
+      "netSavingsINR": 952303.06
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.08,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.012996,
+      "pctReview": 0.007492,
+      "recall": 0.275184,
+      "netSavingsINR": 957099.5
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.085,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.014278,
+      "pctReview": 0.00621,
+      "recall": 0.275184,
+      "netSavingsINR": 957050.59
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.09,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.015228,
+      "pctReview": 0.00526,
+      "recall": 0.275184,
+      "netSavingsINR": 954165.16
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.095,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.016156,
+      "pctReview": 0.004332,
+      "recall": 0.275184,
+      "netSavingsINR": 955288.07
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.1,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.016841,
+      "pctReview": 0.003647,
+      "recall": 0.275184,
+      "netSavingsINR": 956135.0
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.105,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.017372,
+      "pctReview": 0.003116,
+      "recall": 0.275184,
+      "netSavingsINR": 956672.38
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.11,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.017858,
+      "pctReview": 0.00263,
+      "recall": 0.275184,
+      "netSavingsINR": 954933.24
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.115,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.018278,
+      "pctReview": 0.00221,
+      "recall": 0.275184,
+      "netSavingsINR": 954192.72
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.12,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.018587,
+      "pctReview": 0.001901,
+      "recall": 0.275184,
+      "netSavingsINR": 952533.56
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.125,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.01883,
+      "pctReview": 0.001658,
+      "recall": 0.275184,
+      "netSavingsINR": 951829.74
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.13,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.019118,
+      "pctReview": 0.00137,
+      "recall": 0.275184,
+      "netSavingsINR": 948607.71
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.135,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.019361,
+      "pctReview": 0.001127,
+      "recall": 0.275184,
+      "netSavingsINR": 948563.32
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.14,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.019516,
+      "pctReview": 0.000972,
+      "recall": 0.275184,
+      "netSavingsINR": 948570.92
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.145,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.01956,
+      "pctReview": 0.000928,
+      "recall": 0.275184,
+      "netSavingsINR": 948603.39
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.15,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.019759,
+      "pctReview": 0.000729,
+      "recall": 0.275184,
+      "netSavingsINR": 941541.86
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.155,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.019803,
+      "pctReview": 0.000685,
+      "recall": 0.275184,
+      "netSavingsINR": 941202.48
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.16,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.019847,
+      "pctReview": 0.000641,
+      "recall": 0.275184,
+      "netSavingsINR": 938269.95
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.165,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.019935,
+      "pctReview": 0.000553,
+      "recall": 0.275184,
+      "netSavingsINR": 938157.1
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.17,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.020068,
+      "pctReview": 0.00042,
+      "recall": 0.275184,
+      "netSavingsINR": 935450.52
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.175,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.020134,
+      "pctReview": 0.000354,
+      "recall": 0.275184,
+      "netSavingsINR": 934627.4
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.18,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.020223,
+      "pctReview": 0.000265,
+      "recall": 0.275184,
+      "netSavingsINR": 931121.48
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.185,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.020223,
+      "pctReview": 0.000265,
+      "recall": 0.275184,
+      "netSavingsINR": 931121.48
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.19,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.020289,
+      "pctReview": 0.000199,
+      "recall": 0.275184,
+      "netSavingsINR": 927440.0
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.195,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.020289,
+      "pctReview": 0.000199,
+      "recall": 0.275184,
+      "netSavingsINR": 927440.0
+    },
+    {
+      "stepUp": 0.05,
+      "review": 0.2,
+      "pctAllowed": 0.979512,
+      "pctStepUp": 0.020333,
+      "pctReview": 0.000155,
+      "recall": 0.275184,
+      "netSavingsINR": 927004.21
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.06,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.002763,
+      "pctReview": 0.014056,
+      "recall": 0.235872,
+      "netSavingsINR": 829698.67
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.065,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.005105,
+      "pctReview": 0.011714,
+      "recall": 0.235872,
+      "netSavingsINR": 833689.59
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.07,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.006918,
+      "pctReview": 0.009901,
+      "recall": 0.235872,
+      "netSavingsINR": 836915.57
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.075,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.008487,
+      "pctReview": 0.008332,
+      "recall": 0.235872,
+      "netSavingsINR": 838688.73
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.08,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.009327,
+      "pctReview": 0.007492,
+      "recall": 0.235872,
+      "netSavingsINR": 843485.16
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.085,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.010609,
+      "pctReview": 0.00621,
+      "recall": 0.235872,
+      "netSavingsINR": 843436.25
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.09,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.011559,
+      "pctReview": 0.00526,
+      "recall": 0.235872,
+      "netSavingsINR": 840550.83
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.095,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.012487,
+      "pctReview": 0.004332,
+      "recall": 0.235872,
+      "netSavingsINR": 841673.73
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.1,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.013172,
+      "pctReview": 0.003647,
+      "recall": 0.235872,
+      "netSavingsINR": 842520.67
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.105,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.013703,
+      "pctReview": 0.003116,
+      "recall": 0.235872,
+      "netSavingsINR": 843058.05
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.11,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.014189,
+      "pctReview": 0.00263,
+      "recall": 0.235872,
+      "netSavingsINR": 841318.9
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.115,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.014609,
+      "pctReview": 0.00221,
+      "recall": 0.235872,
+      "netSavingsINR": 840578.39
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.12,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.014918,
+      "pctReview": 0.001901,
+      "recall": 0.235872,
+      "netSavingsINR": 838919.23
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.125,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.015162,
+      "pctReview": 0.001658,
+      "recall": 0.235872,
+      "netSavingsINR": 838215.4
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.13,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.015449,
+      "pctReview": 0.00137,
+      "recall": 0.235872,
+      "netSavingsINR": 834993.38
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.135,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.015692,
+      "pctReview": 0.001127,
+      "recall": 0.235872,
+      "netSavingsINR": 834948.99
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.14,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.015847,
+      "pctReview": 0.000972,
+      "recall": 0.235872,
+      "netSavingsINR": 834956.58
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.145,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.015891,
+      "pctReview": 0.000928,
+      "recall": 0.235872,
+      "netSavingsINR": 834989.05
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.15,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.01609,
+      "pctReview": 0.000729,
+      "recall": 0.235872,
+      "netSavingsINR": 827927.53
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.155,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.016134,
+      "pctReview": 0.000685,
+      "recall": 0.235872,
+      "netSavingsINR": 827588.15
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.16,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.016178,
+      "pctReview": 0.000641,
+      "recall": 0.235872,
+      "netSavingsINR": 824655.62
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.165,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.016267,
+      "pctReview": 0.000553,
+      "recall": 0.235872,
+      "netSavingsINR": 824542.76
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.17,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.016399,
+      "pctReview": 0.00042,
+      "recall": 0.235872,
+      "netSavingsINR": 821836.18
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.175,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.016466,
+      "pctReview": 0.000354,
+      "recall": 0.235872,
+      "netSavingsINR": 821013.06
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.18,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.016554,
+      "pctReview": 0.000265,
+      "recall": 0.235872,
+      "netSavingsINR": 817507.14
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.185,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.016554,
+      "pctReview": 0.000265,
+      "recall": 0.235872,
+      "netSavingsINR": 817507.14
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.19,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.01662,
+      "pctReview": 0.000199,
+      "recall": 0.235872,
+      "netSavingsINR": 813825.66
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.195,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.01662,
+      "pctReview": 0.000199,
+      "recall": 0.235872,
+      "netSavingsINR": 813825.66
+    },
+    {
+      "stepUp": 0.055,
+      "review": 0.2,
+      "pctAllowed": 0.983181,
+      "pctStepUp": 0.016664,
+      "pctReview": 0.000155,
+      "recall": 0.235872,
+      "netSavingsINR": 813389.88
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.065,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.002343,
+      "pctReview": 0.011714,
+      "recall": 0.206388,
+      "netSavingsINR": 691773.83
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.07,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.004155,
+      "pctReview": 0.009901,
+      "recall": 0.206388,
+      "netSavingsINR": 694999.82
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.075,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.005724,
+      "pctReview": 0.008332,
+      "recall": 0.206388,
+      "netSavingsINR": 696772.98
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.08,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.006564,
+      "pctReview": 0.007492,
+      "recall": 0.206388,
+      "netSavingsINR": 701569.41
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.085,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.007846,
+      "pctReview": 0.00621,
+      "recall": 0.206388,
+      "netSavingsINR": 701520.5
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.09,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.008796,
+      "pctReview": 0.00526,
+      "recall": 0.206388,
+      "netSavingsINR": 698635.08
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.095,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.009725,
+      "pctReview": 0.004332,
+      "recall": 0.206388,
+      "netSavingsINR": 699757.98
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.1,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.01041,
+      "pctReview": 0.003647,
+      "recall": 0.206388,
+      "netSavingsINR": 700604.92
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.105,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.01094,
+      "pctReview": 0.003116,
+      "recall": 0.206388,
+      "netSavingsINR": 701142.3
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.11,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.011426,
+      "pctReview": 0.00263,
+      "recall": 0.206388,
+      "netSavingsINR": 699403.15
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.115,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.011846,
+      "pctReview": 0.00221,
+      "recall": 0.206388,
+      "netSavingsINR": 698662.63
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.12,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.012156,
+      "pctReview": 0.001901,
+      "recall": 0.206388,
+      "netSavingsINR": 697003.47
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.125,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.012399,
+      "pctReview": 0.001658,
+      "recall": 0.206388,
+      "netSavingsINR": 696299.65
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.13,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.012686,
+      "pctReview": 0.00137,
+      "recall": 0.206388,
+      "netSavingsINR": 693077.63
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.135,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.012929,
+      "pctReview": 0.001127,
+      "recall": 0.206388,
+      "netSavingsINR": 693033.24
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.14,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.013084,
+      "pctReview": 0.000972,
+      "recall": 0.206388,
+      "netSavingsINR": 693040.83
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.145,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.013128,
+      "pctReview": 0.000928,
+      "recall": 0.206388,
+      "netSavingsINR": 693073.3
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.15,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.013327,
+      "pctReview": 0.000729,
+      "recall": 0.206388,
+      "netSavingsINR": 686011.78
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.155,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.013371,
+      "pctReview": 0.000685,
+      "recall": 0.206388,
+      "netSavingsINR": 685672.39
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.16,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.013416,
+      "pctReview": 0.000641,
+      "recall": 0.206388,
+      "netSavingsINR": 682739.87
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.165,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.013504,
+      "pctReview": 0.000553,
+      "recall": 0.206388,
+      "netSavingsINR": 682627.01
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.17,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.013637,
+      "pctReview": 0.00042,
+      "recall": 0.206388,
+      "netSavingsINR": 679920.43
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.175,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.013703,
+      "pctReview": 0.000354,
+      "recall": 0.206388,
+      "netSavingsINR": 679097.31
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.18,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.013791,
+      "pctReview": 0.000265,
+      "recall": 0.206388,
+      "netSavingsINR": 675591.39
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.185,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.013791,
+      "pctReview": 0.000265,
+      "recall": 0.206388,
+      "netSavingsINR": 675591.39
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.19,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.013858,
+      "pctReview": 0.000199,
+      "recall": 0.206388,
+      "netSavingsINR": 671909.91
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.195,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.013858,
+      "pctReview": 0.000199,
+      "recall": 0.206388,
+      "netSavingsINR": 671909.91
+    },
+    {
+      "stepUp": 0.06,
+      "review": 0.2,
+      "pctAllowed": 0.985944,
+      "pctStepUp": 0.013902,
+      "pctReview": 0.000155,
+      "recall": 0.206388,
+      "netSavingsINR": 671474.13
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.07,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.001812,
+      "pctReview": 0.009901,
+      "recall": 0.179361,
+      "netSavingsINR": 639794.06
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.075,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.003382,
+      "pctReview": 0.008332,
+      "recall": 0.179361,
+      "netSavingsINR": 641567.21
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.08,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.004221,
+      "pctReview": 0.007492,
+      "recall": 0.179361,
+      "netSavingsINR": 646363.65
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.085,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.005503,
+      "pctReview": 0.00621,
+      "recall": 0.179361,
+      "netSavingsINR": 646314.74
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.09,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.006454,
+      "pctReview": 0.00526,
+      "recall": 0.179361,
+      "netSavingsINR": 643429.31
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.095,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.007382,
+      "pctReview": 0.004332,
+      "recall": 0.179361,
+      "netSavingsINR": 644552.22
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.1,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.008067,
+      "pctReview": 0.003647,
+      "recall": 0.179361,
+      "netSavingsINR": 645399.15
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.105,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.008597,
+      "pctReview": 0.003116,
+      "recall": 0.179361,
+      "netSavingsINR": 645936.53
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.11,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.009084,
+      "pctReview": 0.00263,
+      "recall": 0.179361,
+      "netSavingsINR": 644197.39
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.115,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.009504,
+      "pctReview": 0.00221,
+      "recall": 0.179361,
+      "netSavingsINR": 643456.87
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.12,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.009813,
+      "pctReview": 0.001901,
+      "recall": 0.179361,
+      "netSavingsINR": 641797.71
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.125,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.010056,
+      "pctReview": 0.001658,
+      "recall": 0.179361,
+      "netSavingsINR": 641093.89
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.13,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.010343,
+      "pctReview": 0.00137,
+      "recall": 0.179361,
+      "netSavingsINR": 637871.86
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.135,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.010587,
+      "pctReview": 0.001127,
+      "recall": 0.179361,
+      "netSavingsINR": 637827.47
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.14,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.010741,
+      "pctReview": 0.000972,
+      "recall": 0.179361,
+      "netSavingsINR": 637835.07
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.145,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.010785,
+      "pctReview": 0.000928,
+      "recall": 0.179361,
+      "netSavingsINR": 637867.54
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.15,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.010984,
+      "pctReview": 0.000729,
+      "recall": 0.179361,
+      "netSavingsINR": 630806.01
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.155,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.011029,
+      "pctReview": 0.000685,
+      "recall": 0.179361,
+      "netSavingsINR": 630466.63
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.16,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.011073,
+      "pctReview": 0.000641,
+      "recall": 0.179361,
+      "netSavingsINR": 627534.1
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.165,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.011161,
+      "pctReview": 0.000553,
+      "recall": 0.179361,
+      "netSavingsINR": 627421.25
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.17,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.011294,
+      "pctReview": 0.00042,
+      "recall": 0.179361,
+      "netSavingsINR": 624714.67
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.175,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.01136,
+      "pctReview": 0.000354,
+      "recall": 0.179361,
+      "netSavingsINR": 623891.55
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.18,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.011449,
+      "pctReview": 0.000265,
+      "recall": 0.179361,
+      "netSavingsINR": 620385.63
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.185,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.011449,
+      "pctReview": 0.000265,
+      "recall": 0.179361,
+      "netSavingsINR": 620385.63
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.19,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.011515,
+      "pctReview": 0.000199,
+      "recall": 0.179361,
+      "netSavingsINR": 616704.15
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.195,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.011515,
+      "pctReview": 0.000199,
+      "recall": 0.179361,
+      "netSavingsINR": 616704.15
+    },
+    {
+      "stepUp": 0.065,
+      "review": 0.2,
+      "pctAllowed": 0.988286,
+      "pctStepUp": 0.011559,
+      "pctReview": 0.000155,
+      "recall": 0.179361,
+      "netSavingsINR": 616268.36
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.075,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.001569,
+      "pctReview": 0.008332,
+      "recall": 0.162162,
+      "netSavingsINR": 599248.63
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.08,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.002409,
+      "pctReview": 0.007492,
+      "recall": 0.162162,
+      "netSavingsINR": 604045.06
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.085,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.003691,
+      "pctReview": 0.00621,
+      "recall": 0.162162,
+      "netSavingsINR": 603996.15
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.09,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.004641,
+      "pctReview": 0.00526,
+      "recall": 0.162162,
+      "netSavingsINR": 601110.73
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.095,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.00557,
+      "pctReview": 0.004332,
+      "recall": 0.162162,
+      "netSavingsINR": 602233.63
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.1,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.006255,
+      "pctReview": 0.003647,
+      "recall": 0.162162,
+      "netSavingsINR": 603080.57
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.105,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.006785,
+      "pctReview": 0.003116,
+      "recall": 0.162162,
+      "netSavingsINR": 603617.94
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.11,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.007271,
+      "pctReview": 0.00263,
+      "recall": 0.162162,
+      "netSavingsINR": 601878.8
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.115,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.007691,
+      "pctReview": 0.00221,
+      "recall": 0.162162,
+      "netSavingsINR": 601138.28
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.12,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.008001,
+      "pctReview": 0.001901,
+      "recall": 0.162162,
+      "netSavingsINR": 599479.12
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.125,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.008244,
+      "pctReview": 0.001658,
+      "recall": 0.162162,
+      "netSavingsINR": 598775.3
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.13,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.008531,
+      "pctReview": 0.00137,
+      "recall": 0.162162,
+      "netSavingsINR": 595553.27
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.135,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.008774,
+      "pctReview": 0.001127,
+      "recall": 0.162162,
+      "netSavingsINR": 595508.88
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.14,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.008929,
+      "pctReview": 0.000972,
+      "recall": 0.162162,
+      "netSavingsINR": 595516.48
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.145,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.008973,
+      "pctReview": 0.000928,
+      "recall": 0.162162,
+      "netSavingsINR": 595548.95
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.15,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.009172,
+      "pctReview": 0.000729,
+      "recall": 0.162162,
+      "netSavingsINR": 588487.43
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.155,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.009216,
+      "pctReview": 0.000685,
+      "recall": 0.162162,
+      "netSavingsINR": 588148.04
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.16,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.00926,
+      "pctReview": 0.000641,
+      "recall": 0.162162,
+      "netSavingsINR": 585215.52
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.165,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.009349,
+      "pctReview": 0.000553,
+      "recall": 0.162162,
+      "netSavingsINR": 585102.66
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.17,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.009482,
+      "pctReview": 0.00042,
+      "recall": 0.162162,
+      "netSavingsINR": 582396.08
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.175,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.009548,
+      "pctReview": 0.000354,
+      "recall": 0.162162,
+      "netSavingsINR": 581572.96
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.18,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.009636,
+      "pctReview": 0.000265,
+      "recall": 0.162162,
+      "netSavingsINR": 578067.04
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.185,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.009636,
+      "pctReview": 0.000265,
+      "recall": 0.162162,
+      "netSavingsINR": 578067.04
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.19,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.009703,
+      "pctReview": 0.000199,
+      "recall": 0.162162,
+      "netSavingsINR": 574385.56
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.195,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.009703,
+      "pctReview": 0.000199,
+      "recall": 0.162162,
+      "netSavingsINR": 574385.56
+    },
+    {
+      "stepUp": 0.07,
+      "review": 0.2,
+      "pctAllowed": 0.990099,
+      "pctStepUp": 0.009747,
+      "pctReview": 0.000155,
+      "recall": 0.162162,
+      "netSavingsINR": 573949.78
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.08,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.00084,
+      "pctReview": 0.007492,
+      "recall": 0.149877,
+      "netSavingsINR": 584612.65
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.085,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.002122,
+      "pctReview": 0.00621,
+      "recall": 0.149877,
+      "netSavingsINR": 584563.74
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.09,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.003072,
+      "pctReview": 0.00526,
+      "recall": 0.149877,
+      "netSavingsINR": 581678.31
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.095,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.004,
+      "pctReview": 0.004332,
+      "recall": 0.149877,
+      "netSavingsINR": 582801.22
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.1,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.004685,
+      "pctReview": 0.003647,
+      "recall": 0.149877,
+      "netSavingsINR": 583648.15
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.105,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.005216,
+      "pctReview": 0.003116,
+      "recall": 0.149877,
+      "netSavingsINR": 584185.53
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.11,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.005702,
+      "pctReview": 0.00263,
+      "recall": 0.149877,
+      "netSavingsINR": 582446.39
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.115,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.006122,
+      "pctReview": 0.00221,
+      "recall": 0.149877,
+      "netSavingsINR": 581705.87
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.12,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.006432,
+      "pctReview": 0.001901,
+      "recall": 0.149877,
+      "netSavingsINR": 580046.71
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.125,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.006675,
+      "pctReview": 0.001658,
+      "recall": 0.149877,
+      "netSavingsINR": 579342.89
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.13,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.006962,
+      "pctReview": 0.00137,
+      "recall": 0.149877,
+      "netSavingsINR": 576120.86
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.135,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.007205,
+      "pctReview": 0.001127,
+      "recall": 0.149877,
+      "netSavingsINR": 576076.47
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.14,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.00736,
+      "pctReview": 0.000972,
+      "recall": 0.149877,
+      "netSavingsINR": 576084.06
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.145,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.007404,
+      "pctReview": 0.000928,
+      "recall": 0.149877,
+      "netSavingsINR": 576116.54
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.15,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.007603,
+      "pctReview": 0.000729,
+      "recall": 0.149877,
+      "netSavingsINR": 569055.01
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.155,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.007647,
+      "pctReview": 0.000685,
+      "recall": 0.149877,
+      "netSavingsINR": 568715.63
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.16,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.007691,
+      "pctReview": 0.000641,
+      "recall": 0.149877,
+      "netSavingsINR": 565783.1
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.165,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.00778,
+      "pctReview": 0.000553,
+      "recall": 0.149877,
+      "netSavingsINR": 565670.25
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.17,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.007912,
+      "pctReview": 0.00042,
+      "recall": 0.149877,
+      "netSavingsINR": 562963.66
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.175,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.007979,
+      "pctReview": 0.000354,
+      "recall": 0.149877,
+      "netSavingsINR": 562140.55
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.18,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.008067,
+      "pctReview": 0.000265,
+      "recall": 0.149877,
+      "netSavingsINR": 558634.63
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.185,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.008067,
+      "pctReview": 0.000265,
+      "recall": 0.149877,
+      "netSavingsINR": 558634.63
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.19,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.008133,
+      "pctReview": 0.000199,
+      "recall": 0.149877,
+      "netSavingsINR": 554953.15
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.195,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.008133,
+      "pctReview": 0.000199,
+      "recall": 0.149877,
+      "netSavingsINR": 554953.15
+    },
+    {
+      "stepUp": 0.075,
+      "review": 0.2,
+      "pctAllowed": 0.991668,
+      "pctStepUp": 0.008178,
+      "pctReview": 0.000155,
+      "recall": 0.149877,
+      "netSavingsINR": 554517.36
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.085,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.001282,
+      "pctReview": 0.00621,
+      "recall": 0.140049,
+      "netSavingsINR": 565604.38
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.09,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.002232,
+      "pctReview": 0.00526,
+      "recall": 0.140049,
+      "netSavingsINR": 562718.96
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.095,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.003161,
+      "pctReview": 0.004332,
+      "recall": 0.140049,
+      "netSavingsINR": 563841.86
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.1,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.003846,
+      "pctReview": 0.003647,
+      "recall": 0.140049,
+      "netSavingsINR": 564688.8
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.105,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.004376,
+      "pctReview": 0.003116,
+      "recall": 0.140049,
+      "netSavingsINR": 565226.17
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.11,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.004862,
+      "pctReview": 0.00263,
+      "recall": 0.140049,
+      "netSavingsINR": 563487.03
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.115,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.005282,
+      "pctReview": 0.00221,
+      "recall": 0.140049,
+      "netSavingsINR": 562746.51
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.12,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.005592,
+      "pctReview": 0.001901,
+      "recall": 0.140049,
+      "netSavingsINR": 561087.35
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.125,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.005835,
+      "pctReview": 0.001658,
+      "recall": 0.140049,
+      "netSavingsINR": 560383.53
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.13,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.006122,
+      "pctReview": 0.00137,
+      "recall": 0.140049,
+      "netSavingsINR": 557161.5
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.135,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.006365,
+      "pctReview": 0.001127,
+      "recall": 0.140049,
+      "netSavingsINR": 557117.11
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.14,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.00652,
+      "pctReview": 0.000972,
+      "recall": 0.140049,
+      "netSavingsINR": 557124.71
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.145,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.006564,
+      "pctReview": 0.000928,
+      "recall": 0.140049,
+      "netSavingsINR": 557157.18
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.15,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.006763,
+      "pctReview": 0.000729,
+      "recall": 0.140049,
+      "netSavingsINR": 550095.65
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.155,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.006807,
+      "pctReview": 0.000685,
+      "recall": 0.140049,
+      "netSavingsINR": 549756.27
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.16,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.006851,
+      "pctReview": 0.000641,
+      "recall": 0.140049,
+      "netSavingsINR": 546823.75
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.165,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.00694,
+      "pctReview": 0.000553,
+      "recall": 0.140049,
+      "netSavingsINR": 546710.89
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.17,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.007072,
+      "pctReview": 0.00042,
+      "recall": 0.140049,
+      "netSavingsINR": 544004.31
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.175,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.007139,
+      "pctReview": 0.000354,
+      "recall": 0.140049,
+      "netSavingsINR": 543181.19
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.18,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.007227,
+      "pctReview": 0.000265,
+      "recall": 0.140049,
+      "netSavingsINR": 539675.27
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.185,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.007227,
+      "pctReview": 0.000265,
+      "recall": 0.140049,
+      "netSavingsINR": 539675.27
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.19,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.007293,
+      "pctReview": 0.000199,
+      "recall": 0.140049,
+      "netSavingsINR": 535993.79
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.195,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.007293,
+      "pctReview": 0.000199,
+      "recall": 0.140049,
+      "netSavingsINR": 535993.79
+    },
+    {
+      "stepUp": 0.08,
+      "review": 0.2,
+      "pctAllowed": 0.992508,
+      "pctStepUp": 0.007338,
+      "pctReview": 0.000155,
+      "recall": 0.140049,
+      "netSavingsINR": 535558.01
+    },
+    {
+      "stepUp": 0.085,
+      "review": 0.09,
+      "pctAllowed": 0.99379,
+      "pctStepUp": 0.00095,
+      "pctReview": 0.00526,
+      "recall": 0.127764,
+      "netSavingsINR": 526551.86
+    },
+    {
+      "stepUp": 0.085,
+      "review": 0.095,
+      "pctAllowed": 0.99379,
+      "pctStepUp": 0.001879,
+      "pctReview": 0.004332,
+      "recall": 0.127764,
+      "netSavingsINR": 527674.76
+    },
+    {
+      "stepUp": 0.085,
+      "review": 0.1,
+      "pctAllowed": 0.99379,
+      "pctStepUp": 0.002564,
+      "pctReview": 0.003647,
+      "recall": 0.127764,
+      "netSavingsINR": 528521.7
+    },
+    {
+      "stepUp": 0.085,
+      "review": 0.105,
+      "pctAllowed": 0.99379,
+      "pctStepUp": 0.003094,
+      "pctReview": 0.003116,
+      "recall": 0.127764,
+      "netSavingsINR": 529059.07
+    },
+    {
+      "stepUp": 0.085,
+      "review": 0.11,
+      "pctAllowed": 0.99379,
+      "pctStepUp": 0.00358,
+      "pctReview": 0.00263,
+      "recall": 0.127764,
+      "netSavingsINR": 527319.93
+    },
+    {
+      "stepUp": 0.085,
+      "review": 0.115,
+      "pctAllowed": 0.99379,
+      "pctStepUp": 0.004,
+      "pctReview": 0.00221,
+      "recall": 0.127764,
+      "netSavingsINR": 526579.41
+    },
+    {
+      "stepUp": 0.085,
+      "review": 0.12,
+      "pctAllowed": 0.99379,
+      "pctStepUp": 0.00431,
+      "pctReview": 0.001901,
+      "recall": 0.127764,
+      "netSavingsINR": 524920.25
+    },
+    {
+      "stepUp": 0.085,
+      "review": 0.125,
+      "pctAllowed": 0.99379,
+      "pctStepUp": 0.004553,
+      "pctReview": 0.001658,
+      "recall": 0.127764,
+      "netSavingsINR": 524216.43
+    },
+    {
+      "stepUp": 0.085,
+      "review": 0.13,
+      "pctAllowed": 0.99379,
+      "pctStepUp": 0.00484,
+      "pctReview": 0.00137,
+      "recall": 0.127764,
+      "netSavingsINR": 520994.4
+    },
+    {
+      "stepUp": 0.085,
+      "review": 0.135,
+      "pctAllowed": 0.99379,
+      "pctStepUp": 0.005083,
+      "pctReview": 0.001127,
+      "recall": 0.127764,
+      "netSavingsINR": 520950.01
+    },
+    {
+      "stepUp": 0.085,
+      "review": 0.14,
+      "pctAllowed": 0.99379,
+      "pctStepUp": 0.005238,
+      "pctReview": 0.000972,
+      "recall": 0.127764,
+      "netSavingsINR": 520957.61
+    },
+    {
+      "stepUp": 0.085,
+      "review": 0.145,
+      "pctAllowed": 0.99379,
+      "pctStepUp": 0.005282,
+      "pctReview": 0.000928,
+      "recall": 0.127764,
+      "netSavingsINR": 520990.08
+    },
+    {
+      "stepUp": 0.085,
+      "review": 0.15,
+      "pctAllowed": 0.99379,
+      "pctStepUp": 0.005481,
+      "pctReview": 0.000729,
+      "recall": 0.127764,
+      "netSavingsINR": 513928.55
+    },
+    {
+      "stepUp": 0.085,
+      "review": 0.155,
+      "pctAllowed": 0.99379,
+      "pctStepUp": 0.005525,
+      "pctReview": 0.000685,
+      "recall": 0.127764,
+      "netSavingsINR": 513589.17
+    },
+    {
+      "stepUp": 0.085,
+      "review": 0.16,
+      "pctAllowed": 0.99379,
+      "pctStepUp": 0.00557,
+      "pctReview": 0.000641,
+      "recall": 0.127764,
+      "netSavingsINR": 510656.65
+    },
+    {
+      "stepUp": 0.085,
+      "review": 0.165,
+      "pctAllowed": 0.99379,
+      "pctStepUp": 0.005658,
+      "pctReview": 0.000553,
+      "recall": 0.127764,
+      "netSavingsINR": 510543.79
+    },
+    {
+      "stepUp": 0.085,
+      "review": 0.17,
+      "pctAllowed": 0.99379,
+      "pctStepUp": 0.005791,
+      "pctReview": 0.00042,
+      "recall": 0.127764,
+      "netSavingsINR": 507837.21
+    },
+    {
+      "stepUp": 0.085,
+      "review": 0.175,
+      "pctAllowed": 0.99379,
+      "pctStepUp": 0.005857,
+      "pctReview": 0.000354,
+      "recall": 0.127764,
+      "netSavingsINR": 507014.09
+    },
+    {
+      "stepUp": 0.085,
+      "review": 0.18,
+      "pctAllowed": 0.99379,
+      "pctStepUp": 0.005945,
+      "pctReview": 0.000265,
+      "recall": 0.127764,
+      "netSavingsINR": 503508.17
+    },
+    {
+      "stepUp": 0.085,
+      "review": 0.185,
+      "pctAllowed": 0.99379,
+      "pctStepUp": 0.005945,
+      "pctReview": 0.000265,
+      "recall": 0.127764,
+      "netSavingsINR": 503508.17
+    },
+    {
+      "stepUp": 0.085,
+      "review": 0.19,
+      "pctAllowed": 0.99379,
+      "pctStepUp": 0.006012,
+      "pctReview": 0.000199,
+      "recall": 0.127764,
+      "netSavingsINR": 499826.69
+    },
+    {
+      "stepUp": 0.085,
+      "review": 0.195,
+      "pctAllowed": 0.99379,
+      "pctStepUp": 0.006012,
+      "pctReview": 0.000199,
+      "recall": 0.127764,
+      "netSavingsINR": 499826.69
+    },
+    {
+      "stepUp": 0.085,
+      "review": 0.2,
+      "pctAllowed": 0.99379,
+      "pctStepUp": 0.006056,
+      "pctReview": 0.000155,
+      "recall": 0.127764,
+      "netSavingsINR": 499390.91
+    },
+    {
+      "stepUp": 0.09,
+      "review": 0.095,
+      "pctAllowed": 0.99474,
+      "pctStepUp": 0.000928,
+      "pctReview": 0.004332,
+      "recall": 0.120393,
+      "netSavingsINR": 524457.3
+    },
+    {
+      "stepUp": 0.09,
+      "review": 0.1,
+      "pctAllowed": 0.99474,
+      "pctStepUp": 0.001613,
+      "pctReview": 0.003647,
+      "recall": 0.120393,
+      "netSavingsINR": 525304.24
+    },
+    {
+      "stepUp": 0.09,
+      "review": 0.105,
+      "pctAllowed": 0.99474,
+      "pctStepUp": 0.002144,
+      "pctReview": 0.003116,
+      "recall": 0.120393,
+      "netSavingsINR": 525841.62
+    },
+    {
+      "stepUp": 0.09,
+      "review": 0.11,
+      "pctAllowed": 0.99474,
+      "pctStepUp": 0.00263,
+      "pctReview": 0.00263,
+      "recall": 0.120393,
+      "netSavingsINR": 524102.47
+    },
+    {
+      "stepUp": 0.09,
+      "review": 0.115,
+      "pctAllowed": 0.99474,
+      "pctStepUp": 0.00305,
+      "pctReview": 0.00221,
+      "recall": 0.120393,
+      "netSavingsINR": 523361.96
+    },
+    {
+      "stepUp": 0.09,
+      "review": 0.12,
+      "pctAllowed": 0.99474,
+      "pctStepUp": 0.003359,
+      "pctReview": 0.001901,
+      "recall": 0.120393,
+      "netSavingsINR": 521702.8
+    },
+    {
+      "stepUp": 0.09,
+      "review": 0.125,
+      "pctAllowed": 0.99474,
+      "pctStepUp": 0.003603,
+      "pctReview": 0.001658,
+      "recall": 0.120393,
+      "netSavingsINR": 520998.97
+    },
+    {
+      "stepUp": 0.09,
+      "review": 0.13,
+      "pctAllowed": 0.99474,
+      "pctStepUp": 0.00389,
+      "pctReview": 0.00137,
+      "recall": 0.120393,
+      "netSavingsINR": 517776.95
+    },
+    {
+      "stepUp": 0.09,
+      "review": 0.135,
+      "pctAllowed": 0.99474,
+      "pctStepUp": 0.004133,
+      "pctReview": 0.001127,
+      "recall": 0.120393,
+      "netSavingsINR": 517732.56
+    },
+    {
+      "stepUp": 0.09,
+      "review": 0.14,
+      "pctAllowed": 0.99474,
+      "pctStepUp": 0.004288,
+      "pctReview": 0.000972,
+      "recall": 0.120393,
+      "netSavingsINR": 517740.15
+    },
+    {
+      "stepUp": 0.09,
+      "review": 0.145,
+      "pctAllowed": 0.99474,
+      "pctStepUp": 0.004332,
+      "pctReview": 0.000928,
+      "recall": 0.120393,
+      "netSavingsINR": 517772.62
+    },
+    {
+      "stepUp": 0.09,
+      "review": 0.15,
+      "pctAllowed": 0.99474,
+      "pctStepUp": 0.004531,
+      "pctReview": 0.000729,
+      "recall": 0.120393,
+      "netSavingsINR": 510711.1
+    },
+    {
+      "stepUp": 0.09,
+      "review": 0.155,
+      "pctAllowed": 0.99474,
+      "pctStepUp": 0.004575,
+      "pctReview": 0.000685,
+      "recall": 0.120393,
+      "netSavingsINR": 510371.72
+    },
+    {
+      "stepUp": 0.09,
+      "review": 0.16,
+      "pctAllowed": 0.99474,
+      "pctStepUp": 0.004619,
+      "pctReview": 0.000641,
+      "recall": 0.120393,
+      "netSavingsINR": 507439.19
+    },
+    {
+      "stepUp": 0.09,
+      "review": 0.165,
+      "pctAllowed": 0.99474,
+      "pctStepUp": 0.004708,
+      "pctReview": 0.000553,
+      "recall": 0.120393,
+      "netSavingsINR": 507326.33
+    },
+    {
+      "stepUp": 0.09,
+      "review": 0.17,
+      "pctAllowed": 0.99474,
+      "pctStepUp": 0.00484,
+      "pctReview": 0.00042,
+      "recall": 0.120393,
+      "netSavingsINR": 504619.75
+    },
+    {
+      "stepUp": 0.09,
+      "review": 0.175,
+      "pctAllowed": 0.99474,
+      "pctStepUp": 0.004907,
+      "pctReview": 0.000354,
+      "recall": 0.120393,
+      "netSavingsINR": 503796.63
+    },
+    {
+      "stepUp": 0.09,
+      "review": 0.18,
+      "pctAllowed": 0.99474,
+      "pctStepUp": 0.004995,
+      "pctReview": 0.000265,
+      "recall": 0.120393,
+      "netSavingsINR": 500290.71
+    },
+    {
+      "stepUp": 0.09,
+      "review": 0.185,
+      "pctAllowed": 0.99474,
+      "pctStepUp": 0.004995,
+      "pctReview": 0.000265,
+      "recall": 0.120393,
+      "netSavingsINR": 500290.71
+    },
+    {
+      "stepUp": 0.09,
+      "review": 0.19,
+      "pctAllowed": 0.99474,
+      "pctStepUp": 0.005061,
+      "pctReview": 0.000199,
+      "recall": 0.120393,
+      "netSavingsINR": 496609.23
+    },
+    {
+      "stepUp": 0.09,
+      "review": 0.195,
+      "pctAllowed": 0.99474,
+      "pctStepUp": 0.005061,
+      "pctReview": 0.000199,
+      "recall": 0.120393,
+      "netSavingsINR": 496609.23
+    },
+    {
+      "stepUp": 0.09,
+      "review": 0.2,
+      "pctAllowed": 0.99474,
+      "pctStepUp": 0.005105,
+      "pctReview": 0.000155,
+      "recall": 0.120393,
+      "netSavingsINR": 496173.45
+    },
+    {
+      "stepUp": 0.095,
+      "review": 0.1,
+      "pctAllowed": 0.995668,
+      "pctStepUp": 0.000685,
+      "pctReview": 0.003647,
+      "recall": 0.09828,
+      "netSavingsINR": 463835.31
+    },
+    {
+      "stepUp": 0.095,
+      "review": 0.105,
+      "pctAllowed": 0.995668,
+      "pctStepUp": 0.001216,
+      "pctReview": 0.003116,
+      "recall": 0.09828,
+      "netSavingsINR": 464372.69
+    },
+    {
+      "stepUp": 0.095,
+      "review": 0.11,
+      "pctAllowed": 0.995668,
+      "pctStepUp": 0.001702,
+      "pctReview": 0.00263,
+      "recall": 0.09828,
+      "netSavingsINR": 462633.55
+    },
+    {
+      "stepUp": 0.095,
+      "review": 0.115,
+      "pctAllowed": 0.995668,
+      "pctStepUp": 0.002122,
+      "pctReview": 0.00221,
+      "recall": 0.09828,
+      "netSavingsINR": 461893.03
+    },
+    {
+      "stepUp": 0.095,
+      "review": 0.12,
+      "pctAllowed": 0.995668,
+      "pctStepUp": 0.002431,
+      "pctReview": 0.001901,
+      "recall": 0.09828,
+      "netSavingsINR": 460233.87
+    },
+    {
+      "stepUp": 0.095,
+      "review": 0.125,
+      "pctAllowed": 0.995668,
+      "pctStepUp": 0.002674,
+      "pctReview": 0.001658,
+      "recall": 0.09828,
+      "netSavingsINR": 459530.05
+    },
+    {
+      "stepUp": 0.095,
+      "review": 0.13,
+      "pctAllowed": 0.995668,
+      "pctStepUp": 0.002962,
+      "pctReview": 0.00137,
+      "recall": 0.09828,
+      "netSavingsINR": 456308.02
+    },
+    {
+      "stepUp": 0.095,
+      "review": 0.135,
+      "pctAllowed": 0.995668,
+      "pctStepUp": 0.003205,
+      "pctReview": 0.001127,
+      "recall": 0.09828,
+      "netSavingsINR": 456263.63
+    },
+    {
+      "stepUp": 0.095,
+      "review": 0.14,
+      "pctAllowed": 0.995668,
+      "pctStepUp": 0.003359,
+      "pctReview": 0.000972,
+      "recall": 0.09828,
+      "netSavingsINR": 456271.23
+    },
+    {
+      "stepUp": 0.095,
+      "review": 0.145,
+      "pctAllowed": 0.995668,
+      "pctStepUp": 0.003404,
+      "pctReview": 0.000928,
+      "recall": 0.09828,
+      "netSavingsINR": 456303.7
+    },
+    {
+      "stepUp": 0.095,
+      "review": 0.15,
+      "pctAllowed": 0.995668,
+      "pctStepUp": 0.003603,
+      "pctReview": 0.000729,
+      "recall": 0.09828,
+      "netSavingsINR": 449242.17
+    },
+    {
+      "stepUp": 0.095,
+      "review": 0.155,
+      "pctAllowed": 0.995668,
+      "pctStepUp": 0.003647,
+      "pctReview": 0.000685,
+      "recall": 0.09828,
+      "netSavingsINR": 448902.79
+    },
+    {
+      "stepUp": 0.095,
+      "review": 0.16,
+      "pctAllowed": 0.995668,
+      "pctStepUp": 0.003691,
+      "pctReview": 0.000641,
+      "recall": 0.09828,
+      "netSavingsINR": 445970.26
+    },
+    {
+      "stepUp": 0.095,
+      "review": 0.165,
+      "pctAllowed": 0.995668,
+      "pctStepUp": 0.003779,
+      "pctReview": 0.000553,
+      "recall": 0.09828,
+      "netSavingsINR": 445857.41
+    },
+    {
+      "stepUp": 0.095,
+      "review": 0.17,
+      "pctAllowed": 0.995668,
+      "pctStepUp": 0.003912,
+      "pctReview": 0.00042,
+      "recall": 0.09828,
+      "netSavingsINR": 443150.83
+    },
+    {
+      "stepUp": 0.095,
+      "review": 0.175,
+      "pctAllowed": 0.995668,
+      "pctStepUp": 0.003978,
+      "pctReview": 0.000354,
+      "recall": 0.09828,
+      "netSavingsINR": 442327.71
+    },
+    {
+      "stepUp": 0.095,
+      "review": 0.18,
+      "pctAllowed": 0.995668,
+      "pctStepUp": 0.004067,
+      "pctReview": 0.000265,
+      "recall": 0.09828,
+      "netSavingsINR": 438821.79
+    },
+    {
+      "stepUp": 0.095,
+      "review": 0.185,
+      "pctAllowed": 0.995668,
+      "pctStepUp": 0.004067,
+      "pctReview": 0.000265,
+      "recall": 0.09828,
+      "netSavingsINR": 438821.79
+    },
+    {
+      "stepUp": 0.095,
+      "review": 0.19,
+      "pctAllowed": 0.995668,
+      "pctStepUp": 0.004133,
+      "pctReview": 0.000199,
+      "recall": 0.09828,
+      "netSavingsINR": 435140.31
+    },
+    {
+      "stepUp": 0.095,
+      "review": 0.195,
+      "pctAllowed": 0.995668,
+      "pctStepUp": 0.004133,
+      "pctReview": 0.000199,
+      "recall": 0.09828,
+      "netSavingsINR": 435140.31
+    },
+    {
+      "stepUp": 0.095,
+      "review": 0.2,
+      "pctAllowed": 0.995668,
+      "pctStepUp": 0.004177,
+      "pctReview": 0.000155,
+      "recall": 0.09828,
+      "netSavingsINR": 434704.53
+    },
+    {
+      "stepUp": 0.1,
+      "review": 0.105,
+      "pctAllowed": 0.996353,
+      "pctStepUp": 0.00053,
+      "pctReview": 0.003116,
+      "recall": 0.085995,
+      "netSavingsINR": 413317.42
+    },
+    {
+      "stepUp": 0.1,
+      "review": 0.11,
+      "pctAllowed": 0.996353,
+      "pctStepUp": 0.001017,
+      "pctReview": 0.00263,
+      "recall": 0.085995,
+      "netSavingsINR": 411578.27
+    },
+    {
+      "stepUp": 0.1,
+      "review": 0.115,
+      "pctAllowed": 0.996353,
+      "pctStepUp": 0.001437,
+      "pctReview": 0.00221,
+      "recall": 0.085995,
+      "netSavingsINR": 410837.76
+    },
+    {
+      "stepUp": 0.1,
+      "review": 0.12,
+      "pctAllowed": 0.996353,
+      "pctStepUp": 0.001746,
+      "pctReview": 0.001901,
+      "recall": 0.085995,
+      "netSavingsINR": 409178.6
+    },
+    {
+      "stepUp": 0.1,
+      "review": 0.125,
+      "pctAllowed": 0.996353,
+      "pctStepUp": 0.001989,
+      "pctReview": 0.001658,
+      "recall": 0.085995,
+      "netSavingsINR": 408474.77
+    },
+    {
+      "stepUp": 0.1,
+      "review": 0.13,
+      "pctAllowed": 0.996353,
+      "pctStepUp": 0.002276,
+      "pctReview": 0.00137,
+      "recall": 0.085995,
+      "netSavingsINR": 405252.75
+    },
+    {
+      "stepUp": 0.1,
+      "review": 0.135,
+      "pctAllowed": 0.996353,
+      "pctStepUp": 0.00252,
+      "pctReview": 0.001127,
+      "recall": 0.085995,
+      "netSavingsINR": 405208.36
+    },
+    {
+      "stepUp": 0.1,
+      "review": 0.14,
+      "pctAllowed": 0.996353,
+      "pctStepUp": 0.002674,
+      "pctReview": 0.000972,
+      "recall": 0.085995,
+      "netSavingsINR": 405215.95
+    },
+    {
+      "stepUp": 0.1,
+      "review": 0.145,
+      "pctAllowed": 0.996353,
+      "pctStepUp": 0.002718,
+      "pctReview": 0.000928,
+      "recall": 0.085995,
+      "netSavingsINR": 405248.43
+    },
+    {
+      "stepUp": 0.1,
+      "review": 0.15,
+      "pctAllowed": 0.996353,
+      "pctStepUp": 0.002917,
+      "pctReview": 0.000729,
+      "recall": 0.085995,
+      "netSavingsINR": 398186.9
+    },
+    {
+      "stepUp": 0.1,
+      "review": 0.155,
+      "pctAllowed": 0.996353,
+      "pctStepUp": 0.002962,
+      "pctReview": 0.000685,
+      "recall": 0.085995,
+      "netSavingsINR": 397847.52
+    },
+    {
+      "stepUp": 0.1,
+      "review": 0.16,
+      "pctAllowed": 0.996353,
+      "pctStepUp": 0.003006,
+      "pctReview": 0.000641,
+      "recall": 0.085995,
+      "netSavingsINR": 394914.99
+    },
+    {
+      "stepUp": 0.1,
+      "review": 0.165,
+      "pctAllowed": 0.996353,
+      "pctStepUp": 0.003094,
+      "pctReview": 0.000553,
+      "recall": 0.085995,
+      "netSavingsINR": 394802.14
+    },
+    {
+      "stepUp": 0.1,
+      "review": 0.17,
+      "pctAllowed": 0.996353,
+      "pctStepUp": 0.003227,
+      "pctReview": 0.00042,
+      "recall": 0.085995,
+      "netSavingsINR": 392095.55
+    },
+    {
+      "stepUp": 0.1,
+      "review": 0.175,
+      "pctAllowed": 0.996353,
+      "pctStepUp": 0.003293,
+      "pctReview": 0.000354,
+      "recall": 0.085995,
+      "netSavingsINR": 391272.43
+    },
+    {
+      "stepUp": 0.1,
+      "review": 0.18,
+      "pctAllowed": 0.996353,
+      "pctStepUp": 0.003382,
+      "pctReview": 0.000265,
+      "recall": 0.085995,
+      "netSavingsINR": 387766.52
+    },
+    {
+      "stepUp": 0.1,
+      "review": 0.185,
+      "pctAllowed": 0.996353,
+      "pctStepUp": 0.003382,
+      "pctReview": 0.000265,
+      "recall": 0.085995,
+      "netSavingsINR": 387766.52
+    },
+    {
+      "stepUp": 0.1,
+      "review": 0.19,
+      "pctAllowed": 0.996353,
+      "pctStepUp": 0.003448,
+      "pctReview": 0.000199,
+      "recall": 0.085995,
+      "netSavingsINR": 384085.04
+    },
+    {
+      "stepUp": 0.1,
+      "review": 0.195,
+      "pctAllowed": 0.996353,
+      "pctStepUp": 0.003448,
+      "pctReview": 0.000199,
+      "recall": 0.085995,
+      "netSavingsINR": 384085.04
+    },
+    {
+      "stepUp": 0.1,
+      "review": 0.2,
+      "pctAllowed": 0.996353,
+      "pctStepUp": 0.003492,
+      "pctReview": 0.000155,
+      "recall": 0.085995,
+      "netSavingsINR": 383649.25
+    },
+    {
+      "stepUp": 0.105,
+      "review": 0.11,
+      "pctAllowed": 0.996884,
+      "pctStepUp": 0.000486,
+      "pctReview": 0.00263,
+      "recall": 0.076167,
+      "netSavingsINR": 346019.02
+    },
+    {
+      "stepUp": 0.105,
+      "review": 0.115,
+      "pctAllowed": 0.996884,
+      "pctStepUp": 0.000906,
+      "pctReview": 0.00221,
+      "recall": 0.076167,
+      "netSavingsINR": 345278.5
+    },
+    {
+      "stepUp": 0.105,
+      "review": 0.12,
+      "pctAllowed": 0.996884,
+      "pctStepUp": 0.001216,
+      "pctReview": 0.001901,
+      "recall": 0.076167,
+      "netSavingsINR": 343619.34
+    },
+    {
+      "stepUp": 0.105,
+      "review": 0.125,
+      "pctAllowed": 0.996884,
+      "pctStepUp": 0.001459,
+      "pctReview": 0.001658,
+      "recall": 0.076167,
+      "netSavingsINR": 342915.52
+    },
+    {
+      "stepUp": 0.105,
+      "review": 0.13,
+      "pctAllowed": 0.996884,
+      "pctStepUp": 0.001746,
+      "pctReview": 0.00137,
+      "recall": 0.076167,
+      "netSavingsINR": 339693.49
+    },
+    {
+      "stepUp": 0.105,
+      "review": 0.135,
+      "pctAllowed": 0.996884,
+      "pctStepUp": 0.001989,
+      "pctReview": 0.001127,
+      "recall": 0.076167,
+      "netSavingsINR": 339649.1
+    },
+    {
+      "stepUp": 0.105,
+      "review": 0.14,
+      "pctAllowed": 0.996884,
+      "pctStepUp": 0.002144,
+      "pctReview": 0.000972,
+      "recall": 0.076167,
+      "netSavingsINR": 339656.7
+    },
+    {
+      "stepUp": 0.105,
+      "review": 0.145,
+      "pctAllowed": 0.996884,
+      "pctStepUp": 0.002188,
+      "pctReview": 0.000928,
+      "recall": 0.076167,
+      "netSavingsINR": 339689.17
+    },
+    {
+      "stepUp": 0.105,
+      "review": 0.15,
+      "pctAllowed": 0.996884,
+      "pctStepUp": 0.002387,
+      "pctReview": 0.000729,
+      "recall": 0.076167,
+      "netSavingsINR": 332627.64
+    },
+    {
+      "stepUp": 0.105,
+      "review": 0.155,
+      "pctAllowed": 0.996884,
+      "pctStepUp": 0.002431,
+      "pctReview": 0.000685,
+      "recall": 0.076167,
+      "netSavingsINR": 332288.26
+    },
+    {
+      "stepUp": 0.105,
+      "review": 0.16,
+      "pctAllowed": 0.996884,
+      "pctStepUp": 0.002475,
+      "pctReview": 0.000641,
+      "recall": 0.076167,
+      "netSavingsINR": 329355.73
+    },
+    {
+      "stepUp": 0.105,
+      "review": 0.165,
+      "pctAllowed": 0.996884,
+      "pctStepUp": 0.002564,
+      "pctReview": 0.000553,
+      "recall": 0.076167,
+      "netSavingsINR": 329242.88
+    },
+    {
+      "stepUp": 0.105,
+      "review": 0.17,
+      "pctAllowed": 0.996884,
+      "pctStepUp": 0.002696,
+      "pctReview": 0.00042,
+      "recall": 0.076167,
+      "netSavingsINR": 326536.3
+    },
+    {
+      "stepUp": 0.105,
+      "review": 0.175,
+      "pctAllowed": 0.996884,
+      "pctStepUp": 0.002763,
+      "pctReview": 0.000354,
+      "recall": 0.076167,
+      "netSavingsINR": 325713.18
+    },
+    {
+      "stepUp": 0.105,
+      "review": 0.18,
+      "pctAllowed": 0.996884,
+      "pctStepUp": 0.002851,
+      "pctReview": 0.000265,
+      "recall": 0.076167,
+      "netSavingsINR": 322207.26
+    },
+    {
+      "stepUp": 0.105,
+      "review": 0.185,
+      "pctAllowed": 0.996884,
+      "pctStepUp": 0.002851,
+      "pctReview": 0.000265,
+      "recall": 0.076167,
+      "netSavingsINR": 322207.26
+    },
+    {
+      "stepUp": 0.105,
+      "review": 0.19,
+      "pctAllowed": 0.996884,
+      "pctStepUp": 0.002917,
+      "pctReview": 0.000199,
+      "recall": 0.076167,
+      "netSavingsINR": 318525.78
+    },
+    {
+      "stepUp": 0.105,
+      "review": 0.195,
+      "pctAllowed": 0.996884,
+      "pctStepUp": 0.002917,
+      "pctReview": 0.000199,
+      "recall": 0.076167,
+      "netSavingsINR": 318525.78
+    },
+    {
+      "stepUp": 0.105,
+      "review": 0.2,
+      "pctAllowed": 0.996884,
+      "pctStepUp": 0.002962,
+      "pctReview": 0.000155,
+      "recall": 0.076167,
+      "netSavingsINR": 318089.99
+    },
+    {
+      "stepUp": 0.11,
+      "review": 0.115,
+      "pctAllowed": 0.99737,
+      "pctStepUp": 0.00042,
+      "pctReview": 0.00221,
+      "recall": 0.071253,
+      "netSavingsINR": 337246.23
+    },
+    {
+      "stepUp": 0.11,
+      "review": 0.12,
+      "pctAllowed": 0.99737,
+      "pctStepUp": 0.000729,
+      "pctReview": 0.001901,
+      "recall": 0.071253,
+      "netSavingsINR": 335587.07
+    },
+    {
+      "stepUp": 0.11,
+      "review": 0.125,
+      "pctAllowed": 0.99737,
+      "pctStepUp": 0.000972,
+      "pctReview": 0.001658,
+      "recall": 0.071253,
+      "netSavingsINR": 334883.25
+    },
+    {
+      "stepUp": 0.11,
+      "review": 0.13,
+      "pctAllowed": 0.99737,
+      "pctStepUp": 0.00126,
+      "pctReview": 0.00137,
+      "recall": 0.071253,
+      "netSavingsINR": 331661.22
+    },
+    {
+      "stepUp": 0.11,
+      "review": 0.135,
+      "pctAllowed": 0.99737,
+      "pctStepUp": 0.001503,
+      "pctReview": 0.001127,
+      "recall": 0.071253,
+      "netSavingsINR": 331616.83
+    },
+    {
+      "stepUp": 0.11,
+      "review": 0.14,
+      "pctAllowed": 0.99737,
+      "pctStepUp": 0.001658,
+      "pctReview": 0.000972,
+      "recall": 0.071253,
+      "netSavingsINR": 331624.43
+    },
+    {
+      "stepUp": 0.11,
+      "review": 0.145,
+      "pctAllowed": 0.99737,
+      "pctStepUp": 0.001702,
+      "pctReview": 0.000928,
+      "recall": 0.071253,
+      "netSavingsINR": 331656.9
+    },
+    {
+      "stepUp": 0.11,
+      "review": 0.15,
+      "pctAllowed": 0.99737,
+      "pctStepUp": 0.001901,
+      "pctReview": 0.000729,
+      "recall": 0.071253,
+      "netSavingsINR": 324595.37
+    },
+    {
+      "stepUp": 0.11,
+      "review": 0.155,
+      "pctAllowed": 0.99737,
+      "pctStepUp": 0.001945,
+      "pctReview": 0.000685,
+      "recall": 0.071253,
+      "netSavingsINR": 324255.99
+    },
+    {
+      "stepUp": 0.11,
+      "review": 0.16,
+      "pctAllowed": 0.99737,
+      "pctStepUp": 0.001989,
+      "pctReview": 0.000641,
+      "recall": 0.071253,
+      "netSavingsINR": 321323.47
+    },
+    {
+      "stepUp": 0.11,
+      "review": 0.165,
+      "pctAllowed": 0.99737,
+      "pctStepUp": 0.002078,
+      "pctReview": 0.000553,
+      "recall": 0.071253,
+      "netSavingsINR": 321210.61
+    },
+    {
+      "stepUp": 0.11,
+      "review": 0.17,
+      "pctAllowed": 0.99737,
+      "pctStepUp": 0.00221,
+      "pctReview": 0.00042,
+      "recall": 0.071253,
+      "netSavingsINR": 318504.03
+    },
+    {
+      "stepUp": 0.11,
+      "review": 0.175,
+      "pctAllowed": 0.99737,
+      "pctStepUp": 0.002276,
+      "pctReview": 0.000354,
+      "recall": 0.071253,
+      "netSavingsINR": 317680.91
+    },
+    {
+      "stepUp": 0.11,
+      "review": 0.18,
+      "pctAllowed": 0.99737,
+      "pctStepUp": 0.002365,
+      "pctReview": 0.000265,
+      "recall": 0.071253,
+      "netSavingsINR": 314174.99
+    },
+    {
+      "stepUp": 0.11,
+      "review": 0.185,
+      "pctAllowed": 0.99737,
+      "pctStepUp": 0.002365,
+      "pctReview": 0.000265,
+      "recall": 0.071253,
+      "netSavingsINR": 314174.99
+    },
+    {
+      "stepUp": 0.11,
+      "review": 0.19,
+      "pctAllowed": 0.99737,
+      "pctStepUp": 0.002431,
+      "pctReview": 0.000199,
+      "recall": 0.071253,
+      "netSavingsINR": 310493.51
+    },
+    {
+      "stepUp": 0.11,
+      "review": 0.195,
+      "pctAllowed": 0.99737,
+      "pctStepUp": 0.002431,
+      "pctReview": 0.000199,
+      "recall": 0.071253,
+      "netSavingsINR": 310493.51
+    },
+    {
+      "stepUp": 0.11,
+      "review": 0.2,
+      "pctAllowed": 0.99737,
+      "pctStepUp": 0.002475,
+      "pctReview": 0.000155,
+      "recall": 0.071253,
+      "netSavingsINR": 310057.73
+    },
+    {
+      "stepUp": 0.115,
+      "review": 0.12,
+      "pctAllowed": 0.99779,
+      "pctStepUp": 0.000309,
+      "pctReview": 0.001901,
+      "recall": 0.058968,
+      "netSavingsINR": 277511.31
+    },
+    {
+      "stepUp": 0.115,
+      "review": 0.125,
+      "pctAllowed": 0.99779,
+      "pctStepUp": 0.000553,
+      "pctReview": 0.001658,
+      "recall": 0.058968,
+      "netSavingsINR": 276807.49
+    },
+    {
+      "stepUp": 0.115,
+      "review": 0.13,
+      "pctAllowed": 0.99779,
+      "pctStepUp": 0.00084,
+      "pctReview": 0.00137,
+      "recall": 0.058968,
+      "netSavingsINR": 273585.46
+    },
+    {
+      "stepUp": 0.115,
+      "review": 0.135,
+      "pctAllowed": 0.99779,
+      "pctStepUp": 0.001083,
+      "pctReview": 0.001127,
+      "recall": 0.058968,
+      "netSavingsINR": 273541.07
+    },
+    {
+      "stepUp": 0.115,
+      "review": 0.14,
+      "pctAllowed": 0.99779,
+      "pctStepUp": 0.001238,
+      "pctReview": 0.000972,
+      "recall": 0.058968,
+      "netSavingsINR": 273548.67
+    },
+    {
+      "stepUp": 0.115,
+      "review": 0.145,
+      "pctAllowed": 0.99779,
+      "pctStepUp": 0.001282,
+      "pctReview": 0.000928,
+      "recall": 0.058968,
+      "netSavingsINR": 273581.14
+    },
+    {
+      "stepUp": 0.115,
+      "review": 0.15,
+      "pctAllowed": 0.99779,
+      "pctStepUp": 0.001481,
+      "pctReview": 0.000729,
+      "recall": 0.058968,
+      "netSavingsINR": 266519.61
+    },
+    {
+      "stepUp": 0.115,
+      "review": 0.155,
+      "pctAllowed": 0.99779,
+      "pctStepUp": 0.001525,
+      "pctReview": 0.000685,
+      "recall": 0.058968,
+      "netSavingsINR": 266180.23
+    },
+    {
+      "stepUp": 0.115,
+      "review": 0.16,
+      "pctAllowed": 0.99779,
+      "pctStepUp": 0.001569,
+      "pctReview": 0.000641,
+      "recall": 0.058968,
+      "netSavingsINR": 263247.7
+    },
+    {
+      "stepUp": 0.115,
+      "review": 0.165,
+      "pctAllowed": 0.99779,
+      "pctStepUp": 0.001658,
+      "pctReview": 0.000553,
+      "recall": 0.058968,
+      "netSavingsINR": 263134.85
+    },
+    {
+      "stepUp": 0.115,
+      "review": 0.17,
+      "pctAllowed": 0.99779,
+      "pctStepUp": 0.00179,
+      "pctReview": 0.00042,
+      "recall": 0.058968,
+      "netSavingsINR": 260428.27
+    },
+    {
+      "stepUp": 0.115,
+      "review": 0.175,
+      "pctAllowed": 0.99779,
+      "pctStepUp": 0.001857,
+      "pctReview": 0.000354,
+      "recall": 0.058968,
+      "netSavingsINR": 259605.15
+    },
+    {
+      "stepUp": 0.115,
+      "review": 0.18,
+      "pctAllowed": 0.99779,
+      "pctStepUp": 0.001945,
+      "pctReview": 0.000265,
+      "recall": 0.058968,
+      "netSavingsINR": 256099.23
+    },
+    {
+      "stepUp": 0.115,
+      "review": 0.185,
+      "pctAllowed": 0.99779,
+      "pctStepUp": 0.001945,
+      "pctReview": 0.000265,
+      "recall": 0.058968,
+      "netSavingsINR": 256099.23
+    },
+    {
+      "stepUp": 0.115,
+      "review": 0.19,
+      "pctAllowed": 0.99779,
+      "pctStepUp": 0.002011,
+      "pctReview": 0.000199,
+      "recall": 0.058968,
+      "netSavingsINR": 252417.75
+    },
+    {
+      "stepUp": 0.115,
+      "review": 0.195,
+      "pctAllowed": 0.99779,
+      "pctStepUp": 0.002011,
+      "pctReview": 0.000199,
+      "recall": 0.058968,
+      "netSavingsINR": 252417.75
+    },
+    {
+      "stepUp": 0.115,
+      "review": 0.2,
+      "pctAllowed": 0.99779,
+      "pctStepUp": 0.002055,
+      "pctReview": 0.000155,
+      "recall": 0.058968,
+      "netSavingsINR": 251981.96
+    },
+    {
+      "stepUp": 0.12,
+      "review": 0.125,
+      "pctAllowed": 0.998099,
+      "pctStepUp": 0.000243,
+      "pctReview": 0.001658,
+      "recall": 0.051597,
+      "netSavingsINR": 256920.2
+    },
+    {
+      "stepUp": 0.12,
+      "review": 0.13,
+      "pctAllowed": 0.998099,
+      "pctStepUp": 0.00053,
+      "pctReview": 0.00137,
+      "recall": 0.051597,
+      "netSavingsINR": 253698.17
+    },
+    {
+      "stepUp": 0.12,
+      "review": 0.135,
+      "pctAllowed": 0.998099,
+      "pctStepUp": 0.000774,
+      "pctReview": 0.001127,
+      "recall": 0.051597,
+      "netSavingsINR": 253653.78
+    },
+    {
+      "stepUp": 0.12,
+      "review": 0.14,
+      "pctAllowed": 0.998099,
+      "pctStepUp": 0.000928,
+      "pctReview": 0.000972,
+      "recall": 0.051597,
+      "netSavingsINR": 253661.38
+    },
+    {
+      "stepUp": 0.12,
+      "review": 0.145,
+      "pctAllowed": 0.998099,
+      "pctStepUp": 0.000972,
+      "pctReview": 0.000928,
+      "recall": 0.051597,
+      "netSavingsINR": 253693.85
+    },
+    {
+      "stepUp": 0.12,
+      "review": 0.15,
+      "pctAllowed": 0.998099,
+      "pctStepUp": 0.001171,
+      "pctReview": 0.000729,
+      "recall": 0.051597,
+      "netSavingsINR": 246632.32
+    },
+    {
+      "stepUp": 0.12,
+      "review": 0.155,
+      "pctAllowed": 0.998099,
+      "pctStepUp": 0.001216,
+      "pctReview": 0.000685,
+      "recall": 0.051597,
+      "netSavingsINR": 246292.94
+    },
+    {
+      "stepUp": 0.12,
+      "review": 0.16,
+      "pctAllowed": 0.998099,
+      "pctStepUp": 0.00126,
+      "pctReview": 0.000641,
+      "recall": 0.051597,
+      "netSavingsINR": 243360.41
+    },
+    {
+      "stepUp": 0.12,
+      "review": 0.165,
+      "pctAllowed": 0.998099,
+      "pctStepUp": 0.001348,
+      "pctReview": 0.000553,
+      "recall": 0.051597,
+      "netSavingsINR": 243247.56
+    },
+    {
+      "stepUp": 0.12,
+      "review": 0.17,
+      "pctAllowed": 0.998099,
+      "pctStepUp": 0.001481,
+      "pctReview": 0.00042,
+      "recall": 0.051597,
+      "netSavingsINR": 240540.98
+    },
+    {
+      "stepUp": 0.12,
+      "review": 0.175,
+      "pctAllowed": 0.998099,
+      "pctStepUp": 0.001547,
+      "pctReview": 0.000354,
+      "recall": 0.051597,
+      "netSavingsINR": 239717.86
+    },
+    {
+      "stepUp": 0.12,
+      "review": 0.18,
+      "pctAllowed": 0.998099,
+      "pctStepUp": 0.001636,
+      "pctReview": 0.000265,
+      "recall": 0.051597,
+      "netSavingsINR": 236211.94
+    },
+    {
+      "stepUp": 0.12,
+      "review": 0.185,
+      "pctAllowed": 0.998099,
+      "pctStepUp": 0.001636,
+      "pctReview": 0.000265,
+      "recall": 0.051597,
+      "netSavingsINR": 236211.94
+    },
+    {
+      "stepUp": 0.12,
+      "review": 0.19,
+      "pctAllowed": 0.998099,
+      "pctStepUp": 0.001702,
+      "pctReview": 0.000199,
+      "recall": 0.051597,
+      "netSavingsINR": 232530.46
+    },
+    {
+      "stepUp": 0.12,
+      "review": 0.195,
+      "pctAllowed": 0.998099,
+      "pctStepUp": 0.001702,
+      "pctReview": 0.000199,
+      "recall": 0.051597,
+      "netSavingsINR": 232530.46
+    },
+    {
+      "stepUp": 0.12,
+      "review": 0.2,
+      "pctAllowed": 0.998099,
+      "pctStepUp": 0.001746,
+      "pctReview": 0.000155,
+      "recall": 0.051597,
+      "netSavingsINR": 232094.67
+    },
+    {
+      "stepUp": 0.125,
+      "review": 0.13,
+      "pctAllowed": 0.998342,
+      "pctStepUp": 0.000287,
+      "pctReview": 0.00137,
+      "recall": 0.044226,
+      "netSavingsINR": 237362.0
+    },
+    {
+      "stepUp": 0.125,
+      "review": 0.135,
+      "pctAllowed": 0.998342,
+      "pctStepUp": 0.00053,
+      "pctReview": 0.001127,
+      "recall": 0.044226,
+      "netSavingsINR": 237317.61
+    },
+    {
+      "stepUp": 0.125,
+      "review": 0.14,
+      "pctAllowed": 0.998342,
+      "pctStepUp": 0.000685,
+      "pctReview": 0.000972,
+      "recall": 0.044226,
+      "netSavingsINR": 237325.21
+    },
+    {
+      "stepUp": 0.125,
+      "review": 0.145,
+      "pctAllowed": 0.998342,
+      "pctStepUp": 0.000729,
+      "pctReview": 0.000928,
+      "recall": 0.044226,
+      "netSavingsINR": 237357.68
+    },
+    {
+      "stepUp": 0.125,
+      "review": 0.15,
+      "pctAllowed": 0.998342,
+      "pctStepUp": 0.000928,
+      "pctReview": 0.000729,
+      "recall": 0.044226,
+      "netSavingsINR": 230296.15
+    },
+    {
+      "stepUp": 0.125,
+      "review": 0.155,
+      "pctAllowed": 0.998342,
+      "pctStepUp": 0.000972,
+      "pctReview": 0.000685,
+      "recall": 0.044226,
+      "netSavingsINR": 229956.77
+    },
+    {
+      "stepUp": 0.125,
+      "review": 0.16,
+      "pctAllowed": 0.998342,
+      "pctStepUp": 0.001017,
+      "pctReview": 0.000641,
+      "recall": 0.044226,
+      "netSavingsINR": 227024.25
+    },
+    {
+      "stepUp": 0.125,
+      "review": 0.165,
+      "pctAllowed": 0.998342,
+      "pctStepUp": 0.001105,
+      "pctReview": 0.000553,
+      "recall": 0.044226,
+      "netSavingsINR": 226911.39
+    },
+    {
+      "stepUp": 0.125,
+      "review": 0.17,
+      "pctAllowed": 0.998342,
+      "pctStepUp": 0.001238,
+      "pctReview": 0.00042,
+      "recall": 0.044226,
+      "netSavingsINR": 224204.81
+    },
+    {
+      "stepUp": 0.125,
+      "review": 0.175,
+      "pctAllowed": 0.998342,
+      "pctStepUp": 0.001304,
+      "pctReview": 0.000354,
+      "recall": 0.044226,
+      "netSavingsINR": 223381.69
+    },
+    {
+      "stepUp": 0.125,
+      "review": 0.18,
+      "pctAllowed": 0.998342,
+      "pctStepUp": 0.001392,
+      "pctReview": 0.000265,
+      "recall": 0.044226,
+      "netSavingsINR": 219875.77
+    },
+    {
+      "stepUp": 0.125,
+      "review": 0.185,
+      "pctAllowed": 0.998342,
+      "pctStepUp": 0.001392,
+      "pctReview": 0.000265,
+      "recall": 0.044226,
+      "netSavingsINR": 219875.77
+    },
+    {
+      "stepUp": 0.125,
+      "review": 0.19,
+      "pctAllowed": 0.998342,
+      "pctStepUp": 0.001459,
+      "pctReview": 0.000199,
+      "recall": 0.044226,
+      "netSavingsINR": 216194.29
+    },
+    {
+      "stepUp": 0.125,
+      "review": 0.195,
+      "pctAllowed": 0.998342,
+      "pctStepUp": 0.001459,
+      "pctReview": 0.000199,
+      "recall": 0.044226,
+      "netSavingsINR": 216194.29
+    },
+    {
+      "stepUp": 0.125,
+      "review": 0.2,
+      "pctAllowed": 0.998342,
+      "pctStepUp": 0.001503,
+      "pctReview": 0.000155,
+      "recall": 0.044226,
+      "netSavingsINR": 215758.51
+    },
+    {
+      "stepUp": 0.13,
+      "review": 0.135,
+      "pctAllowed": 0.99863,
+      "pctStepUp": 0.000243,
+      "pctReview": 0.001127,
+      "recall": 0.034398,
+      "netSavingsINR": 185266.87
+    },
+    {
+      "stepUp": 0.13,
+      "review": 0.14,
+      "pctAllowed": 0.99863,
+      "pctStepUp": 0.000398,
+      "pctReview": 0.000972,
+      "recall": 0.034398,
+      "netSavingsINR": 185274.47
+    },
+    {
+      "stepUp": 0.13,
+      "review": 0.145,
+      "pctAllowed": 0.99863,
+      "pctStepUp": 0.000442,
+      "pctReview": 0.000928,
+      "recall": 0.034398,
+      "netSavingsINR": 185306.94
+    },
+    {
+      "stepUp": 0.13,
+      "review": 0.15,
+      "pctAllowed": 0.99863,
+      "pctStepUp": 0.000641,
+      "pctReview": 0.000729,
+      "recall": 0.034398,
+      "netSavingsINR": 178245.41
+    },
+    {
+      "stepUp": 0.13,
+      "review": 0.155,
+      "pctAllowed": 0.99863,
+      "pctStepUp": 0.000685,
+      "pctReview": 0.000685,
+      "recall": 0.034398,
+      "netSavingsINR": 177906.03
+    },
+    {
+      "stepUp": 0.13,
+      "review": 0.16,
+      "pctAllowed": 0.99863,
+      "pctStepUp": 0.000729,
+      "pctReview": 0.000641,
+      "recall": 0.034398,
+      "netSavingsINR": 174973.5
+    },
+    {
+      "stepUp": 0.13,
+      "review": 0.165,
+      "pctAllowed": 0.99863,
+      "pctStepUp": 0.000818,
+      "pctReview": 0.000553,
+      "recall": 0.034398,
+      "netSavingsINR": 174860.65
+    },
+    {
+      "stepUp": 0.13,
+      "review": 0.17,
+      "pctAllowed": 0.99863,
+      "pctStepUp": 0.00095,
+      "pctReview": 0.00042,
+      "recall": 0.034398,
+      "netSavingsINR": 172154.07
+    },
+    {
+      "stepUp": 0.13,
+      "review": 0.175,
+      "pctAllowed": 0.99863,
+      "pctStepUp": 0.001017,
+      "pctReview": 0.000354,
+      "recall": 0.034398,
+      "netSavingsINR": 171330.95
+    },
+    {
+      "stepUp": 0.13,
+      "review": 0.18,
+      "pctAllowed": 0.99863,
+      "pctStepUp": 0.001105,
+      "pctReview": 0.000265,
+      "recall": 0.034398,
+      "netSavingsINR": 167825.03
+    },
+    {
+      "stepUp": 0.13,
+      "review": 0.185,
+      "pctAllowed": 0.99863,
+      "pctStepUp": 0.001105,
+      "pctReview": 0.000265,
+      "recall": 0.034398,
+      "netSavingsINR": 167825.03
+    },
+    {
+      "stepUp": 0.13,
+      "review": 0.19,
+      "pctAllowed": 0.99863,
+      "pctStepUp": 0.001171,
+      "pctReview": 0.000199,
+      "recall": 0.034398,
+      "netSavingsINR": 164143.55
+    },
+    {
+      "stepUp": 0.13,
+      "review": 0.195,
+      "pctAllowed": 0.99863,
+      "pctStepUp": 0.001171,
+      "pctReview": 0.000199,
+      "recall": 0.034398,
+      "netSavingsINR": 164143.55
+    },
+    {
+      "stepUp": 0.13,
+      "review": 0.2,
+      "pctAllowed": 0.99863,
+      "pctStepUp": 0.001216,
+      "pctReview": 0.000155,
+      "recall": 0.034398,
+      "netSavingsINR": 163707.76
+    },
+    {
+      "stepUp": 0.135,
+      "review": 0.14,
+      "pctAllowed": 0.998873,
+      "pctStepUp": 0.000155,
+      "pctReview": 0.000972,
+      "recall": 0.027027,
+      "netSavingsINR": 180454.86
+    },
+    {
+      "stepUp": 0.135,
+      "review": 0.145,
+      "pctAllowed": 0.998873,
+      "pctStepUp": 0.000199,
+      "pctReview": 0.000928,
+      "recall": 0.027027,
+      "netSavingsINR": 180487.33
+    },
+    {
+      "stepUp": 0.135,
+      "review": 0.15,
+      "pctAllowed": 0.998873,
+      "pctStepUp": 0.000398,
+      "pctReview": 0.000729,
+      "recall": 0.027027,
+      "netSavingsINR": 173425.8
+    },
+    {
+      "stepUp": 0.135,
+      "review": 0.155,
+      "pctAllowed": 0.998873,
+      "pctStepUp": 0.000442,
+      "pctReview": 0.000685,
+      "recall": 0.027027,
+      "netSavingsINR": 173086.42
+    },
+    {
+      "stepUp": 0.135,
+      "review": 0.16,
+      "pctAllowed": 0.998873,
+      "pctStepUp": 0.000486,
+      "pctReview": 0.000641,
+      "recall": 0.027027,
+      "netSavingsINR": 170153.89
+    },
+    {
+      "stepUp": 0.135,
+      "review": 0.165,
+      "pctAllowed": 0.998873,
+      "pctStepUp": 0.000575,
+      "pctReview": 0.000553,
+      "recall": 0.027027,
+      "netSavingsINR": 170041.04
+    },
+    {
+      "stepUp": 0.135,
+      "review": 0.17,
+      "pctAllowed": 0.998873,
+      "pctStepUp": 0.000707,
+      "pctReview": 0.00042,
+      "recall": 0.027027,
+      "netSavingsINR": 167334.46
+    },
+    {
+      "stepUp": 0.135,
+      "review": 0.175,
+      "pctAllowed": 0.998873,
+      "pctStepUp": 0.000774,
+      "pctReview": 0.000354,
+      "recall": 0.027027,
+      "netSavingsINR": 166511.34
+    },
+    {
+      "stepUp": 0.135,
+      "review": 0.18,
+      "pctAllowed": 0.998873,
+      "pctStepUp": 0.000862,
+      "pctReview": 0.000265,
+      "recall": 0.027027,
+      "netSavingsINR": 163005.42
+    },
+    {
+      "stepUp": 0.135,
+      "review": 0.185,
+      "pctAllowed": 0.998873,
+      "pctStepUp": 0.000862,
+      "pctReview": 0.000265,
+      "recall": 0.027027,
+      "netSavingsINR": 163005.42
+    },
+    {
+      "stepUp": 0.135,
+      "review": 0.19,
+      "pctAllowed": 0.998873,
+      "pctStepUp": 0.000928,
+      "pctReview": 0.000199,
+      "recall": 0.027027,
+      "netSavingsINR": 159323.94
+    },
+    {
+      "stepUp": 0.135,
+      "review": 0.195,
+      "pctAllowed": 0.998873,
+      "pctStepUp": 0.000928,
+      "pctReview": 0.000199,
+      "recall": 0.027027,
+      "netSavingsINR": 159323.94
+    },
+    {
+      "stepUp": 0.135,
+      "review": 0.2,
+      "pctAllowed": 0.998873,
+      "pctStepUp": 0.000972,
+      "pctReview": 0.000155,
+      "recall": 0.027027,
+      "netSavingsINR": 158888.15
+    },
+    {
+      "stepUp": 0.14,
+      "review": 0.145,
+      "pctAllowed": 0.999028,
+      "pctStepUp": 4.4e-05,
+      "pctReview": 0.000928,
+      "recall": 0.022113,
+      "netSavingsINR": 151610.09
+    },
+    {
+      "stepUp": 0.14,
+      "review": 0.15,
+      "pctAllowed": 0.999028,
+      "pctStepUp": 0.000243,
+      "pctReview": 0.000729,
+      "recall": 0.022113,
+      "netSavingsINR": 144548.57
+    },
+    {
+      "stepUp": 0.14,
+      "review": 0.155,
+      "pctAllowed": 0.999028,
+      "pctStepUp": 0.000287,
+      "pctReview": 0.000685,
+      "recall": 0.022113,
+      "netSavingsINR": 144209.18
+    },
+    {
+      "stepUp": 0.14,
+      "review": 0.16,
+      "pctAllowed": 0.999028,
+      "pctStepUp": 0.000332,
+      "pctReview": 0.000641,
+      "recall": 0.022113,
+      "netSavingsINR": 141276.66
+    },
+    {
+      "stepUp": 0.14,
+      "review": 0.165,
+      "pctAllowed": 0.999028,
+      "pctStepUp": 0.00042,
+      "pctReview": 0.000553,
+      "recall": 0.022113,
+      "netSavingsINR": 141163.8
+    },
+    {
+      "stepUp": 0.14,
+      "review": 0.17,
+      "pctAllowed": 0.999028,
+      "pctStepUp": 0.000553,
+      "pctReview": 0.00042,
+      "recall": 0.022113,
+      "netSavingsINR": 138457.22
+    },
+    {
+      "stepUp": 0.14,
+      "review": 0.175,
+      "pctAllowed": 0.999028,
+      "pctStepUp": 0.000619,
+      "pctReview": 0.000354,
+      "recall": 0.022113,
+      "netSavingsINR": 137634.1
+    },
+    {
+      "stepUp": 0.14,
+      "review": 0.18,
+      "pctAllowed": 0.999028,
+      "pctStepUp": 0.000707,
+      "pctReview": 0.000265,
+      "recall": 0.022113,
+      "netSavingsINR": 134128.18
+    },
+    {
+      "stepUp": 0.14,
+      "review": 0.185,
+      "pctAllowed": 0.999028,
+      "pctStepUp": 0.000707,
+      "pctReview": 0.000265,
+      "recall": 0.022113,
+      "netSavingsINR": 134128.18
+    },
+    {
+      "stepUp": 0.14,
+      "review": 0.19,
+      "pctAllowed": 0.999028,
+      "pctStepUp": 0.000774,
+      "pctReview": 0.000199,
+      "recall": 0.022113,
+      "netSavingsINR": 130446.7
+    },
+    {
+      "stepUp": 0.14,
+      "review": 0.195,
+      "pctAllowed": 0.999028,
+      "pctStepUp": 0.000774,
+      "pctReview": 0.000199,
+      "recall": 0.022113,
+      "netSavingsINR": 130446.7
+    },
+    {
+      "stepUp": 0.14,
+      "review": 0.2,
+      "pctAllowed": 0.999028,
+      "pctStepUp": 0.000818,
+      "pctReview": 0.000155,
+      "recall": 0.022113,
+      "netSavingsINR": 130010.92
+    },
+    {
+      "stepUp": 0.145,
+      "review": 0.15,
+      "pctAllowed": 0.999072,
+      "pctStepUp": 0.000199,
+      "pctReview": 0.000729,
+      "recall": 0.022113,
+      "netSavingsINR": 145116.09
+    },
+    {
+      "stepUp": 0.145,
+      "review": 0.155,
+      "pctAllowed": 0.999072,
+      "pctStepUp": 0.000243,
+      "pctReview": 0.000685,
+      "recall": 0.022113,
+      "netSavingsINR": 144776.71
+    },
+    {
+      "stepUp": 0.145,
+      "review": 0.16,
+      "pctAllowed": 0.999072,
+      "pctStepUp": 0.000287,
+      "pctReview": 0.000641,
+      "recall": 0.022113,
+      "netSavingsINR": 141844.18
+    },
+    {
+      "stepUp": 0.145,
+      "review": 0.165,
+      "pctAllowed": 0.999072,
+      "pctStepUp": 0.000376,
+      "pctReview": 0.000553,
+      "recall": 0.022113,
+      "netSavingsINR": 141731.33
+    },
+    {
+      "stepUp": 0.145,
+      "review": 0.17,
+      "pctAllowed": 0.999072,
+      "pctStepUp": 0.000508,
+      "pctReview": 0.00042,
+      "recall": 0.022113,
+      "netSavingsINR": 139024.75
+    },
+    {
+      "stepUp": 0.145,
+      "review": 0.175,
+      "pctAllowed": 0.999072,
+      "pctStepUp": 0.000575,
+      "pctReview": 0.000354,
+      "recall": 0.022113,
+      "netSavingsINR": 138201.63
+    },
+    {
+      "stepUp": 0.145,
+      "review": 0.18,
+      "pctAllowed": 0.999072,
+      "pctStepUp": 0.000663,
+      "pctReview": 0.000265,
+      "recall": 0.022113,
+      "netSavingsINR": 134695.71
+    },
+    {
+      "stepUp": 0.145,
+      "review": 0.185,
+      "pctAllowed": 0.999072,
+      "pctStepUp": 0.000663,
+      "pctReview": 0.000265,
+      "recall": 0.022113,
+      "netSavingsINR": 134695.71
+    },
+    {
+      "stepUp": 0.145,
+      "review": 0.19,
+      "pctAllowed": 0.999072,
+      "pctStepUp": 0.000729,
+      "pctReview": 0.000199,
+      "recall": 0.022113,
+      "netSavingsINR": 131014.23
+    },
+    {
+      "stepUp": 0.145,
+      "review": 0.195,
+      "pctAllowed": 0.999072,
+      "pctStepUp": 0.000729,
+      "pctReview": 0.000199,
+      "recall": 0.022113,
+      "netSavingsINR": 131014.23
+    },
+    {
+      "stepUp": 0.145,
+      "review": 0.2,
+      "pctAllowed": 0.999072,
+      "pctStepUp": 0.000774,
+      "pctReview": 0.000155,
+      "recall": 0.022113,
+      "netSavingsINR": 130578.45
+    },
+    {
+      "stepUp": 0.15,
+      "review": 0.155,
+      "pctAllowed": 0.999271,
+      "pctStepUp": 4.4e-05,
+      "pctReview": 0.000685,
+      "recall": 0.019656,
+      "netSavingsINR": 150408.24
+    },
+    {
+      "stepUp": 0.15,
+      "review": 0.16,
+      "pctAllowed": 0.999271,
+      "pctStepUp": 8.8e-05,
+      "pctReview": 0.000641,
+      "recall": 0.019656,
+      "netSavingsINR": 147475.71
+    },
+    {
+      "stepUp": 0.15,
+      "review": 0.165,
+      "pctAllowed": 0.999271,
+      "pctStepUp": 0.000177,
+      "pctReview": 0.000553,
+      "recall": 0.019656,
+      "netSavingsINR": 147362.86
+    },
+    {
+      "stepUp": 0.15,
+      "review": 0.17,
+      "pctAllowed": 0.999271,
+      "pctStepUp": 0.000309,
+      "pctReview": 0.00042,
+      "recall": 0.019656,
+      "netSavingsINR": 144656.27
+    },
+    {
+      "stepUp": 0.15,
+      "review": 0.175,
+      "pctAllowed": 0.999271,
+      "pctStepUp": 0.000376,
+      "pctReview": 0.000354,
+      "recall": 0.019656,
+      "netSavingsINR": 143833.15
+    },
+    {
+      "stepUp": 0.15,
+      "review": 0.18,
+      "pctAllowed": 0.999271,
+      "pctStepUp": 0.000464,
+      "pctReview": 0.000265,
+      "recall": 0.019656,
+      "netSavingsINR": 140327.24
+    },
+    {
+      "stepUp": 0.15,
+      "review": 0.185,
+      "pctAllowed": 0.999271,
+      "pctStepUp": 0.000464,
+      "pctReview": 0.000265,
+      "recall": 0.019656,
+      "netSavingsINR": 140327.24
+    },
+    {
+      "stepUp": 0.15,
+      "review": 0.19,
+      "pctAllowed": 0.999271,
+      "pctStepUp": 0.00053,
+      "pctReview": 0.000199,
+      "recall": 0.019656,
+      "netSavingsINR": 136645.76
+    },
+    {
+      "stepUp": 0.15,
+      "review": 0.195,
+      "pctAllowed": 0.999271,
+      "pctStepUp": 0.00053,
+      "pctReview": 0.000199,
+      "recall": 0.019656,
+      "netSavingsINR": 136645.76
+    },
+    {
+      "stepUp": 0.15,
+      "review": 0.2,
+      "pctAllowed": 0.999271,
+      "pctStepUp": 0.000575,
+      "pctReview": 0.000155,
+      "recall": 0.019656,
+      "netSavingsINR": 136209.97
+    },
+    {
+      "stepUp": 0.155,
+      "review": 0.16,
+      "pctAllowed": 0.999315,
+      "pctStepUp": 4.4e-05,
+      "pctReview": 0.000641,
+      "recall": 0.017199,
+      "netSavingsINR": 122180.14
+    },
+    {
+      "stepUp": 0.155,
+      "review": 0.165,
+      "pctAllowed": 0.999315,
+      "pctStepUp": 0.000133,
+      "pctReview": 0.000553,
+      "recall": 0.017199,
+      "netSavingsINR": 122067.29
+    },
+    {
+      "stepUp": 0.155,
+      "review": 0.17,
+      "pctAllowed": 0.999315,
+      "pctStepUp": 0.000265,
+      "pctReview": 0.00042,
+      "recall": 0.017199,
+      "netSavingsINR": 119360.71
+    },
+    {
+      "stepUp": 0.155,
+      "review": 0.175,
+      "pctAllowed": 0.999315,
+      "pctStepUp": 0.000332,
+      "pctReview": 0.000354,
+      "recall": 0.017199,
+      "netSavingsINR": 118537.59
+    },
+    {
+      "stepUp": 0.155,
+      "review": 0.18,
+      "pctAllowed": 0.999315,
+      "pctStepUp": 0.00042,
+      "pctReview": 0.000265,
+      "recall": 0.017199,
+      "netSavingsINR": 115031.67
+    },
+    {
+      "stepUp": 0.155,
+      "review": 0.185,
+      "pctAllowed": 0.999315,
+      "pctStepUp": 0.00042,
+      "pctReview": 0.000265,
+      "recall": 0.017199,
+      "netSavingsINR": 115031.67
+    },
+    {
+      "stepUp": 0.155,
+      "review": 0.19,
+      "pctAllowed": 0.999315,
+      "pctStepUp": 0.000486,
+      "pctReview": 0.000199,
+      "recall": 0.017199,
+      "netSavingsINR": 111350.19
+    },
+    {
+      "stepUp": 0.155,
+      "review": 0.195,
+      "pctAllowed": 0.999315,
+      "pctStepUp": 0.000486,
+      "pctReview": 0.000199,
+      "recall": 0.017199,
+      "netSavingsINR": 111350.19
+    },
+    {
+      "stepUp": 0.155,
+      "review": 0.2,
+      "pctAllowed": 0.999315,
+      "pctStepUp": 0.00053,
+      "pctReview": 0.000155,
+      "recall": 0.017199,
+      "netSavingsINR": 110914.4
+    },
+    {
+      "stepUp": 0.16,
+      "review": 0.165,
+      "pctAllowed": 0.999359,
+      "pctStepUp": 8.8e-05,
+      "pctReview": 0.000553,
+      "recall": 0.017199,
+      "netSavingsINR": 125599.82
+    },
+    {
+      "stepUp": 0.16,
+      "review": 0.17,
+      "pctAllowed": 0.999359,
+      "pctStepUp": 0.000221,
+      "pctReview": 0.00042,
+      "recall": 0.017199,
+      "netSavingsINR": 122893.23
+    },
+    {
+      "stepUp": 0.16,
+      "review": 0.175,
+      "pctAllowed": 0.999359,
+      "pctStepUp": 0.000287,
+      "pctReview": 0.000354,
+      "recall": 0.017199,
+      "netSavingsINR": 122070.11
+    },
+    {
+      "stepUp": 0.16,
+      "review": 0.18,
+      "pctAllowed": 0.999359,
+      "pctStepUp": 0.000376,
+      "pctReview": 0.000265,
+      "recall": 0.017199,
+      "netSavingsINR": 118564.2
+    },
+    {
+      "stepUp": 0.16,
+      "review": 0.185,
+      "pctAllowed": 0.999359,
+      "pctStepUp": 0.000376,
+      "pctReview": 0.000265,
+      "recall": 0.017199,
+      "netSavingsINR": 118564.2
+    },
+    {
+      "stepUp": 0.16,
+      "review": 0.19,
+      "pctAllowed": 0.999359,
+      "pctStepUp": 0.000442,
+      "pctReview": 0.000199,
+      "recall": 0.017199,
+      "netSavingsINR": 114882.72
+    },
+    {
+      "stepUp": 0.16,
+      "review": 0.195,
+      "pctAllowed": 0.999359,
+      "pctStepUp": 0.000442,
+      "pctReview": 0.000199,
+      "recall": 0.017199,
+      "netSavingsINR": 114882.72
+    },
+    {
+      "stepUp": 0.16,
+      "review": 0.2,
+      "pctAllowed": 0.999359,
+      "pctStepUp": 0.000486,
+      "pctReview": 0.000155,
+      "recall": 0.017199,
+      "netSavingsINR": 114446.93
+    },
+    {
+      "stepUp": 0.165,
+      "review": 0.17,
+      "pctAllowed": 0.999447,
+      "pctStepUp": 0.000133,
+      "pctReview": 0.00042,
+      "recall": 0.012285,
+      "netSavingsINR": 96914.9
+    },
+    {
+      "stepUp": 0.165,
+      "review": 0.175,
+      "pctAllowed": 0.999447,
+      "pctStepUp": 0.000199,
+      "pctReview": 0.000354,
+      "recall": 0.012285,
+      "netSavingsINR": 96091.78
+    },
+    {
+      "stepUp": 0.165,
+      "review": 0.18,
+      "pctAllowed": 0.999447,
+      "pctStepUp": 0.000287,
+      "pctReview": 0.000265,
+      "recall": 0.012285,
+      "netSavingsINR": 92585.86
+    },
+    {
+      "stepUp": 0.165,
+      "review": 0.185,
+      "pctAllowed": 0.999447,
+      "pctStepUp": 0.000287,
+      "pctReview": 0.000265,
+      "recall": 0.012285,
+      "netSavingsINR": 92585.86
+    },
+    {
+      "stepUp": 0.165,
+      "review": 0.19,
+      "pctAllowed": 0.999447,
+      "pctStepUp": 0.000354,
+      "pctReview": 0.000199,
+      "recall": 0.012285,
+      "netSavingsINR": 88904.38
+    },
+    {
+      "stepUp": 0.165,
+      "review": 0.195,
+      "pctAllowed": 0.999447,
+      "pctStepUp": 0.000354,
+      "pctReview": 0.000199,
+      "recall": 0.012285,
+      "netSavingsINR": 88904.38
+    },
+    {
+      "stepUp": 0.165,
+      "review": 0.2,
+      "pctAllowed": 0.999447,
+      "pctStepUp": 0.000398,
+      "pctReview": 0.000155,
+      "recall": 0.012285,
+      "netSavingsINR": 88468.6
+    },
+    {
+      "stepUp": 0.17,
+      "review": 0.175,
+      "pctAllowed": 0.99958,
+      "pctStepUp": 6.6e-05,
+      "pctReview": 0.000354,
+      "recall": 0.009828,
+      "netSavingsINR": 96825.53
+    },
+    {
+      "stepUp": 0.17,
+      "review": 0.18,
+      "pctAllowed": 0.99958,
+      "pctStepUp": 0.000155,
+      "pctReview": 0.000265,
+      "recall": 0.009828,
+      "netSavingsINR": 93319.61
+    },
+    {
+      "stepUp": 0.17,
+      "review": 0.185,
+      "pctAllowed": 0.99958,
+      "pctStepUp": 0.000155,
+      "pctReview": 0.000265,
+      "recall": 0.009828,
+      "netSavingsINR": 93319.61
+    },
+    {
+      "stepUp": 0.17,
+      "review": 0.19,
+      "pctAllowed": 0.99958,
+      "pctStepUp": 0.000221,
+      "pctReview": 0.000199,
+      "recall": 0.009828,
+      "netSavingsINR": 89638.13
+    },
+    {
+      "stepUp": 0.17,
+      "review": 0.195,
+      "pctAllowed": 0.99958,
+      "pctStepUp": 0.000221,
+      "pctReview": 0.000199,
+      "recall": 0.009828,
+      "netSavingsINR": 89638.13
+    },
+    {
+      "stepUp": 0.17,
+      "review": 0.2,
+      "pctAllowed": 0.99958,
+      "pctStepUp": 0.000265,
+      "pctReview": 0.000155,
+      "recall": 0.009828,
+      "netSavingsINR": 89202.35
+    },
+    {
+      "stepUp": 0.175,
+      "review": 0.18,
+      "pctAllowed": 0.999646,
+      "pctStepUp": 8.8e-05,
+      "pctReview": 0.000265,
+      "recall": 0.007371,
+      "netSavingsINR": 60812.69
+    },
+    {
+      "stepUp": 0.175,
+      "review": 0.185,
+      "pctAllowed": 0.999646,
+      "pctStepUp": 8.8e-05,
+      "pctReview": 0.000265,
+      "recall": 0.007371,
+      "netSavingsINR": 60812.69
+    },
+    {
+      "stepUp": 0.175,
+      "review": 0.19,
+      "pctAllowed": 0.999646,
+      "pctStepUp": 0.000155,
+      "pctReview": 0.000199,
+      "recall": 0.007371,
+      "netSavingsINR": 57131.21
+    },
+    {
+      "stepUp": 0.175,
+      "review": 0.195,
+      "pctAllowed": 0.999646,
+      "pctStepUp": 0.000155,
+      "pctReview": 0.000199,
+      "recall": 0.007371,
+      "netSavingsINR": 57131.21
+    },
+    {
+      "stepUp": 0.175,
+      "review": 0.2,
+      "pctAllowed": 0.999646,
+      "pctStepUp": 0.000199,
+      "pctReview": 0.000155,
+      "recall": 0.007371,
+      "netSavingsINR": 56695.43
+    },
+    {
+      "stepUp": 0.18,
+      "review": 0.185,
+      "pctAllowed": 0.999735,
+      "pctStepUp": 0.0,
+      "pctReview": 0.000265,
+      "recall": 0.004914,
+      "netSavingsINR": 62043.61
+    },
+    {
+      "stepUp": 0.18,
+      "review": 0.19,
+      "pctAllowed": 0.999735,
+      "pctStepUp": 6.6e-05,
+      "pctReview": 0.000199,
+      "recall": 0.004914,
+      "netSavingsINR": 58362.13
+    },
+    {
+      "stepUp": 0.18,
+      "review": 0.195,
+      "pctAllowed": 0.999735,
+      "pctStepUp": 6.6e-05,
+      "pctReview": 0.000199,
+      "recall": 0.004914,
+      "netSavingsINR": 58362.13
+    },
+    {
+      "stepUp": 0.18,
+      "review": 0.2,
+      "pctAllowed": 0.999735,
+      "pctStepUp": 0.000111,
+      "pctReview": 0.000155,
+      "recall": 0.004914,
+      "netSavingsINR": 57926.34
+    },
+    {
+      "stepUp": 0.185,
+      "review": 0.19,
+      "pctAllowed": 0.999735,
+      "pctStepUp": 6.6e-05,
+      "pctReview": 0.000199,
+      "recall": 0.004914,
+      "netSavingsINR": 58362.13
+    },
+    {
+      "stepUp": 0.185,
+      "review": 0.195,
+      "pctAllowed": 0.999735,
+      "pctStepUp": 6.6e-05,
+      "pctReview": 0.000199,
+      "recall": 0.004914,
+      "netSavingsINR": 58362.13
+    },
+    {
+      "stepUp": 0.185,
+      "review": 0.2,
+      "pctAllowed": 0.999735,
+      "pctStepUp": 0.000111,
+      "pctReview": 0.000155,
+      "recall": 0.004914,
+      "netSavingsINR": 57926.34
+    },
+    {
+      "stepUp": 0.19,
+      "review": 0.195,
+      "pctAllowed": 0.999801,
+      "pctStepUp": 0.0,
+      "pctReview": 0.000199,
+      "recall": 0.002457,
+      "netSavingsINR": 59030.61
+    },
+    {
+      "stepUp": 0.19,
+      "review": 0.2,
+      "pctAllowed": 0.999801,
+      "pctStepUp": 4.4e-05,
+      "pctReview": 0.000155,
+      "recall": 0.002457,
+      "netSavingsINR": 58594.83
+    },
+    {
+      "stepUp": 0.195,
+      "review": 0.2,
+      "pctAllowed": 0.999801,
+      "pctStepUp": 4.4e-05,
+      "pctReview": 0.000155,
+      "recall": 0.002457,
+      "netSavingsINR": 58594.83
+    }
+  ],
+  "chosen": {
+    "stepUp": 0.024425,
+    "review": 0.082395,
+    "pctAllowed": 0.931618,
+    "pctStepUp": 0.061575,
+    "pctReview": 0.006807,
+    "recall": 0.498771,
+    "netSavingsINR": 1199620.19
+  }
+}

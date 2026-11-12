@@ -16,12 +16,9 @@ export default function ResumePage(): ReactElement {
   return (
     <Section className="pt-24 pb-28 xl:pt-28">
       <Container width="wide">
-        <h1 className="m-0 font-serif text-[40px] leading-[1.15] font-semibold tracking-[-0.015em] lg:text-[46px]">
+        <h1 className="m-0 mb-12 font-serif text-[40px] leading-[1.15] font-semibold tracking-[-0.015em] lg:text-[46px]">
           Résumé
         </h1>
-        <p className="text-ink-muted mt-3.5 mb-12 max-w-[680px] text-[19px] leading-[1.6]">
-          My latest résumé, plus earlier versions for reference.
-        </p>
         <h2 className="m-0 mb-5 font-serif text-[26px] leading-[1.25] font-semibold">
           Latest version
         </h2>

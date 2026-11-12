@@ -254,6 +254,7 @@ const THRESHOLDS_JSON = path.join(
   "public/media/data/chargebacklens-thresholds.json",
 );
 const ARCHIVE_DIR = path.join(process.cwd(), "public/media/resume/archive");
+const hasThresholds = existsSync(THRESHOLDS_JSON);
 
 test.describe("about page", () => {
   test("renders the heading, the story and the My path band", async ({ page }) => {
@@ -394,5 +395,51 @@ test.describe("404 page", () => {
     await expect(
       page.locator("main").getByRole("link", { name: "About", exact: true }),
     ).toHaveAttribute("href", "/about");
+  });
+});
+
+test.describe("threshold explorer", () => {
+  test("shows the placeholder when the JSON is missing or invalid, and the explorer when it is valid", async ({
+    page,
+  }) => {
+    await page.goto("/work/chargebacklens");
+    const section = page.locator("section:has(> #try-the-thresholds-yourself)");
+    if (!hasThresholds) {
+      await expect(section.getByText("Interactive explorer coming soon")).toBeVisible();
+      await expect(section.getByRole("slider")).toHaveCount(0);
+    } else {
+      await expect(section.getByRole("slider")).toHaveCount(2);
+    }
+  });
+
+  test("works by keyboard alone when the JSON exists", async ({ page }) => {
+    test.skip(!hasThresholds, "no thresholds JSON yet: placeholder is shown instead");
+    await page.goto("/work/chargebacklens");
+    const stepUp = page.getByRole("slider", { name: "Step-up threshold" });
+    const review = page.getByRole("slider", { name: "Review threshold" });
+    const live = page.locator('section:has(> #try-the-thresholds-yourself) [aria-live="polite"]');
+
+    await stepUp.focus();
+    const before = await live.innerText();
+    await page.keyboard.press("ArrowRight");
+    await expect(live).not.toHaveText(before);
+    await expect(stepUp).toHaveAttribute(
+      "aria-valuetext",
+      /Step-up threshold .+ of transactions stepped up/,
+    );
+
+    // Pushing step-up to its maximum must keep review above it, compared as threshold values.
+    const thresholdOf = async (slider: typeof stepUp) =>
+      Number((await slider.getAttribute("aria-valuetext"))!.match(/threshold ([\d.]+)/)![1]);
+    await page.keyboard.press("End");
+    const stepValue = await thresholdOf(stepUp);
+    await review.focus();
+    await page.keyboard.press("Home");
+    expect(await thresholdOf(review)).toBeGreaterThan(stepValue);
+
+    await page.getByRole("button", { name: "Reset to chosen policy" }).focus();
+    await page.keyboard.press("Enter");
+    await expect(page.getByText("Chosen policy:")).toBeVisible();
+    await expect(page.getByText("Computed on the held-out test period")).toBeVisible();
   });
 });

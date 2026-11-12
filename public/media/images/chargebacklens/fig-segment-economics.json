@@ -1,0 +1,66 @@
+{
+  "title": "Segment Economics: Net Savings per Manual Review Decision",
+  "data": [
+    {
+      "segment": "method=wallet",
+      "savings": 46.692780049261046
+    },
+    {
+      "segment": "merchant_category=ticketing",
+      "savings": 50.386065573770495
+    },
+    {
+      "segment": "amount_bucket=<500",
+      "savings": 77.61351491053675
+    },
+    {
+      "segment": "merchant_category=gaming",
+      "savings": 113.98568548387095
+    },
+    {
+      "segment": "merchant_category=edtech",
+      "savings": 121.86507275747503
+    },
+    {
+      "segment": "amount_bucket=500-2000",
+      "savings": 129.07928455165703
+    },
+    {
+      "segment": "merchant_category=subscription",
+      "savings": 141.80751592356688
+    },
+    {
+      "segment": "method=card",
+      "savings": 150.0918675560711
+    },
+    {
+      "segment": "merchant_category=d2c",
+      "savings": 164.1475065959953
+    },
+    {
+      "segment": "amount_bucket=2000-10000",
+      "savings": 227.80915426587308
+    },
+    {
+      "segment": "method=upi",
+      "savings": 246.93382760223062
+    },
+    {
+      "segment": "method=netbanking",
+      "savings": 605.8583714479025
+    },
+    {
+      "segment": "merchant_category=travel",
+      "savings": 1094.2646031363088
+    },
+    {
+      "segment": "method=emi",
+      "savings": 1294.3708135514016
+    },
+    {
+      "segment": "amount_bucket=>10000",
+      "savings": 1433.597153590664
+    }
+  ],
+  "type": "segments"
+}

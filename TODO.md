@@ -25,10 +25,6 @@ The full list of names the page uses:
 - [ ] `public/media/images/streakforge/fig-activation-by-year.png`, `fig-activation-by-plan.png`, `fig-weekly-anomalies.png`, `fig-branch-churn.png`
 - [x] `public/media/images/deliveriq/fig-target-distribution.png`, `fig-road-type.png`, `fig-hour-day-heatmap.png`, `fig-speed-traffic.png`, `fig-road-weather.png` (re-export, see above)
 
-## Data still to add
-
-- [ ] `public/media/data/chargebacklens-thresholds.json`, exported from the ChargebackLens repo (`docs/build-spec.md` §8.1). **Status (PR 5):** not present. The threshold explorer was removed from PR 5 and is not on the site yet.
-
 ## Content to confirm
 
 - [ ] **ParkEase dates.** `docs/content.md` says Feb–Mar 2026 in three places. PR 2 copies them as written. If the dates change, correct `docs/content.md` first and regenerate.

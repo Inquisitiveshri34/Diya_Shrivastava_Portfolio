@@ -1,4 +1,4 @@
 {
-  "alt": "Line chart of net savings against the flagging threshold on a log scale. Savings start at about minus ₹18L for very low thresholds, cross zero near 0.8%, peak at ₹10.81L near 2.4%, then fall. A dashed line marks the three-band policy at ₹11.99L.",
-  "caption": "With a single flag-or-allow threshold, savings peak at ₹10.81L; flagging anything above about 0.8% risk or less loses money. The three-band policy beats the best single threshold, at ₹11.99L."
+  "alt": "Line chart of net savings against the decision threshold on a log scale. Savings start at about minus ₹18L for very low thresholds, cross zero near 0.85%, peak at ₹10.81L near 2.4%, then fall. A dashed line marks the three-band policy at ₹11.99L.",
+  "caption": "With a single threshold, savings peak at ₹10.81L near 2.4% risk. Thresholds below about 0.85% lose money. The three-band policy beats the best single threshold, at ₹11.99L."
 }

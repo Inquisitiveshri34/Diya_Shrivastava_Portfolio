@@ -1,4 +1,4 @@
 {
-  "alt": "Heatmap of average travel time by hour and weekday. Hours 7–9 and 17–19 are darkest every day, at about 25–27 minutes, against about 19–21 minutes at other hours.",
+  "alt": "Heatmap of average travel time by hour and weekday. Rush-hour cells (7–9 and 17–19) average about 25 minutes on every weekday, against about 21 minutes for other hours.",
   "caption": "Average travel time by hour and day of week: the 7–9 am and 5–7 pm rush hours stand out on every day of the week."
 }

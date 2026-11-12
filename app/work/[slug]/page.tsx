@@ -11,7 +11,9 @@ import { TableOfContents } from "@/components/work/TableOfContents";
 import { CaseStudyBody, splitSections } from "@/lib/mdx";
 import { featuredProjects, getProject, loadProjects } from "@/lib/content";
 import { demoVideo } from "@/lib/media";
+import { projectDescription } from "@/lib/og";
 import { pageMetadata } from "@/lib/seo";
+import { JsonLd, creativeWorkJsonLd } from "@/components/seo/JsonLd";
 
 // Only the seven project files are pages. Any other slug is a 404.
 export const dynamicParams = false;
@@ -26,7 +28,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) return {};
-  return pageMetadata({ title: project.name, description: project.summary, path: `/work/${slug}` });
+  return pageMetadata({
+    title: project.name,
+    description: projectDescription(slug),
+    path: `/work/${slug}`,
+  });
 }
 
 /** Youtube links come in several shapes; only the video id is needed for the no-cookie embed. */
@@ -59,6 +65,7 @@ export default async function CaseStudyPage({ params }: PageProps): Promise<Reac
 
   return (
     <div className="pt-16 pb-28 lg:pt-20">
+      <JsonLd data={creativeWorkJsonLd(project)} />
       <Container width="wide">
         <CaseStudyHeader project={project} />
         {video ? (

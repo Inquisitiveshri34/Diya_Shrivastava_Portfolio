@@ -9,6 +9,7 @@ import { HomeContainer, HomeSection } from "@/components/home/HomeLayout";
 import { NowCard } from "@/components/home/NowCard";
 import { Toolkit } from "@/components/home/Toolkit";
 import { Values } from "@/components/home/Values";
+import { JsonLd, personJsonLd } from "@/components/seo/JsonLd";
 import { featuredProjects } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 
@@ -28,6 +29,7 @@ export default function HomePage(): ReactElement {
   const projects = featuredProjects();
   return (
     <div className="flex flex-col">
+      <JsonLd data={personJsonLd()} />
       <Hero />
       <FeaturedWork projects={projects} />
       <Values />

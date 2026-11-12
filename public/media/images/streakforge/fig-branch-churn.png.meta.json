@@ -1,4 +1,4 @@
 {
-  "alt": "Bar chart of churn rate for 40 branches sorted from lowest to highest, all between 91% and 98%, with a dashed line at the 94.2% average.",
-  "caption": "Churn sits between 91% and 98% at every one of the 40 branches, averaging 94.2%. No branch is an outlier, so the problem is platform-wide."
+  "alt": "Bar chart of churn rate for 40 branches, sorted from lowest to highest, all between about 91% and 98%, with a dashed line at the 94.2% average.",
+  "caption": "Churn is between about 91% and 98% at each of the 40 branches, averaging 94.2%. No branch stands out, so the problem is platform-wide."
 }

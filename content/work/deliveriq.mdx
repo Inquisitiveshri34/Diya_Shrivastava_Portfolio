@@ -106,6 +106,8 @@ An 80/20 random split — 191,935 trips for training, 47,984 for testing. The ba
 - **Broken road references.** 13.5% of trips (33,793) had no valid road record and defaulted to "residential", which weakens predictions for those trips.
 - **No seasonal or holiday effects.** Hour and day of week are used, but monthly patterns and holidays are not.
 
+<Figure name="fig-trip-count-by-hour.png" />
+
 ## What I'd do next
 
 1. **Fix the two data issues and re-measure** — cap impossible distances, treat midnight timestamps as missing, and re-run the evaluation.

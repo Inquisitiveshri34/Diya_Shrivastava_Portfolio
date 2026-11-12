@@ -99,7 +99,7 @@ export function AtAGlance({
           >
             {note ? <p className="m-0 font-serif text-[18px] italic">{note}</p> : null}
             {hasApproach ? (
-              <p className="m-0">
+              <p className="m-0 hidden lg:block">
                 <TextLink href="#approach" className="text-accent font-semibold">
                   See the approach ↓
                 </TextLink>

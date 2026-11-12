@@ -25,18 +25,12 @@ The full list of names the page uses:
 - [ ] `public/media/images/streakforge/fig-activation-by-year.png`, `fig-activation-by-plan.png`, `fig-weekly-anomalies.png`, `fig-branch-churn.png`
 - [x] `public/media/images/deliveriq/fig-target-distribution.png`, `fig-road-type.png`, `fig-hour-day-heatmap.png`, `fig-speed-traffic.png`, `fig-road-weather.png` (re-export, see above)
 
-## Data still to add
-
-- [ ] `public/media/data/chargebacklens-thresholds.json`, exported from the ChargebackLens repo (`docs/build-spec.md` §8.1). **Status (PR 5):** not present; the explorer shows "Interactive explorer coming soon". Percentages and `base_rate` are percents, and `chosen` carries its full outputs.
-- [ ] Certificate PDFs under `public/media/documents/certificates/<slug>.pdf` (for example `pl-200.pdf`). **Status (PR 5):** none present; the About table shows only Verify links until they are added.
-
 ## Content to confirm
 
 - [ ] **ParkEase dates.** `docs/content.md` says Feb–Mar 2026 in three places. PR 2 copies them as written. If the dates change, correct `docs/content.md` first and regenerate.
-- [ ] **Certification slugs.** Slugs in `content/data/certifications.ts` are derived from the codes and names (for example `pl-200`, `databricks-fundamentals`). The content doc has none. Confirm them before adding certificate PDFs.
+- [ ] **Certification slugs.** Slugs in `content/data/certifications.ts` are derived from the codes and names (for example `pl-200`, `databricks-fundamentals`). The content doc has none. Confirm them.
 - [ ] **Home words not in `content.md`.** The design headings "Major certifications" and "More certifications" were used, as you asked; they are not in `content.md`. The design's sentence under the heading and the "View certificate" link text are also not in `content.md`. Add them to the content doc, or confirm they stay.
 - [ ] **Hero line.** "4× Microsoft Certified" is added to the hero label on request. It is not in `docs/content.md`. Add it there to keep the content doc and the site in step.
-- [ ] **Certificate preview boxes.** The design shows each certificate's file name in its preview box. The site shows the code on the Microsoft cards. The three "More" cards have no code, so their boxes are blank. Decide what they should show.
 - [ ] **ClauseCheck figure paragraph.** The Evaluation section still has a `**Figure:**` line that repeats the figure's caption. Keep it or remove it.
 - [ ] **Case-study descriptions.** Each case-study page uses its summary as its meta description. `docs/content.md` §10 has its own wording for each page; PR 6 sets those.
 
@@ -62,6 +56,5 @@ Measured against `docs/Diya-Portfolio-Design/html` at 1280px and 390px. Laptop s
 - [ ] Card heights differ by 15–27px on laptops, because the descriptions and context lines are the `content.md` text and the design's wording is different.
 - [ ] The headline is "I'm Diya Shrivastava." as the design has it, on request. `docs/content.md` §2.1 says "I'm Diya.". Update the content doc to match, or change the site back.
 - [ ] Design text kept as written: certification intro, "landscape certificate", "Applied ML & GenAI Developer". Confirm these are wanted in the content doc.
-- [ ] "View certificate" is hidden until the PDF exists, as agreed in PR 3. The design always shows it.
 - [ ] The header (PR 1) shows a "Menu" button on phones; the design shows an icon. The header and footer are shared with every page, so they were not changed here.
 - [ ] The arrow "→" in Public Sans falls back to another font, so it looks longer than in the design.

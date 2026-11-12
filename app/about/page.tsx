@@ -55,7 +55,7 @@ export default function AboutPage(): ReactElement {
         </Container>
       </Section>
 
-      <Values />
+      <Values heading="What I care about" />
 
       <Section>
         <Container width="wide">

@@ -19,16 +19,16 @@ export function ProjectCard({ project }: { project: LoadedProject }): ReactEleme
       className="group rounded-card bg-band text-ink hover:text-ink grid gap-x-0 gap-y-2 p-[22px] no-underline transition-colors hover:no-underline lg:grid-cols-[minmax(0,1fr)_260px] lg:gap-x-14 lg:gap-y-0 lg:p-8"
     >
       <div className="contents lg:flex lg:min-w-0 lg:flex-col lg:gap-2">
-        <p className="text-ink-muted order-1 m-0 text-[13px] leading-[1.4] lg:text-[14px]">
+        <p className="text-ink-muted order-1 m-0 text-[13px] leading-[1.4] lg:order-none lg:text-[14px]">
           {project.cardLabel}
         </p>
-        <h3 className="order-2 m-0 font-serif text-[27px] leading-[1.25] font-semibold">
+        <h3 className="order-2 m-0 font-serif text-[27px] leading-[1.25] font-semibold lg:order-none">
           {project.name}
           <span className="text-ink-muted block font-sans text-[14px] font-normal lg:text-[15px]">
             {project.subtitle}
           </span>
         </h3>
-        <p className="text-ink order-3 m-0 text-[16px] leading-[1.6] lg:text-[17px]">
+        <p className="text-ink order-3 m-0 text-[16px] leading-[1.6] lg:order-none lg:text-[17px]">
           {project.cardLine}
         </p>
         {project.cardTags ? (
